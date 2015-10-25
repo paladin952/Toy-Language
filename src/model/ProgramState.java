@@ -4,35 +4,51 @@ import interfaces.IDictionary;
 import interfaces.IList;
 import interfaces.IStack;
 import interfaces.IStatement;
-import model.Collections.MyDictionary;
-import model.Collections.MyList;
-import model.Collections.MyStack;
-
-import java.util.List;
 
 /**
  * Created by Lucian on 10/19/2015.
  */
 public class ProgramState {
 
-    private IStack<IStatement> mExecutionStack;
-    private IDictionary<String, Integer> myDictionary;
-    private IList<String> output;
-    private IStatement mOriginalProgram;
+    /**
+     * The execution stack containing statements
+     */
+    private IStack<IStatement> executionStack;
 
-    public ProgramState(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> output, IStatement mOriginalProgram) {
-        this.mExecutionStack = mExecutionStack;
+    /**
+     * The table of variables as a hash map
+     */
+    private IDictionary<String, Integer> myDictionary;
+
+    /**
+     * List of output
+     * The messages are coming from print statement
+     */
+    private IList<String> output;
+
+    /**
+     * A copy of the original program
+     */
+    private IStatement originalProgram;
+
+    public ProgramState(IStack<IStatement> executionStack, IDictionary<String, Integer> myDictionary, IList<String> output, IStatement originalProgram) {
+        this.executionStack = executionStack;
         this.myDictionary = myDictionary;
         this.output = output;
-        this.mOriginalProgram = mOriginalProgram;
-        this.mExecutionStack.push(mOriginalProgram);
+        this.originalProgram = originalProgram;
+        this.executionStack.push(originalProgram);
     }
 
+    /**
+     * String representation
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
         result.append("Execution stack: \n");
-        result.append(mExecutionStack.toString());
+        result.append(executionStack.toString());
 
         result.append("My dictionary: \n");
         result.append("\n");
@@ -40,15 +56,19 @@ public class ProgramState {
 
         result.append("Output: \n");
         result.append(output.toString());
-        return result.toString() ;
+        return result.toString();
     }
 
+    /**
+     * Getters and setters
+     */
+
     public IStack<IStatement> getExecutionStack() {
-        return mExecutionStack;
+        return executionStack;
     }
 
     public void setExecutionStack(IStack<IStatement> mExecutionStack) {
-        this.mExecutionStack = mExecutionStack;
+        this.executionStack = mExecutionStack;
     }
 
     public IDictionary<String, Integer> getMyDictionary() {
@@ -67,11 +87,11 @@ public class ProgramState {
         this.output = output;
     }
 
-    public IStatement getmOriginalProgram() {
-        return mOriginalProgram;
+    public IStatement getOriginalProgram() {
+        return originalProgram;
     }
 
-    public void setmOriginalProgram(IStatement mOriginalProgram) {
-        this.mOriginalProgram = mOriginalProgram;
+    public void setOriginalProgram(IStatement originalProgram) {
+        this.originalProgram = originalProgram;
     }
 }

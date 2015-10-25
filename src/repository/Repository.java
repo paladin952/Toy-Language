@@ -11,23 +11,30 @@ import java.util.List;
  */
 public class Repository implements IRepository {
 
-    private List<ProgramState> mProgramStateList;
+    /**
+     * The list of current program states
+     * For now only one item will be there
+     */
+    private List<ProgramState> programStateList;
 
+    /**
+     * The constructor
+     */
     public Repository() {
-        mProgramStateList = new ArrayList<>();
+        programStateList = new ArrayList<>();
     }
 
     public void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IStatement mInitialProgram) {
-        mProgramStateList.add(new ProgramState(mExecutionStack, myDictionary, mOutput, mInitialProgram));
+        programStateList.add(new ProgramState(mExecutionStack, myDictionary, mOutput, mInitialProgram));
     }
 
+    /**
+     * Get the latest program state
+     * @return The ProgramState
+     */
     @Override
     public ProgramState getCurrentState() {
-        return mProgramStateList.get(mProgramStateList.size() - 1);
+        return programStateList.get(programStateList.size() - 1);
     }
 
-    @Override
-    public void saveProgramState() {
-
-    }
 }

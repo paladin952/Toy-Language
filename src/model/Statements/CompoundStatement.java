@@ -7,32 +7,50 @@ import interfaces.IStatement;
  */
 public class CompoundStatement implements IStatement {
 
-    private IStatement mFirstStatement;
-    private IStatement mSecondStatement;
+    /**
+     * First statement
+     */
+    private IStatement firstStatement;
 
-    public CompoundStatement(IStatement mFirstStatement, IStatement mSecondStatement) {
-        this.mFirstStatement = mFirstStatement;
-        this.mSecondStatement = mSecondStatement;
+    /**
+     * Second statement
+     */
+    private IStatement secondStatement;
+
+    /**
+     * The constructor
+     * @param firstStatement The first statement
+     * @param secondStatement The second statement
+     */
+    public CompoundStatement(IStatement firstStatement, IStatement secondStatement) {
+        this.firstStatement = firstStatement;
+        this.secondStatement = secondStatement;
     }
 
-    public IStatement getmFirstStatement() {
-        return mFirstStatement;
+    /**
+     * Getters and setters
+     */
+    public IStatement getFirstStatement() {
+        return firstStatement;
     }
 
-    public void setmFirstStatement(IStatement mFirstStatement) {
-        this.mFirstStatement = mFirstStatement;
+    public void setFirstStatement(IStatement firstStatement) {
+        this.firstStatement = firstStatement;
     }
 
-    public IStatement getmSecondStatement() {
-        return mSecondStatement;
+    public IStatement getSecondStatement() {
+        return secondStatement;
     }
 
-    public void setmSecondStatement(IStatement mSecondStatement) {
-        this.mSecondStatement = mSecondStatement;
+    public void setSecondStatement(IStatement secondStatement) {
+        this.secondStatement = secondStatement;
     }
 
+    /**
+     * String representation
+     */
     @Override
     public String toString() {
-        return mFirstStatement.toString() + ";" + mSecondStatement.toString();
+        return firstStatement.toString() + ";" + secondStatement.toString();
     }
 }

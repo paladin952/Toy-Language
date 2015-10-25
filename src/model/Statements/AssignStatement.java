@@ -1,39 +1,58 @@
 package model.Statements;
 
 import interfaces.IStatement;
-import model.Expresions.Expression;
+import interfaces.Expression;
 
 /**
  * Created by Lucian on 10/11/2015.
  */
 public class AssignStatement implements IStatement {
 
-    private String mId;
-    private Expression mExpression;
+    /**
+     * The name of the variable
+     */
+    private String variableName;
 
-    public AssignStatement(String mId, Expression mExpression) {
-        this.mId = mId;
-        this.mExpression = mExpression;
+    /**
+     * The expression to be assigned to variable
+     */
+    private Expression expression;
+
+    /**
+     * The constructor
+     * @param variableName The name of variable
+     * @param expression The expression
+     */
+    public AssignStatement(String variableName, Expression expression) {
+        this.variableName = variableName;
+        this.expression = expression;
     }
 
-    public String getmId() {
-        return mId;
+    /**
+     * Getters and setters
+     */
+    public String getVariableName() {
+        return variableName;
     }
 
-    public void setmId(String mId) {
-        this.mId = mId;
+    public void setVariableName(String variableName) {
+        this.variableName = variableName;
     }
 
-    public Expression getmExpression() {
-        return mExpression;
+    public Expression getExpression() {
+        return expression;
     }
 
-    public void setmExpression(Expression mExpression) {
-        this.mExpression = mExpression;
+    public void setExpression(Expression expression) {
+        this.expression = expression;
     }
 
+    /**
+     * String representation
+     * @return
+     */
     @Override
     public String toString() {
-        return mId + "=" + mExpression.toString();
+        return variableName + "=" + expression.toString();
     }
 }

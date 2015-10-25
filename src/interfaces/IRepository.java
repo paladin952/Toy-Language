@@ -13,11 +13,6 @@ public interface IRepository {
     ProgramState getCurrentState();
 
     /**
-     * Saving the program's state
-     */
-    void saveProgramState();
-
-    /**
      * Creates a new program
      *
      * @param mExecutionStack The execution stack of the program

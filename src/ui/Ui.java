@@ -5,7 +5,7 @@ import controller.Controller;
 import interfaces.IStatement;
 import model.Expresions.ArithmeticExpression;
 import model.Expresions.ConstantExpression;
-import model.Expresions.Expression;
+import interfaces.Expression;
 import model.Expresions.VariableExpression;
 import model.Statements.AssignStatement;
 import model.Statements.CompoundStatement;
@@ -14,9 +14,7 @@ import model.Statements.PrintStatement;
 
 import java.util.Scanner;
 
-/**
- * Created by Lucian on 10/11/2015.
- */
+
 public class Ui {
     /**
      * Input scanned
@@ -24,17 +22,12 @@ public class Ui {
     private Scanner scanner;
 
     /**
-     * String input
-     */
-    private int input;
-
-    /**
      * Controller instance
      */
     private Controller controller;
 
     /**
-     * Consstructor
+     * Constructor
      */
     public Ui(Controller controller) {
         scanner = new Scanner(System.in);
@@ -50,9 +43,10 @@ public class Ui {
             System.out.println("--2 Run");
             System.out.println("--3 Print flag");
             System.out.print("\n>");
-            input = scanner.nextInt();
+
+            int input = scanner.nextInt();
             switch (input) {
-                case 1: // everytinhg starts with a compound
+                case 1: // everything starts with a compound
                     IStatement statement = createCompoundStatement();
                     controller.createProgram(statement);
                     break;
@@ -146,7 +140,6 @@ public class Ui {
      * @return The VariableExpression created by user
      */
     private Expression createVariableExpression() {
-        Expression expression;
         System.out.println("--Enter variable: ");
         String var = scanner.next();
         return new VariableExpression(var);
@@ -159,7 +152,6 @@ public class Ui {
      * @return The ConstantExpression created by user
      */
     private Expression createConstantExpression() {
-        Expression expression;
         System.out.println("--Enter number: ");
         int number = scanner.nextInt();
 
