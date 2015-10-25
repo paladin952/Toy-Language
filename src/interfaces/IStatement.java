@@ -5,6 +5,11 @@ package interfaces;
  */
 public interface IStatement {
 
+    /**
+     * String representation
+     *
+     * @return String
+     */
     String toString();
 
 

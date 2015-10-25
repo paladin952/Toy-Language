@@ -19,29 +19,52 @@ import model.Statements.PrintStatement;
  * Created by Lucian on 10/11/2015.
  */
 public class Controller {
-    public static boolean shouldPrint;
-    private IRepository mRepository;
 
+    /**
+     * Boolean: print current programe state if it is true
+     */
+    public static boolean PRINT_FLAG = true;
+
+    /**
+     * Repository object
+     */
+    private IRepository repository;
+
+    /**
+     * The constructor
+     * @param repository The repository
+     */
     public Controller(IRepository repository) {
-        mRepository = repository;
+        this.repository = repository;
 
-        IStack<IStatement> stack = new MyStack<>(IStatement.class, 100);
-
-        IStatement initialStatement = new CompoundStatement(new AssignStatement("b", new ConstantExpression(100)),
-                new AssignStatement("a", new ArithmeticExpression("+", new VariableExpression("b"), new ConstantExpression(1))));
-
-        IStatement secondStatement = new CompoundStatement(new AssignStatement("b", new ConstantExpression(100)),
-                new PrintStatement(new VariableExpression("b")));
-
-        IStatement thirdStatement = new CompoundStatement(new AssignStatement("b", new ArithmeticExpression("+", new ConstantExpression(10), new ConstantExpression(20))),
-                new CompoundStatement(new AssignStatement("a", new ArithmeticExpression("*", new VariableExpression("b"), new ConstantExpression(2))),
-                        new PrintStatement(new VariableExpression("a"))));
-        mRepository.createProgram(stack, new MyDictionary<String, Integer>(100), new MyList<String>(String.class, 100), thirdStatement);
+//        IStatement initialStatement = new CompoundStatement(new AssignStatement("b", new ConstantExpression(100)),
+//                new AssignStatement("a", new ArithmeticExpression("+", new VariableExpression("b"), new ConstantExpression(1))));
+//
+//        IStatement secondStatement = new CompoundStatement(new AssignStatement("b", new ConstantExpression(100)),
+//                new PrintStatement(new VariableExpression("b")));
+//
+//        IStatement thirdStatement = new CompoundStatement(new AssignStatement("b", new ArithmeticExpression("+", new ConstantExpression(10), new ConstantExpression(20))),
+//                new CompoundStatement(new AssignStatement("a", new ArithmeticExpression("*", new VariableExpression("b"), new ConstantExpression(2))),
+//                        new PrintStatement(new VariableExpression("a"))));
+//        this.repository.createProgram(new MyStack<>(IStatement.class, 100), new MyDictionary<String, Integer>(100), new MyList<String>(String.class, 100), thirdStatement);
 
     }
 
+    /**
+     * Creating a new program based on initial statement
+     * @param initialStatement initial IStatement
+     */
+    public void createProgram(IStatement initialStatement){
+        repository.createProgram(new MyStack<>(IStatement.class, 100), new MyDictionary<String, Integer>(100), new MyList<String>(String.class, 100), initialStatement);
+    }
+
+    /**
+     * Run the program in debug mode, one step at a time
+     * @param programState The program
+     * @throws StatementExecutionException
+     */
     private void oneStep(ProgramState programState) throws StatementExecutionException {
-        IStack<IStatement> myStack = mRepository.getCurrentState().getExecutionStack();
+        IStack<IStatement> myStack = repository.getCurrentState().getExecutionStack();
 
         if (myStack.isEmpty())
             throw new StatementExecutionException();
@@ -70,7 +93,7 @@ public class Controller {
             IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
             IList<String> output = programState.getOutput();
             PrintStatement printStatement = (PrintStatement) statement;
-            Expression expr = printStatement.getmExpression();
+            Expression expr = printStatement.getExpression();
             output.add(String.valueOf(expr.eval(myDictionary)));
             return;
         }
@@ -78,30 +101,38 @@ public class Controller {
         if (statement instanceof IfStatement) {
             IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
             IfStatement ifStatement = (IfStatement) statement;
-            if (ifStatement.getmExpression().eval(myDictionary) != 0) {
-                myStack.push(ifStatement.getmThenStatement());
+            if (ifStatement.getExpression().eval(myDictionary) != 0) {
+                myStack.push(ifStatement.getThenStatement());
             } else {
-                myStack.push(ifStatement.getmElseStatement());
+                myStack.push(ifStatement.getElseStatement());
             }
             return;
         }
     }
 
+    /**
+     * Run all program
+     * @throws StatementExecutionException
+     */
     public void runAllSteps() throws StatementExecutionException {
-        ProgramState programState = mRepository.getCurrentState();
+        ProgramState programState = repository.getCurrentState();
         while (!programState.getExecutionStack().isEmpty()) {
             oneStep(programState);
-            if(shouldPrint){
+            if(PRINT_FLAG){
                 System.out.println(programState.toString());
             }
         }
     }
 
+    /**
+     * Run step by step
+     * @throws StatementExecutionException
+     */
     public void runOneStep() throws StatementExecutionException {
-        ProgramState programState = mRepository.getCurrentState();
+        ProgramState programState = repository.getCurrentState();
         if(programState.getExecutionStack().size()>0){
             oneStep(programState);
-            if(shouldPrint){
+            if(PRINT_FLAG){
                 System.out.println(programState.toString());
             }
         }

@@ -7,10 +7,24 @@ import model.ProgramState;
  */
 public interface IRepository {
 
+    /**
+     * @return The current Program's state
+     */
     ProgramState getCurrentState();
 
+    /**
+     * Saving the program's state
+     */
     void saveProgramState();
 
+    /**
+     * Creates a new program
+     *
+     * @param mExecutionStack The execution stack of the program
+     * @param myDictionary    The table of symbols for program
+     * @param mOutput         The output list of the program
+     * @param mInitialProgram The initial statement
+     */
     void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IStatement mInitialProgram);
 
 

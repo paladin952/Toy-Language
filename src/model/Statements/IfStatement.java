@@ -8,43 +8,43 @@ import model.Expresions.Expression;
  */
 public class IfStatement implements IStatement {
 
-    private Expression mExpression;
-    private IStatement mThenStatement;
-    private IStatement mElseStatement;
+    private Expression expression;
+    private IStatement thenStatement;
+    private IStatement elseStatement;
 
-    public IfStatement(Expression mExpression, IStatement mThenStatement, IStatement mElseStatement) {
-        this.mExpression = mExpression;
-        this.mThenStatement = mThenStatement;
-        this.mElseStatement = mElseStatement;
+    public IfStatement(Expression expression, IStatement thenStatement, IStatement elseStatement) {
+        this.expression = expression;
+        this.thenStatement = thenStatement;
+        this.elseStatement = elseStatement;
     }
 
     @Override
     public String toString() {
-        return "IF(" + mExpression.toString() +")THEN(" + mThenStatement.toString() + ")ELSE("
-                + mElseStatement.toString() +")";
+        return "IF(" + expression.toString() +")THEN(" + thenStatement.toString() + ")ELSE("
+                + elseStatement.toString() +")";
     }
 
-    public Expression getmExpression() {
-        return mExpression;
+    public Expression getExpression() {
+        return expression;
     }
 
-    public void setmExpression(Expression mExpression) {
-        this.mExpression = mExpression;
+    public void setExpression(Expression expression) {
+        this.expression = expression;
     }
 
-    public IStatement getmThenStatement() {
-        return mThenStatement;
+    public IStatement getThenStatement() {
+        return thenStatement;
     }
 
-    public void setmThenStatement(IStatement mThenStatement) {
-        this.mThenStatement = mThenStatement;
+    public void setThenStatement(IStatement thenStatement) {
+        this.thenStatement = thenStatement;
     }
 
-    public IStatement getmElseStatement() {
-        return mElseStatement;
+    public IStatement getElseStatement() {
+        return elseStatement;
     }
 
-    public void setmElseStatement(IStatement mElseStatement) {
-        this.mElseStatement = mElseStatement;
+    public void setElseStatement(IStatement elseStatement) {
+        this.elseStatement = elseStatement;
     }
 }
