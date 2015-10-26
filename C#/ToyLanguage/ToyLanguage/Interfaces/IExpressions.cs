@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ToyLanguage.Interfaces
 {
-    interface IExpressionscs
+    interface IExpressions
     {
         int eval(IMyDictionary<string, int> table);
 
-        string toString();
+        string ToString();
     }
 }

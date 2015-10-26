@@ -43,11 +43,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Exceptions\StatementExecutionException.cs" />
+    <Compile Include="Interfaces\IExpressions.cs" />
+    <Compile Include="Interfaces\IMyList.cs" />
+    <Compile Include="Interfaces\IMyDictionary.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IStack.cs" />
+    <Compile Include="Interfaces\IStatement.cs" />
+    <Compile Include="Model\Collections\MyDictionary.cs" />
+    <Compile Include="Model\Collections\MyList.cs" />
+    <Compile Include="Model\Collections\MyStack.cs" />
+    <Compile Include="Model\Expressions\ArithmeticExpression.cs" />
+    <Compile Include="Model\Expressions\ConstantExpression.cs" />
+    <Compile Include="Model\Expressions\VariableExpression.cs" />
+    <Compile Include="Model\ProgramState.cs" />
+    <Compile Include="Model\Statements\AssignStatement.cs" />
+    <Compile Include="Model\Statements\CompoundStatement.cs" />
+    <Compile Include="Model\Statements\IfStatement.cs" />
+    <Compile Include="Model\Statements\PrintStatement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="UiPackage\UserInterface.cs" />
+    <Compile Include="Utils\MenuUtils.cs" />
+    <Compile Include="Utils\OperatorsEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

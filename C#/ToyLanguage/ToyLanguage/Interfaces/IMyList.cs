@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToyLanguage.Interfaces
 {
-    interface IList<T>
+    interface IMyList<T>
     {
         /**
      * Add a new element in list
@@ -43,5 +43,7 @@ namespace ToyLanguage.Interfaces
          * @return Int size
          */
         int size();
+
+        string ToString();
     }
 }

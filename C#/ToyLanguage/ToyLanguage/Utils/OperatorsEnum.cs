@@ -4,9 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToyLanguage
+namespace ToyLanguage.Utils
 {
-    class Repository
+    enum OperatorsEnum
     {
+        ADD,
+
+        DIVIDE,
+
+        MULTIPLY,
+
+        SUBSTRACT,
     }
 }
