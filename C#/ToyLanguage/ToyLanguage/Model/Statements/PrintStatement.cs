@@ -44,7 +44,7 @@ namespace ToyLanguage.Model.Statements
          * @return String
          */
 
-    public String toString()
+    public string ToString()
         {
             return "Print(" + expression.ToString() + ")";
 

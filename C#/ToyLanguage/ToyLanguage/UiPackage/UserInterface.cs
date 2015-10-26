@@ -11,7 +11,7 @@ using ToyLanguage.Utils;
 
 namespace ToyLanguage.UiPackage
 {
-    class UserInterface
+    class UserInterface : Controller.PrintState
     {
        
         /**
@@ -24,8 +24,8 @@ namespace ToyLanguage.UiPackage
          */
         public UserInterface(Controller controller)
         {
-        
             this.controller = controller;
+            this.controller.setListener(this);
         }
 
         /**
@@ -81,6 +81,10 @@ namespace ToyLanguage.UiPackage
                         if (result == 1)
                         {
                             Controller.PRINT_FLAG = true;
+                        }
+                        else
+                        {
+                            Controller.PRINT_FLAG = false;
                         }
                         break;
 
@@ -257,5 +261,9 @@ namespace ToyLanguage.UiPackage
 
         }
 
+        public void print(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }

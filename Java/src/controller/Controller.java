@@ -37,11 +37,31 @@ public class Controller {
     }
 
     /**
+     * Interface for printing on screen from ui
+     */
+    public interface PrintState{
+        void print(String message);
+    }
+
+    /**
+     * Listener for print
+     */
+    private PrintState printListener;
+
+    /**
      * Creating a new program based on initial statement
      * @param initialStatement initial IStatement
      */
     public void createProgram(IStatement initialStatement){
         repository.createProgram(new MyStack<>(IStatement.class, 100), new MyDictionary<String, Integer>(100), new MyList<String>(String.class, 100), initialStatement);
+    }
+
+    /**
+     * set listener for printing in ui
+     * @param listener The listener
+     */
+    public void setListener(PrintState listener){
+        printListener = listener;
     }
 
     /**
@@ -105,7 +125,7 @@ public class Controller {
         while (!programState.getExecutionStack().isEmpty()) {
             oneStep(programState);
             if(PRINT_FLAG){
-                System.out.println(programState.toString());
+                printListener.print(programState.toString());
             }
         }
     }
@@ -119,7 +139,7 @@ public class Controller {
         if(programState.getExecutionStack().size()>0){
             oneStep(programState);
             if(PRINT_FLAG){
-                System.out.println(programState.toString());
+                printListener.print(programState.toString());
             }
         }
     }

@@ -15,7 +15,7 @@ import model.Statements.PrintStatement;
 import java.util.Scanner;
 
 
-public class Ui {
+public class Ui implements Controller.PrintState {
     /**
      * Input scanned
      */
@@ -32,6 +32,7 @@ public class Ui {
     public Ui(Controller controller) {
         scanner = new Scanner(System.in);
         this.controller = controller;
+        controller.setListener(this);
     }
 
     /**
@@ -74,6 +75,8 @@ public class Ui {
                     int result = scanner.nextInt();
                     if (result == 1) {
                         Controller.PRINT_FLAG = true;
+                    }else{
+                        Controller.PRINT_FLAG = false;
                     }
                     break;
 
@@ -237,4 +240,8 @@ public class Ui {
 
     }
 
+    @Override
+    public void print(String message) {
+        System.out.println(message);
+    }
 }

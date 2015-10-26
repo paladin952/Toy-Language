@@ -24,6 +24,27 @@ namespace ToyLanguage
         private IRepository repository;
 
         /**
+    * Interface for printing on screen from ui
+    */
+        public interface PrintState
+        {
+            void print(string message);
+        }
+
+        /**
+     * Listener for print
+     */
+        private PrintState printListener;
+
+        /**
+        Set listener to print in ui
+            */
+        public void setListener(PrintState listener)
+        {
+            printListener = listener;
+        }
+
+        /**
          * The constructor
          * @param repository The repository
          */
@@ -108,7 +129,7 @@ namespace ToyLanguage
             oneStep(programState);
             if (PRINT_FLAG)
             {
-                Console.WriteLine(programState.ToString());
+               printListener.print(programState.ToString());
             }
         }
     }
@@ -124,7 +145,7 @@ namespace ToyLanguage
             oneStep(programState);
             if (PRINT_FLAG)
             {
-                 Console.WriteLine(programState.ToString());
+               printListener.print(programState.ToString());
             }
         }
     }
