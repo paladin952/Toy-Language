@@ -7,7 +7,7 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Statements
 {
-    class AssignStatement : IStatement
+    class AssignStatement : IMyStatement
     {
         /**
      * The name of the variable
@@ -58,9 +58,10 @@ namespace ToyLanguage.Model.Statements
          * @return
          */
     
-    public string ToString()
+    public string MyToString()
         {
-            return variableName + "=" + expression.ToString();
+            
+            return variableName + "=" + expression.MyToString();
         }
     }
 }

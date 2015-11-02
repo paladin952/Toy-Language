@@ -7,7 +7,7 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Statements
 {
-    class IfStatement :IStatement
+    class IfStatement :IMyStatement
     {
         /**
      * The expression to be evaluated
@@ -17,12 +17,12 @@ namespace ToyLanguage.Model.Statements
         /**
          * The statement to be called if expression is true
          */
-        private IStatement thenStatement;
+        private IMyStatement thenStatement;
 
         /**
          * The statement to be called if expression is false
          */
-        private IStatement elseStatement;
+        private IMyStatement elseStatement;
 
         internal IExpressions Expression
         {
@@ -43,7 +43,7 @@ namespace ToyLanguage.Model.Statements
          * @param thenStatement The correct statement
          * @param elseStatement The false statement
          */
-        public IfStatement(IExpressions expression, IStatement thenStatement, IStatement elseStatement)
+        public IfStatement(IExpressions expression, IMyStatement thenStatement, IMyStatement elseStatement)
         {
             this.Expression = expression;
             this.thenStatement = thenStatement;
@@ -55,10 +55,10 @@ namespace ToyLanguage.Model.Statements
          * @return String
          */
     
-    public string ToString()
+    public string MyToString()
         {
-            return "IF(" + Expression.ToString() + ")THEN(" + thenStatement.ToString() + ")ELSE("
-                    + elseStatement.ToString() + ")";
+            return "IF(" + Expression.MyToString() + ")THEN(" + thenStatement.MyToString() + ")ELSE("
+                    + elseStatement.MyToString() + ")";
         }
 
         /**
@@ -74,22 +74,22 @@ namespace ToyLanguage.Model.Statements
             this.Expression = expression;
         }
 
-        public IStatement getThenStatement()
+        public IMyStatement getThenStatement()
         {
             return thenStatement;
         }
 
-        public void setThenStatement(IStatement thenStatement)
+        public void setThenStatement(IMyStatement thenStatement)
         {
             this.thenStatement = thenStatement;
         }
 
-        public IStatement getElseStatement()
+        public IMyStatement getElseStatement()
         {
             return elseStatement;
         }
 
-        public void setElseStatement(IStatement elseStatement)
+        public void setElseStatement(IMyStatement elseStatement)
         {
             this.elseStatement = elseStatement;
         }

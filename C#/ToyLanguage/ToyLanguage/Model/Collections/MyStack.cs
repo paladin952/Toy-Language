@@ -7,7 +7,7 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Collections
 {
-    class MyStack<T> : IStack<T>
+    class MyStack<T> : IMyStack<T>
     {
         /**
     * The array
@@ -108,6 +108,7 @@ namespace ToyLanguage.Model.Collections
             {
                 result.Append(array[i].ToString());
                 result.Append("\n");
+                
             }
             return result.ToString();
         }

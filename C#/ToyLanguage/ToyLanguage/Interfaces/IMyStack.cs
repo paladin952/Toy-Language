@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToyLanguage.Interfaces
 {
-    interface IStack<T>
+    interface IMyStack<T>
     {
         /**
      * Get the top element and decrement the stack

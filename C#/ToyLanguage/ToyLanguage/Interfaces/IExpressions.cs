@@ -10,6 +10,6 @@ namespace ToyLanguage.Interfaces
     {
         int eval(IMyDictionary<string, int> table);
 
-        string ToString();
+        string MyToString();
     }
 }

@@ -12,7 +12,7 @@ namespace ToyLanguage.Model
         /**
      * The execution stack containing statements
      */
-        private IStack<IStatement> executionStack;
+        private IMyStack<IMyStatement> executionStack;
 
         /**
          * The table of variables as a hash map
@@ -28,9 +28,9 @@ namespace ToyLanguage.Model
         /**
          * A copy of the original program
          */
-        private IStatement originalProgram;
+        private IMyStatement originalProgram;
 
-        public ProgramState(IStack<IStatement> executionStack, IMyDictionary<string, int> myDictionary, IMyList<string> output, IStatement originalProgram)
+        public ProgramState(IMyStack<IMyStatement> executionStack, IMyDictionary<string, int> myDictionary, IMyList<string> output, IMyStatement originalProgram)
         {
             this.executionStack = executionStack;
             this.myDictionary = myDictionary;
@@ -64,12 +64,12 @@ namespace ToyLanguage.Model
          * Getters and setters
          */
 
-        public IStack<IStatement> getExecutionStack()
+        public IMyStack<IMyStatement> getExecutionStack()
         {
             return executionStack;
         }
 
-        public void setExecutionStack(IStack<IStatement> mExecutionStack)
+        public void setExecutionStack(IMyStack<IMyStatement> mExecutionStack)
         {
             this.executionStack = mExecutionStack;
         }
@@ -94,12 +94,12 @@ namespace ToyLanguage.Model
             this.output = output;
         }
 
-        public IStatement getOriginalProgram()
+        public IMyStatement getOriginalProgram()
         {
             return originalProgram;
         }
 
-        public void setOriginalProgram(IStatement originalProgram)
+        public void setOriginalProgram(IMyStatement originalProgram)
         {
             this.originalProgram = originalProgram;
         }

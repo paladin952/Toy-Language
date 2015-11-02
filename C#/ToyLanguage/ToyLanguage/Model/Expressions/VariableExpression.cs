@@ -39,7 +39,7 @@ namespace ToyLanguage.Model.Expressions
          * @return String
          */
     
-    public String ToString()
+    public String MyToString()
         {
             return name;
         }

@@ -22,7 +22,7 @@ namespace ToyLanguage.Interfaces
          * @param mOutput         The output list of the program
          * @param mInitialProgram The initial statement
          */
-        void createProgram(IStack<IStatement> mExecutionStack, IMyDictionary<string, int> myDictionary, IMyList<string> mOutput, IStatement mInitialProgram);
+        void createProgram(IMyStack<IMyStatement> mExecutionStack, IMyDictionary<string, int> myDictionary, IMyList<string> mOutput, IMyStatement mInitialProgram);
 
     }
 }

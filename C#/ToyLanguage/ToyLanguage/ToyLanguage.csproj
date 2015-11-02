@@ -49,11 +49,14 @@
     <Compile Include="Interfaces\IMyList.cs" />
     <Compile Include="Interfaces\IMyDictionary.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IStack.cs" />
-    <Compile Include="Interfaces\IStatement.cs" />
+    <Compile Include="Interfaces\IMyStack.cs" />
+    <Compile Include="Interfaces\IMyStatement.cs" />
     <Compile Include="Model\Collections\MyDictionary.cs" />
     <Compile Include="Model\Collections\MyList.cs" />
     <Compile Include="Model\Collections\MyStack.cs" />
+    <Compile Include="Model\Collections\WrapperDictionary.cs" />
+    <Compile Include="Model\Collections\WrapperList.cs" />
+    <Compile Include="Model\Collections\WrapperStack.cs" />
     <Compile Include="Model\Expressions\ArithmeticExpression.cs" />
     <Compile Include="Model\Expressions\ConstantExpression.cs" />
     <Compile Include="Model\Expressions\VariableExpression.cs" />

@@ -44,7 +44,7 @@ namespace ToyLanguage.UiPackage
                 switch (input)
                 {
                     case 1: // everything starts with a compound
-                        IStatement statement = createCompoundStatement();
+                        IMyStatement statement = createCompoundStatement();
                         controller.createProgram(statement);
                         break;
                     case 2: //run
@@ -126,9 +126,9 @@ namespace ToyLanguage.UiPackage
          * @param message The message to be shown to user
          * @return The IStatement created by user
          */
-        private IStatement getStatementFromUser(String message)
+        private IMyStatement getStatementFromUser(String message)
         {
-            IStatement statement;
+            IMyStatement statement;
             Console.WriteLine(message);
             Console.WriteLine(MenuUtils.getChooseStatement());
             int input1 = Convert.ToInt32(Console.ReadLine());
@@ -203,7 +203,7 @@ namespace ToyLanguage.UiPackage
          *
          * @return The PrintStatement created by user
          */
-        private IStatement createPrintStatement()
+        private IMyStatement createPrintStatement()
         {
             IExpressions expression = getExpressionFromUser("--Enter expression: ");
             return new PrintStatement(expression);
@@ -215,10 +215,10 @@ namespace ToyLanguage.UiPackage
          *
          * @return The CompoundStatement created by user
          */
-        private IStatement createCompoundStatement()
+        private IMyStatement createCompoundStatement()
         {
-            IStatement statement1;
-            IStatement statement2;
+            IMyStatement statement1;
+            IMyStatement statement2;
 
             statement1 = getStatementFromUser("--Enter first statement: ");
             statement2 = getStatementFromUser("--Enter second statement: ");
@@ -231,11 +231,11 @@ namespace ToyLanguage.UiPackage
          *
          * @return The IfStatement created by user
          */
-        private IStatement createIfStatement()
+        private IMyStatement createIfStatement()
         {
             IExpressions expression;
-            IStatement correctStatement;
-            IStatement falseStatement;
+            IMyStatement correctStatement;
+            IMyStatement falseStatement;
 
             expression = getExpressionFromUser("Enter expression: ");
             correctStatement = getStatementFromUser("--Enter correct statement: ");
@@ -251,7 +251,7 @@ namespace ToyLanguage.UiPackage
          *
          * @return The AssignStatement created by user
          */
-        private IStatement createAssignStatement()
+        private IMyStatement createAssignStatement()
         {
             IExpressions expression;
             Console.WriteLine("Enter variable name: ");

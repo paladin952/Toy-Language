@@ -57,9 +57,9 @@ namespace ToyLanguage
     * Creating a new program based on initial statement
     * @param initialStatement initial IStatement
     */
-        public void createProgram(IStatement initialStatement)
+        public void createProgram(IMyStatement initialStatement)
         {
-            repository.createProgram(new MyStack<IStatement>(100), new MyDictionary<string, int>(100), new MyList<string>(100), initialStatement);
+            repository.createProgram(new WrapperStack<IMyStatement>(), new WrapperDictionary<string, int>(), new WrapperList<string>(), initialStatement);
         }
 
     /**
@@ -69,11 +69,11 @@ namespace ToyLanguage
      */
     private void oneStep(ProgramState programState)
     {
-        IStack<IStatement> myStack = repository.getCurrentState().getExecutionStack();
+        IMyStack<IMyStatement> myStack = repository.getCurrentState().getExecutionStack();
 
         if (myStack.isEmpty())
             throw new StatementExecutionException();
-        IStatement statement = myStack.pop();
+        IMyStatement statement = myStack.pop();
 
         if (statement.GetType() == typeof (CompoundStatement)) {
             CompoundStatement compoundStatement1 = (CompoundStatement)statement;

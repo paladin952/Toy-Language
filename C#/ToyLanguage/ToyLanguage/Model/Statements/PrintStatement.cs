@@ -7,9 +7,9 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Statements
 {
-    class PrintStatement: IStatement
+    class PrintStatement: IMyStatement
     {
-        /**
+        /** 
      * The expression to be printed
      */
         private IExpressions expression;
@@ -44,9 +44,10 @@ namespace ToyLanguage.Model.Statements
          * @return String
          */
 
-    public string ToString()
+        public string MyToString()
         {
-            return "Print(" + expression.ToString() + ")";
+                
+                return "Print(" + expression.MyToString() + ")";
 
         }
     }

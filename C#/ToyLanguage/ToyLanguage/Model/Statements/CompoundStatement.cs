@@ -7,24 +7,24 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Statements
 {
-    class CompoundStatement:IStatement
+    class CompoundStatement:IMyStatement
     {
         /**
     * First statement
     */
-        private IStatement firstStatement;
+        private IMyStatement firstStatement;
 
         /**
          * Second statement
          */
-        private IStatement secondStatement;
+        private IMyStatement secondStatement;
 
         /**
          * The constructor
          * @param firstStatement The first statement
          * @param secondStatement The second statement
          */
-        public CompoundStatement(IStatement firstStatement, IStatement secondStatement)
+        public CompoundStatement(IMyStatement firstStatement, IMyStatement secondStatement)
         {
             this.firstStatement = firstStatement;
             this.secondStatement = secondStatement;
@@ -33,22 +33,22 @@ namespace ToyLanguage.Model.Statements
         /**
          * Getters and setters
          */
-        public IStatement getFirstStatement()
+        public IMyStatement getFirstStatement()
         {
             return firstStatement;
         }
 
-        public void setFirstStatement(IStatement firstStatement)
+        public void setFirstStatement(IMyStatement firstStatement)
         {
             this.firstStatement = firstStatement;
         }
 
-        public IStatement getSecondStatement()
+        public IMyStatement getSecondStatement()
         {
             return secondStatement;
         }
 
-        public void setSecondStatement(IStatement secondStatement)
+        public void setSecondStatement(IMyStatement secondStatement)
         {
             this.secondStatement = secondStatement;
         }
@@ -57,9 +57,9 @@ namespace ToyLanguage.Model.Statements
          * String representation
          */
  
-    public string ToString()
+    public string MyToString()
         {
-            return firstStatement.ToString() + ";" + secondStatement.ToString();
+            return firstStatement.MyToString() + ";" + secondStatement.MyToString();
         }
     }
 }

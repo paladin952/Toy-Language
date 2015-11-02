@@ -24,7 +24,7 @@ namespace ToyLanguage
             programStateList = new List<ProgramState>();
         }
 
-        public void createProgram(IStack<IStatement> mExecutionStack, IMyDictionary<String, int> myDictionary, IMyList<String> mOutput, IStatement mInitialProgram)
+        public void createProgram(IMyStack<IMyStatement> mExecutionStack, IMyDictionary<String, int> myDictionary, IMyList<String> mOutput, IMyStatement mInitialProgram)
         {
             programStateList.Add(new ProgramState(mExecutionStack, myDictionary, mOutput, mInitialProgram));
         }

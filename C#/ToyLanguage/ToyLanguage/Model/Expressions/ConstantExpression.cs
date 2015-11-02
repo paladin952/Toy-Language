@@ -39,7 +39,7 @@ namespace ToyLanguage.Model.Expressions
          * @return String
          */
        
-    public String toString()
+    public String MyToString()
         {
             return number.ToString();
         }
