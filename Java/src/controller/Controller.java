@@ -2,9 +2,7 @@ package controller;
 
 import Exceptions.StatementExecutionException;
 import interfaces.*;
-import model.Collections.MyDictionary;
-import model.Collections.MyList;
-import model.Collections.MyStack;
+import model.Collections.*;
 import interfaces.Expression;
 import model.ProgramState;
 import model.Statements.AssignStatement;
@@ -53,7 +51,7 @@ public class Controller {
      * @param initialStatement initial IStatement
      */
     public void createProgram(IStatement initialStatement){
-        repository.createProgram(new MyStack<>(IStatement.class, 100), new MyDictionary<String, Integer>(100), new MyList<String>(String.class, 100), initialStatement);
+        repository.createProgram(new WrapperStack<IStatement>(), new WrapperDictionary<String, Integer>(), new WrapperList<String>(), initialStatement);
     }
 
     /**

@@ -57,7 +57,7 @@ namespace ToyLanguage.Model.Statements
          * String representation
          */
  
-    public String ToString()
+    public string ToString()
         {
             return firstStatement.ToString() + ";" + secondStatement.ToString();
         }

@@ -13,7 +13,7 @@ namespace ToyLanguage.Interfaces
     *
     * @return String
     */
-        String ToString();
+        string ToString();
 
     }
 }

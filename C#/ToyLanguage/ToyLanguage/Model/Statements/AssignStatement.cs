@@ -58,7 +58,7 @@ namespace ToyLanguage.Model.Statements
          * @return
          */
     
-    public String ToString()
+    public string ToString()
         {
             return variableName + "=" + expression.ToString();
         }

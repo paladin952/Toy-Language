@@ -55,7 +55,7 @@ namespace ToyLanguage.Model.Statements
          * @return String
          */
     
-    public String ToString()
+    public string ToString()
         {
             return "IF(" + Expression.ToString() + ")THEN(" + thenStatement.ToString() + ")ELSE("
                     + elseStatement.ToString() + ")";
