@@ -12,4 +12,16 @@ public enum OperatorsEnum {
     MULTIPLY,
 
     SUBSTRACT,
+
+    LESS,
+
+    GRATER,
+
+    EQUAL,
+
+    DIFFERENT,
+
+    GRATER_EQUAL,
+
+    LESS_EQUAL
 }

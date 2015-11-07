@@ -15,5 +15,17 @@ namespace ToyLanguage.Utils
         MULTIPLY,
 
         SUBSTRACT,
+
+        LESS,
+
+        GRATER,
+
+        EQUAL,
+
+        DIFFERENT,
+
+        GRATER_EQUAL,
+
+        LESS_EQUAL
     }
 }

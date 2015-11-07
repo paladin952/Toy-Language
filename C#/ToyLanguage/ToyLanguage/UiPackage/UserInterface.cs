@@ -87,6 +87,17 @@ namespace ToyLanguage.UiPackage
                             Controller.PRINT_FLAG = false;
                         }
                         break;
+                    case 5:
+                        /**a=10+(2<6)*/
+                        IMyStatement myStatement = new CompoundStatement(new AssignStatement("a", new ArithmeticExpression("+", new ConstantExpression(10),
+                                new BooleanExpression("<", new ConstantExpression(2), new ConstantExpression(6)))), new PrintStatement(new VariableExpression("a")));
+                        controller.createProgram(myStatement);
+                        /**a=1==(2!=3)*/
+                        IMyStatement myStatemetn2 = new CompoundStatement(new AssignStatement("a", new BooleanExpression("==", new ConstantExpression(1),
+                                new BooleanExpression("!=", new ConstantExpression(2), new ConstantExpression(3)))), new PrintStatement(new VariableExpression("a")));
+
+                        controller.createProgram(myStatemetn2);
+                        break;
 
                 }
             } while (true);

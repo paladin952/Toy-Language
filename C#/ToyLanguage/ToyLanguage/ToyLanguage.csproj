@@ -58,6 +58,7 @@
     <Compile Include="Model\Collections\WrapperList.cs" />
     <Compile Include="Model\Collections\WrapperStack.cs" />
     <Compile Include="Model\Expressions\ArithmeticExpression.cs" />
+    <Compile Include="Model\Expressions\BooleanExpression.cs" />
     <Compile Include="Model\Expressions\ConstantExpression.cs" />
     <Compile Include="Model\Expressions\VariableExpression.cs" />
     <Compile Include="Model\ProgramState.cs" />

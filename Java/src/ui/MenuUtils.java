@@ -14,6 +14,6 @@ public class MenuUtils {
         return "-- 1 for One step\n-- 2 for All steps";
     }
 
-    public static final String EXPRESSIONS = "-- 1 Arithmetic\n--2 Constant\n--3 Variable";
+    public static final String EXPRESSIONS = "-- 1 Arithmetic\n--2 Constant\n--3 Variable\n--4BooleanExpression";
 
 }

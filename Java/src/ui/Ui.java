@@ -4,6 +4,7 @@ import Exceptions.StatementExecutionException;
 import controller.Controller;
 import interfaces.IStatement;
 import model.Expresions.ArithmeticExpression;
+import model.Expresions.BooleanExpression;
 import model.Expresions.ConstantExpression;
 import interfaces.Expression;
 import model.Expresions.VariableExpression;
@@ -79,7 +80,6 @@ public class Ui implements Controller.PrintState {
                         Controller.PRINT_FLAG = false;
                     }
                     break;
-
             }
         } while (true);
     }
@@ -102,8 +102,11 @@ public class Ui implements Controller.PrintState {
             case 2: //Constant
                 expression = createConstantExpression();
                 break;
-            default://Variable
+            case 3://Variable
                 expression = createVariableExpression();
+                break;
+            default:
+                expression = createBooleanExpression();
 
         }
         return expression;
@@ -178,6 +181,19 @@ public class Ui implements Controller.PrintState {
         expression1 = getExpressionFromUser("--Enter first expression: ");
         expression2 = getExpressionFromUser("--Enter second expression: ");
         return new ArithmeticExpression(operator, expression1, expression2);
+    }
+
+    private Expression createBooleanExpression(){
+        Expression expression1;
+        Expression expression2;
+        String operator;
+
+        System.out.println("--Enter boolean operator");
+        operator = scanner.next();
+
+        expression1 = getExpressionFromUser("--Enter first expression: ");
+        expression2 = getExpressionFromUser("--Enter second expression: ");
+        return new BooleanExpression(operator, expression1, expression2);
     }
 
     /**
