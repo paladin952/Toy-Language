@@ -1,5 +1,6 @@
 package model.Collections;
 
+import Exceptions.InvalidPositionException;
 import interfaces.IList;
 
 import java.lang.reflect.Array;
@@ -50,7 +51,11 @@ public class MyList<T> implements IList<T> {
      * @return The element
      */
     @Override
-    public T get(int position) {
+    public T get(int position) throws InvalidPositionException{
+        if(position < 0 || position > size-1){
+            throw new InvalidPositionException();
+        }
+
         return array[position];
     }
 
@@ -60,7 +65,11 @@ public class MyList<T> implements IList<T> {
      * @param position Int position
      */
     @Override
-    public void remove(int position) {
+    public void remove(int position) throws InvalidPositionException{
+        if(position < 0 || position > size-1){
+            throw new InvalidPositionException();
+        }
+
         for (int i = position; i < size - 1; i++) {
             array[i] = array[i + 1];
         }

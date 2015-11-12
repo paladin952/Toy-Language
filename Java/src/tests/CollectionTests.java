@@ -1,5 +1,8 @@
 package tests;
 
+import Exceptions.EmptyStackException;
+import Exceptions.InvalidPositionException;
+import Exceptions.ValueNotFoundException;
 import interfaces.IDictionary;
 import interfaces.IList;
 import interfaces.IStack;
@@ -30,7 +33,11 @@ public class CollectionTests {
         myDictionary.put("key1", 1.0);
         assert myDictionary.size() == 1;
         assert !myDictionary.isEmpty();
-        assert myDictionary.lookUp("key1").equals(1.0);
+        try {
+            assert myDictionary.lookUp("key1").equals(1.0);
+        } catch (ValueNotFoundException e) {
+            e.printStackTrace();
+        }
 
         myDictionary.remove("key1");
         assert myDictionary.isEmpty();
@@ -52,14 +59,22 @@ public class CollectionTests {
         myList.add(2.0);
         //test size + get method
         assert (myList.size() == 1);
-        assert (myList.get(0).equals(2.0));
+        try {
+            assert (myList.get(0).equals(2.0));
+        } catch (InvalidPositionException e) {
+            e.printStackTrace();
+        }
 
         myList.add(1.0);
         //test is empty
         assert (myList.size() == 2);
         assert (!myList.isEmpty());
 
-        myList.remove(1);
+        try {
+            myList.remove(1);
+        } catch (InvalidPositionException e) {
+            e.printStackTrace();
+        }
         //test remove
         assert (myList.size() == 1);
     }
@@ -80,10 +95,19 @@ public class CollectionTests {
         myStack.push(text);
         assert (!myStack.isEmpty());
         assert (myStack.size() == 1);
-        assert (myStack.top().equals(text));
+        try {
+            assert (myStack.top().equals(text));
+        } catch (EmptyStackException e) {
+            e.printStackTrace();
+        }
 
         //test pop
-        String res = myStack.pop();
+        String res = null;
+        try {
+            res = myStack.pop();
+        } catch (EmptyStackException e) {
+            e.printStackTrace();
+        }
         assert res.equals(text);
         assert myStack.isEmpty();
         assert myStack.size() == 0;

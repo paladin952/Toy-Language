@@ -41,6 +41,9 @@ public class IfStatement implements IStatement {
      */
     @Override
     public String toString() {
+        if(elseStatement == null){
+            return "IF(" + expression.toString() +")";
+        }
         return "IF(" + expression.toString() +")THEN(" + thenStatement.toString() + ")ELSE("
                 + elseStatement.toString() +")";
     }

@@ -1,5 +1,6 @@
 package repository;
 
+import Exceptions.InvalidPositionException;
 import interfaces.*;
 import model.ProgramState;
 
@@ -33,8 +34,11 @@ public class Repository implements IRepository {
      * @return The ProgramState
      */
     @Override
-    public ProgramState getCurrentState() {
-        return programStateList.get(programStateList.size() - 1);
+    public ProgramState getCurrentState() throws InvalidPositionException{
+        if(programStateList.size()>0){
+            return programStateList.get(programStateList.size() - 1);
+        }
+        throw new InvalidPositionException();
     }
 
 }

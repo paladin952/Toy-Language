@@ -1,5 +1,7 @@
 package interfaces;
 
+import Exceptions.ValueNotFoundException;
+
 /**
  * Created by Lucian on 10/11/2015.
  */
@@ -11,7 +13,7 @@ public interface IDictionary<K, V> {
      * @param id The id
      * @return The value V of id K
      */
-    V lookUp(K id);
+    V lookUp(K id) throws ValueNotFoundException;
 
     /**
      * Check if dictionary is empty

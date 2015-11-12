@@ -1,5 +1,7 @@
 package interfaces;
 
+import Exceptions.EmptyStackException;
+
 /**
  * Created by Lucian on 10/12/2015.
  */
@@ -10,7 +12,7 @@ public interface IStack<T> {
      *
      * @return T element
      */
-    T pop();
+    T pop() throws EmptyStackException;
 
     /**
      * Push element T at the top of the stack
@@ -24,7 +26,7 @@ public interface IStack<T> {
      *
      * @return T element
      */
-    T top();
+    T top() throws EmptyStackException;
 
     /**
      * Check if the stack is empty

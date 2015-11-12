@@ -9,7 +9,7 @@ import model.OperatorsEnum;
 /**
  * Created by Lucian on 11/3/2015.
  */
-public class BooleanExpression implements Expression {
+public class LogicExpression implements Expression {
 
     /**
      * First expression
@@ -31,7 +31,7 @@ public class BooleanExpression implements Expression {
      */
     private String operator;
 
-    public BooleanExpression(String operator, Expression expression1, Expression expression2) {
+    public LogicExpression(String operator, Expression expression1, Expression expression2) {
         this.operatorType = getOperatorType(operator);
         this.firstExpression = expression1;
         this.secondExpression = expression2;
@@ -46,18 +46,12 @@ public class BooleanExpression implements Expression {
     private OperatorsEnum getOperatorType(String operator) {
         this.operator = operator;
         switch (operator) {
-            case "<":
-                return OperatorsEnum.LESS;
-            case "<=":
-                return OperatorsEnum.LESS_EQUAL;
-            case ">":
-                return OperatorsEnum.GRATER;
-            case ">=":
-                return OperatorsEnum.GRATER_EQUAL;
-            case "==":
-                return OperatorsEnum.EQUAL;
+            case "&&":
+                return OperatorsEnum.AND;
+            case "||":
+                return OperatorsEnum.OR;
             default:
-                return OperatorsEnum.DIFFERENT;
+                return OperatorsEnum.NOT;
         }
     }
 
@@ -70,34 +64,35 @@ public class BooleanExpression implements Expression {
      */
     @Override
     public int eval(IDictionary<String, Integer> table) throws ValueNotFoundException, DivideByZeroException {
+
+        boolean firstBoolean;
+        boolean secondBoolean;
+
+        if(firstExpression.eval(table) == 0){
+            firstBoolean = false;
+        }else{
+            firstBoolean = true;
+        }
+
+        if(firstExpression.eval(table) == 0){
+            secondBoolean = false;
+        }else{
+            secondBoolean = true;
+        }
+
         switch (operatorType) {
-            case LESS:
-                if (firstExpression.eval(table) < secondExpression.eval(table)) {
+            case AND:
+                if(firstBoolean && secondBoolean){
                     return 1;
                 }
                 return 0;
-            case LESS_EQUAL:
-                if (firstExpression.eval(table) <= secondExpression.eval(table)) {
+            case OR:
+                if(firstBoolean || secondBoolean){
                     return 1;
                 }
                 return 0;
-            case GRATER_EQUAL:
-                if (firstExpression.eval(table) >= secondExpression.eval(table)) {
-                    return 1;
-                }
-                return 0;
-            case GRATER:
-                if (firstExpression.eval(table) > secondExpression.eval(table)) {
-                    return 1;
-                }
-                return 0;
-            case EQUAL:
-                if (firstExpression.eval(table) == secondExpression.eval(table)) {
-                    return 1;
-                }
-                return 0;
-            case DIFFERENT:
-                if (firstExpression.eval(table) != secondExpression.eval(table)) {
+            case NOT:
+                if (!firstBoolean) {
                     return 1;
                 }
                 return 0;

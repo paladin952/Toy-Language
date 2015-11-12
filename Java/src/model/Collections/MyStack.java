@@ -1,6 +1,9 @@
 package model.Collections;
 
+import Exceptions.EmptyStackException;
+import Exceptions.InvalidPositionException;
 import interfaces.IStack;
+import sun.invoke.empty.Empty;
 
 import java.lang.reflect.Array;
 
@@ -36,7 +39,11 @@ public class MyStack<T> implements IStack<T> {
      * @return T element
      */
     @Override
-    public T pop() {
+    public T pop() throws EmptyStackException{
+        if(size == 0){
+            throw new EmptyStackException();
+        }
+
         if (size() > 0) {
             T element = array[size - 1];
             size--;
@@ -62,7 +69,11 @@ public class MyStack<T> implements IStack<T> {
      * @return T element
      */
     @Override
-    public T top() {
+    public T top() throws EmptyStackException{
+        if(size == 0){
+            throw new EmptyStackException();
+        }
+
         return array[size - 1];
     }
 

@@ -1,5 +1,6 @@
 package model.Collections;
 
+import Exceptions.ValueNotFoundException;
 import interfaces.IDictionary;
 
 import java.util.Arrays;
@@ -100,7 +101,7 @@ public class MyDictionary<K, V> implements IDictionary<K, V> {
      * @return Value
      */
     @Override
-    public V lookUp(K id) {
+    public V lookUp(K id) throws ValueNotFoundException{
         for (int i = 0; i < size; i++) {
             if (array[i].getKey().equals(id)) {
                 return array[i].getValue();
@@ -108,7 +109,7 @@ public class MyDictionary<K, V> implements IDictionary<K, V> {
         }
 
         //if the key is not here return null
-        return null;
+        throw new ValueNotFoundException();
     }
 
     /**

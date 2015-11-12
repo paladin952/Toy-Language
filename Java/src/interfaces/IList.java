@@ -1,5 +1,7 @@
 package interfaces;
 
+import Exceptions.InvalidPositionException;
+
 /**
  * Created by Lucian on 10/12/2015.
  */
@@ -18,14 +20,14 @@ public interface IList<T> {
      * @param position Int position
      * @return T element
      */
-    T get(int position);
+    T get(int position) throws InvalidPositionException;
 
     /**
      * Remove element T at position
      *
      * @param position Int position
      */
-    void remove(int position);
+    void remove(int position) throws InvalidPositionException;
 
     /**
      * Check if list is empty

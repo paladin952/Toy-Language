@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToyLanguage.Exceptions;
 using ToyLanguage.Interfaces;
 using ToyLanguage.Model;
 
@@ -36,6 +37,10 @@ namespace ToyLanguage
      
     public ProgramState getCurrentState()
         {
+            if(programStateList.Count() == 0)
+            {
+                throw new EmptyContainerException();
+            }
             return programStateList.ElementAt(programStateList.Count() - 1);
         }
     }

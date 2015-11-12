@@ -1,5 +1,6 @@
 package interfaces;
 
+import Exceptions.InvalidPositionException;
 import model.ProgramState;
 
 /**
@@ -10,7 +11,7 @@ public interface IRepository {
     /**
      * @return The current Program's state
      */
-    ProgramState getCurrentState();
+    ProgramState getCurrentState() throws InvalidPositionException;
 
     /**
      * Creates a new program

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToyLanguage.Exceptions;
 using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Collections
@@ -27,7 +28,11 @@ namespace ToyLanguage.Model.Collections
 
         public T pop()
         {
-            return stack.Pop();
+            if(stack.Count > 0)
+            {
+                return stack.Pop();
+            }
+            throw new EmptyContainerException();
         }
 
         public void push(T element)
@@ -42,7 +47,11 @@ namespace ToyLanguage.Model.Collections
 
         public T top()
         {
-            return stack.Peek();
+            if (stack.Count > 0)
+            {
+                return stack.Peek();
+            }
+            throw new EmptyContainerException();
         }
 
         public string ToString()

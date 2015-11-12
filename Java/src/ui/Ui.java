@@ -1,17 +1,11 @@
 package ui;
 
-import Exceptions.StatementExecutionException;
+import Exceptions.*;
 import controller.Controller;
 import interfaces.IStatement;
-import model.Expresions.ArithmeticExpression;
-import model.Expresions.BooleanExpression;
-import model.Expresions.ConstantExpression;
+import model.Expresions.*;
 import interfaces.Expression;
-import model.Expresions.VariableExpression;
-import model.Statements.AssignStatement;
-import model.Statements.CompoundStatement;
-import model.Statements.IfStatement;
-import model.Statements.PrintStatement;
+import model.Statements.*;
 
 import java.util.Scanner;
 
@@ -59,14 +53,22 @@ public class Ui implements Controller.PrintState {
                     if (step == 1) { // one step at a time
                         try {
                             controller.runOneStep();
-                        } catch (StatementExecutionException e) {
-                            e.printStackTrace();
+                        } catch (StatementExecutionException | EmptyStackException e) {
+                            System.out.println("We are sorry, your program is not valid!");
+                        } catch (ValueNotFoundException | InvalidPositionException e) {
+                            System.out.println(e.toString());
+                        } catch (DivideByZeroException e) {
+                            System.out.println("Divide by zero!");
                         }
                     } else { //all steps
                         try {
                             controller.runAllSteps();
-                        } catch (StatementExecutionException e) {
+                        } catch (StatementExecutionException | EmptyStackException | InvalidPositionException e) {
+                            System.out.println("We are sorry, your program is not valid!");
+                        } catch (ValueNotFoundException e) {
                             e.printStackTrace();
+                        } catch (DivideByZeroException e) {
+                            System.out.println("Divide by zero!");
                         }
                     }
                     break;
@@ -79,6 +81,20 @@ public class Ui implements Controller.PrintState {
                     }else{
                         Controller.PRINT_FLAG = false;
                     }
+                    break;
+                case 5: // for testing
+//                    IStatement logical1 = new CompoundStatement(new AssignStatement("a", new LogicExpression("&&", new ConstantExpression(10), new ArithmeticExpression("-", new ConstantExpression(10),
+//                            new ConstantExpression(10)))), new PrintStatement(new VariableExpression("a")));
+//
+//                    IStatement readStatement = new CompoundStatement(new AssignStatement("a", new ArithmeticExpression("+", new ConstantExpression(1), new ReadExpression())),
+//                            new PrintStatement(new VariableExpression("a")));
+                    IStatement whileStatement = new CompoundStatement(new AssignStatement("a", new ConstantExpression(12)),
+                            new WhileStatement(new CompoundStatement(new PrintStatement(new VariableExpression("a")),
+                                    new AssignStatement("a",new ArithmeticExpression("-", new VariableExpression("a"), new ConstantExpression(1)))),new VariableExpression("a")));
+
+                    IStatement switchStatement = new CompoundStatement(new AssignStatement("a", new ConstantExpression(2)),
+                            new SwitchStatement(new VariableExpression("a"), new ConstantExpression(3), new ConstantExpression(2), new PrintStatement(new ConstantExpression(100)), new PrintStatement(new ConstantExpression(3)), new PrintStatement(new ConstantExpression(2))));
+                    controller.createProgram(switchStatement);
                     break;
             }
         } while (true);

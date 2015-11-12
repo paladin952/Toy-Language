@@ -1,14 +1,12 @@
 package controller;
 
-import Exceptions.StatementExecutionException;
+import Exceptions.*;
 import interfaces.*;
-import model.Collections.*;
-import interfaces.Expression;
+import model.Collections.WrapperDictionary;
+import model.Collections.WrapperList;
+import model.Collections.WrapperStack;
 import model.ProgramState;
-import model.Statements.AssignStatement;
-import model.Statements.CompoundStatement;
-import model.Statements.IfStatement;
-import model.Statements.PrintStatement;
+import model.Statements.*;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -27,6 +25,7 @@ public class Controller {
 
     /**
      * The constructor
+     *
      * @param repository The repository
      */
     public Controller(IRepository repository) {
@@ -37,7 +36,7 @@ public class Controller {
     /**
      * Interface for printing on screen from ui
      */
-    public interface PrintState{
+    public interface PrintState {
         void print(String message);
     }
 
@@ -48,27 +47,30 @@ public class Controller {
 
     /**
      * Creating a new program based on initial statement
+     *
      * @param initialStatement initial IStatement
      */
-    public void createProgram(IStatement initialStatement){
+    public void createProgram(IStatement initialStatement) {
         repository.createProgram(new WrapperStack<IStatement>(), new WrapperDictionary<String, Integer>(), new WrapperList<String>(), initialStatement);
     }
 
     /**
      * set listener for printing in ui
+     *
      * @param listener The listener
      */
-    public void setListener(PrintState listener){
+    public void setListener(PrintState listener) {
         printListener = listener;
     }
 
     /**
      * Run the program in debug mode, one step at a time
+     *
      * @param programState The program
      * @throws StatementExecutionException
      */
-    private void oneStep(ProgramState programState) throws StatementExecutionException {
-        IStack<IStatement> myStack = repository.getCurrentState().getExecutionStack();
+    private void oneStep(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
+        IStack<IStatement> myStack = programState.getExecutionStack();
 
         if (myStack.isEmpty())
             throw new StatementExecutionException();
@@ -108,38 +110,87 @@ public class Controller {
             if (ifStatement.getExpression().eval(myDictionary) != 0) {
                 myStack.push(ifStatement.getThenStatement());
             } else {
-                myStack.push(ifStatement.getElseStatement());
+                if(ifStatement.getElseStatement() != null){
+                    myStack.push(ifStatement.getElseStatement());
+                }
             }
             return;
+        }
+
+        if (statement instanceof WhileStatement) {
+            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
+            IList<String> output = programState.getOutput();
+            WhileStatement whileStatement = (WhileStatement) statement;
+            IStack<IStatement> secondStack = new WrapperStack<>();
+            ProgramState secondProgramState = new ProgramState(secondStack, myDictionary, output, whileStatement.getStatement());
+            while (whileStatement.getExpression().eval(myDictionary) != 0) {
+                runAllSteps(secondProgramState);
+                secondStack.push(whileStatement.getStatement());
+            }
+            return;
+        }
+
+        if(statement instanceof SkipStatement){
+            return;
+        }
+
+        if(statement instanceof SwitchStatement){
+            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
+            SwitchStatement switchStatement = (SwitchStatement) statement;
+            Expression expression = switchStatement.getExpression();
+            if(switchStatement.getCase1().eval(myDictionary) == expression.eval(myDictionary)){
+                myStack.push(switchStatement.getStatementCase1());
+            }
+            if(switchStatement.getCase2().eval(myDictionary) == expression.eval(myDictionary)){
+                myStack.push(switchStatement.getStatementCase2());
+            }
+            myStack.push(switchStatement.getStatementDefault());
         }
     }
 
     /**
      * Run all program
+     *
      * @throws StatementExecutionException
      */
-    public void runAllSteps() throws StatementExecutionException {
+    public void runAllSteps() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
         ProgramState programState = repository.getCurrentState();
         while (!programState.getExecutionStack().isEmpty()) {
             oneStep(programState);
-            if(PRINT_FLAG){
+            if (PRINT_FLAG) {
                 printListener.print(programState.toString());
             }
         }
     }
 
     /**
-     * Run step by step
+     * Run all program
+     *
      * @throws StatementExecutionException
      */
-    public void runOneStep() throws StatementExecutionException {
-        ProgramState programState = repository.getCurrentState();
-        if(programState.getExecutionStack().size()>0){
+    private void runAllSteps(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
+        while (!programState.getExecutionStack().isEmpty()) {
             oneStep(programState);
-            if(PRINT_FLAG){
+//            if (PRINT_FLAG) {
+//                printListener.print(programState.toString());
+//            }
+        }
+    }
+
+    /**
+     * Run step by step
+     *
+     * @throws StatementExecutionException
+     */
+    public void runOneStep() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
+        ProgramState programState = repository.getCurrentState();
+        if (programState.getExecutionStack().size() > 0) {
+            oneStep(programState);
+            if (PRINT_FLAG) {
                 printListener.print(programState.toString());
             }
         }
     }
+
 
 }

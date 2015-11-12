@@ -1,5 +1,6 @@
 package model.Expresions;
 
+import Exceptions.ValueNotFoundException;
 import interfaces.Expression;
 import interfaces.IDictionary;
 
@@ -27,7 +28,7 @@ public class VariableExpression implements Expression {
      * @return int value
      */
     @Override
-    public int eval(IDictionary<String, Integer> table) {
+    public int eval(IDictionary<String, Integer> table) throws ValueNotFoundException {
         return table.lookUp(name);
     }
 

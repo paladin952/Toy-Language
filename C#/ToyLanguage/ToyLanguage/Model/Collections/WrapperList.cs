@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToyLanguage.Exceptions;
 using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Collections
@@ -23,6 +24,10 @@ namespace ToyLanguage.Model.Collections
 
         public T get(int position)
         {
+            if (position < 0 || position >= data.Count)
+            {
+                throw new InvalidPositionException();
+            }
             return data.ElementAt(position);
         }
 
@@ -37,6 +42,10 @@ namespace ToyLanguage.Model.Collections
 
         public void remove(int position)
         {
+            if(position < 0 || position >= data.Count)
+            {
+                throw new InvalidPositionException();
+            }
             data.RemoveAt(position);
         }
 

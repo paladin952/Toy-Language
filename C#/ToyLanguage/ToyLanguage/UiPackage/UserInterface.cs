@@ -59,7 +59,15 @@ namespace ToyLanguage.UiPackage
                             }
                             catch (StatementExecutionException e)
                             {
-                                
+                                Console.WriteLine("Your program is not valid!");  
+                            }
+                            catch (InvalidPositionException e)
+                            {
+                                Console.WriteLine("The position you are trying to access is not valid!");
+                            }
+                            catch(EmptyContainerException e)
+                            {
+                                Console.WriteLine("Your container is empty!");
                             }
                         }
                         else
@@ -70,7 +78,15 @@ namespace ToyLanguage.UiPackage
                             }
                             catch (StatementExecutionException e)
                             {
-                                
+                                Console.WriteLine("Your program is not valid!");
+                            }
+                            catch (InvalidPositionException e)
+                            {
+                                Console.WriteLine("The position you are trying to access is not valid!");
+                            }
+                            catch (EmptyContainerException e)
+                            {
+                                Console.WriteLine("Your container is empty!");
                             }
                         }
                         break;
@@ -123,12 +139,29 @@ namespace ToyLanguage.UiPackage
                 case 2: //Constant
                     expression = createConstantExpression();
                     break;
-                default://Variable
+                case 3:
                     expression = createVariableExpression();
+                    break;
+                default://Variable
+                    expression = createBooleanExpression();
                     break;
 
             }
             return expression;
+        }
+
+        private IExpressions createBooleanExpression()
+        {
+            IExpressions expression1;
+            IExpressions expression2;
+            String theOperator;
+
+           Console.WriteLine("--Enter boolean operator");
+            theOperator = Console.ReadLine();
+
+            expression1 = getExpressionFromUser("--Enter first expression: ");
+            expression2 = getExpressionFromUser("--Enter second expression: ");
+            return new BooleanExpression(theOperator, expression1, expression2);
         }
 
         /**

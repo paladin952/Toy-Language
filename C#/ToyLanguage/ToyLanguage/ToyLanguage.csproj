@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Exceptions\EmptyContainerException.cs" />
+    <Compile Include="Exceptions\InvalidPositionException.cs" />
     <Compile Include="Exceptions\StatementExecutionException.cs" />
     <Compile Include="Interfaces\IExpressions.cs" />
     <Compile Include="Interfaces\IMyList.cs" />
