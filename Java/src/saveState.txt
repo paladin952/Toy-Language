@@ -1,0 +1,9 @@
+STACK:
+
+Symbolic Table
+a->2
+
+Output
+100
+2
+

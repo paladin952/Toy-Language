@@ -1,0 +1,6 @@
+E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\bin\Debug\ToyLanguage.exe.config
+E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.csprojResolveAssemblyReference.cache
+E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\bin\Debug\ToyLanguage.exe
+E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\bin\Debug\ToyLanguage.pdb
+E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.exe
+E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.pdb
