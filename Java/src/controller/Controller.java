@@ -7,6 +7,7 @@ import model.Collections.WrapperList;
 import model.Collections.WrapperStack;
 import model.ProgramState;
 import model.Statements.*;
+import utils.Constants;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -14,9 +15,9 @@ import model.Statements.*;
 public class Controller {
 
     /**
-     * Boolean: print current programe state if it is true
+     * Boolean: print current program state if it is true
      */
-    public static boolean PRINT_FLAG = true;
+    public static int PRINT_FLAG = Constants.PRINT_CONSOLE;
 
     /**
      * Repository object
@@ -51,7 +52,7 @@ public class Controller {
      * @param initialStatement initial IStatement
      */
     public void createProgram(IStatement initialStatement) {
-        repository.createProgram(new WrapperStack<IStatement>(), new WrapperDictionary<String, Integer>(), new WrapperList<String>(), initialStatement);
+        repository.createProgram(new WrapperStack<>(), new WrapperDictionary<>(), new WrapperList<>(), initialStatement);
     }
 
     /**
@@ -110,7 +111,7 @@ public class Controller {
             if (ifStatement.getExpression().eval(myDictionary) != 0) {
                 myStack.push(ifStatement.getThenStatement());
             } else {
-                if(ifStatement.getElseStatement() != null){
+                if (ifStatement.getElseStatement() != null) {
                     myStack.push(ifStatement.getElseStatement());
                 }
             }
@@ -130,18 +131,18 @@ public class Controller {
             return;
         }
 
-        if(statement instanceof SkipStatement){
+        if (statement instanceof SkipStatement) {
             return;
         }
 
-        if(statement instanceof SwitchStatement){
+        if (statement instanceof SwitchStatement) {
             IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
             SwitchStatement switchStatement = (SwitchStatement) statement;
             Expression expression = switchStatement.getExpression();
-            if(switchStatement.getCase1().eval(myDictionary) == expression.eval(myDictionary)){
+            if (switchStatement.getCase1().eval(myDictionary) == expression.eval(myDictionary)) {
                 myStack.push(switchStatement.getStatementCase1());
             }
-            if(switchStatement.getCase2().eval(myDictionary) == expression.eval(myDictionary)){
+            if (switchStatement.getCase2().eval(myDictionary) == expression.eval(myDictionary)) {
                 myStack.push(switchStatement.getStatementCase2());
             }
             myStack.push(switchStatement.getStatementDefault());
@@ -157,8 +158,10 @@ public class Controller {
         ProgramState programState = repository.getCurrentState();
         while (!programState.getExecutionStack().isEmpty()) {
             oneStep(programState);
-            if (PRINT_FLAG) {
+            if (PRINT_FLAG == Constants.PRINT_CONSOLE) {
                 printListener.print(programState.toString());
+            } else if (PRINT_FLAG == Constants.PRINT_IN_FILE) {
+                repository.saveStateInFile();
             }
         }
     }
@@ -171,9 +174,6 @@ public class Controller {
     private void runAllSteps(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
         while (!programState.getExecutionStack().isEmpty()) {
             oneStep(programState);
-//            if (PRINT_FLAG) {
-//                printListener.print(programState.toString());
-//            }
         }
     }
 
@@ -186,11 +186,29 @@ public class Controller {
         ProgramState programState = repository.getCurrentState();
         if (programState.getExecutionStack().size() > 0) {
             oneStep(programState);
-            if (PRINT_FLAG) {
+            if (PRINT_FLAG == Constants.PRINT_CONSOLE) {
                 printListener.print(programState.toString());
+            } else if (PRINT_FLAG == Constants.PRINT_IN_FILE) {
+                repository.saveStateInFile();
             }
         }
     }
 
+    /**
+     * serializing the program state
+     */
+    public void serialize() {
+        repository.serialize();
+    }
 
+    /**
+     * Deserializing the program state
+     */
+    public void deSerialize() {
+        repository.deSerialize();
+    }
+
+    public void saveInFile() {
+        repository.saveStateInFile();
+    }
 }

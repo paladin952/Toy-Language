@@ -5,7 +5,7 @@ import Exceptions.InvalidPositionException;
 /**
  * Created by Lucian on 10/12/2015.
  */
-public interface IList<T> {
+public interface IList<T> extends java.io.Serializable{
 
     /**
      * Add a new element in list

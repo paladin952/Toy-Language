@@ -5,7 +5,7 @@ import Exceptions.ValueNotFoundException;
 /**
  * Created by Lucian on 10/11/2015.
  */
-public interface IDictionary<K, V> {
+public interface IDictionary<K, V> extends java.io.Serializable {
 
     /**
      * Get the value at id K

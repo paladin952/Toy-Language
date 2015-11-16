@@ -5,7 +5,7 @@ import Exceptions.EmptyStackException;
 /**
  * Created by Lucian on 10/12/2015.
  */
-public interface IStack<T> {
+public interface IStack<T> extends java.io.Serializable{
 
     /**
      * Get the top element and decrement the stack

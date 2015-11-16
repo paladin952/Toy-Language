@@ -8,7 +8,7 @@ import interfaces.IStatement;
 /**
  * Created by Lucian on 10/19/2015.
  */
-public class ProgramState {
+public class ProgramState implements java.io.Serializable {
 
     /**
      * The execution stack containing statements
@@ -28,8 +28,9 @@ public class ProgramState {
 
     /**
      * A copy of the original program
+     * I don't need to serialize it
      */
-    private IStatement originalProgram;
+    private transient IStatement originalProgram;
 
     public ProgramState(IStack<IStatement> executionStack, IDictionary<String, Integer> myDictionary, IList<String> output, IStatement originalProgram) {
         this.executionStack = executionStack;

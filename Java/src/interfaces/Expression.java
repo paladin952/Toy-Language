@@ -4,10 +4,12 @@ import Exceptions.DivideByZeroException;
 import Exceptions.ValueNotFoundException;
 import interfaces.IDictionary;
 
+import java.io.Serializable;
+
 /**
  * Created by Lucian on 10/11/2015.
  */
-public interface Expression {
+public interface Expression extends Serializable {
 
     /**
      *Evaluating the expression

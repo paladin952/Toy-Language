@@ -6,6 +6,7 @@ import interfaces.IStatement;
 import model.Expresions.*;
 import interfaces.Expression;
 import model.Statements.*;
+import utils.Constants;
 
 import java.util.Scanner;
 
@@ -38,6 +39,8 @@ public class Ui implements Controller.PrintState {
             System.out.println("--1 Compound statement");
             System.out.println("--2 Run");
             System.out.println("--3 Print flag");
+            System.out.println("--4 Serialize");
+            System.out.println("--5 deserialize");
             System.out.print("\n>");
 
             int input = scanner.nextInt();
@@ -73,16 +76,25 @@ public class Ui implements Controller.PrintState {
                     }
                     break;
                 case 3://set print flasg
-                    System.out.println("1 to print");
-                    System.out.println("2 to not print");
+                    System.out.println("1 to print on console");
+                    System.out.println("2 to save on file");
+                    System.out.println("3 to not print");
                     int result = scanner.nextInt();
                     if (result == 1) {
-                        Controller.PRINT_FLAG = true;
+                        Controller.PRINT_FLAG = Constants.PRINT_CONSOLE;
+                    }else if(result == 2){
+                        Controller.PRINT_FLAG = Constants.PRINT_IN_FILE;
                     }else{
-                        Controller.PRINT_FLAG = false;
+                        Controller.PRINT_FLAG = Constants.NO_PRINT;
                     }
                     break;
-                case 5: // for testing
+                case 4: //serialization
+                    controller.serialize();
+                    break;
+                case 5:
+                    controller.deSerialize();
+                    break;
+                case 6: // for testing
 //                    IStatement logical1 = new CompoundStatement(new AssignStatement("a", new LogicExpression("&&", new ConstantExpression(10), new ArithmeticExpression("-", new ConstantExpression(10),
 //                            new ConstantExpression(10)))), new PrintStatement(new VariableExpression("a")));
 //
