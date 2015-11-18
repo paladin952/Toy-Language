@@ -1,0 +1,7 @@
+STACK
+
+Dictionary:
+a->2
+
+Output:
+

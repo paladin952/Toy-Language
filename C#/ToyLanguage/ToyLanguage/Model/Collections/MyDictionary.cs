@@ -7,6 +7,7 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Collections
 {
+    [Serializable]
     class MyDictionary<K, V> : IMyDictionary<K, V>
     {
         /**

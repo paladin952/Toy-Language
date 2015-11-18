@@ -7,6 +7,7 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Expressions
 {
+    [Serializable]
     class VariableExpression: IExpressions
     {
         /**

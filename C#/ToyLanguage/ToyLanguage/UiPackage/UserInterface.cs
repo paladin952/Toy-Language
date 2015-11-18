@@ -38,6 +38,8 @@ namespace ToyLanguage.UiPackage
                 Console.WriteLine("--1 Compound statement");
                 Console.WriteLine("--2 Run");
                 Console.WriteLine("--3 Print flag");
+                Console.WriteLine("--4 Serialize");
+                Console.WriteLine("--5 Deserialize");
                 Console.WriteLine("\n>");
 
                 int input = Convert.ToInt32(Console.ReadLine());
@@ -91,28 +93,41 @@ namespace ToyLanguage.UiPackage
                         }
                         break;
                     case 3://set print flasg
-                        Console.WriteLine("1 to print");
-                        Console.WriteLine("2 to not print");
+                        Console.WriteLine("1 to print on console");
+                        Console.WriteLine("2 to save in file");
+                        Console.WriteLine("3 to print");
                         int result = Convert.ToInt32(Console.ReadLine());
                         if (result == 1)
                         {
-                            Controller.PRINT_FLAG = true;
+                            Controller.PRINT_FLAG = Constants.PRINT_CONSOLE;
+                        }
+                        else if( result == 2)
+                        {
+                            Controller.PRINT_FLAG = Constants.PRINT_FILE;
                         }
                         else
                         {
-                            Controller.PRINT_FLAG = false;
+                            Controller.PRINT_FLAG = Constants.NO_PRINT;
                         }
                         break;
+                    case 4:
+                        controller.Serialize();
+                        break;
                     case 5:
-                        /**a=10+(2<6)*/
-                        IMyStatement myStatement = new CompoundStatement(new AssignStatement("a", new ArithmeticExpression("+", new ConstantExpression(10),
-                                new BooleanExpression("<", new ConstantExpression(2), new ConstantExpression(6)))), new PrintStatement(new VariableExpression("a")));
-                        controller.createProgram(myStatement);
-                        /**a=1==(2!=3)*/
-                        IMyStatement myStatemetn2 = new CompoundStatement(new AssignStatement("a", new BooleanExpression("==", new ConstantExpression(1),
-                                new BooleanExpression("!=", new ConstantExpression(2), new ConstantExpression(3)))), new PrintStatement(new VariableExpression("a")));
+                        controller.DeSerialize();
+                        break;                    case 6: // for testing
+                            //                    IStatement logical1 = new CompoundStatement(new AssignStatement("a", new LogicExpression("&&", new ConstantExpression(10), new ArithmeticExpression("-", new ConstantExpression(10),
+                            //                            new ConstantExpression(10)))), new PrintStatement(new VariableExpression("a")));
+                            //
+                            //                    IStatement readStatement = new CompoundStatement(new AssignStatement("a", new ArithmeticExpression("+", new ConstantExpression(1), new ReadExpression())),
+                            //                            new PrintStatement(new VariableExpression("a")));
+                        IMyStatement whileStatement = new CompoundStatement(new AssignStatement("a", new ConstantExpression(12)),
+                                new WhileStatement(new CompoundStatement(new PrintStatement(new VariableExpression("a")),
+                                        new AssignStatement("a", new ArithmeticExpression("-", new VariableExpression("a"), new ConstantExpression(1)))), new VariableExpression("a")));
 
-                        controller.createProgram(myStatemetn2);
+                        IMyStatement switchStatement = new CompoundStatement(new AssignStatement("a", new ConstantExpression(2)),
+                                new SwitchStatement(new VariableExpression("a"), new ConstantExpression(3), new ConstantExpression(2), new PrintStatement(new ConstantExpression(100)), new PrintStatement(new ConstantExpression(3)), new PrintStatement(new ConstantExpression(2))));
+                        controller.createProgram(switchStatement);
                         break;
 
                 }

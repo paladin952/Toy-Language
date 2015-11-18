@@ -62,16 +62,22 @@
     <Compile Include="Model\Expressions\ArithmeticExpression.cs" />
     <Compile Include="Model\Expressions\BooleanExpression.cs" />
     <Compile Include="Model\Expressions\ConstantExpression.cs" />
+    <Compile Include="Model\Expressions\LogicalExpression.cs" />
+    <Compile Include="Model\Expressions\ReadExpression.cs" />
     <Compile Include="Model\Expressions\VariableExpression.cs" />
     <Compile Include="Model\ProgramState.cs" />
     <Compile Include="Model\Statements\AssignStatement.cs" />
     <Compile Include="Model\Statements\CompoundStatement.cs" />
     <Compile Include="Model\Statements\IfStatement.cs" />
     <Compile Include="Model\Statements\PrintStatement.cs" />
+    <Compile Include="Model\Statements\SkipStatement.cs" />
+    <Compile Include="Model\Statements\SwitchStatement.cs" />
+    <Compile Include="Model\Statements\WhileStatement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="UiPackage\UserInterface.cs" />
+    <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\MenuUtils.cs" />
     <Compile Include="Utils\OperatorsEnum.cs" />
   </ItemGroup>

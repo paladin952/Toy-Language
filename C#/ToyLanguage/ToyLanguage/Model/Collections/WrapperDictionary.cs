@@ -7,7 +7,7 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Collections
 {
-    
+    [Serializable]
     class WrapperDictionary<K, V> : IMyDictionary<K, V>
     {
         private Dictionary<K, V> map;

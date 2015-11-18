@@ -58,7 +58,9 @@ public class Repository implements IRepository {
             /**
              * Replacing old program state
              */
-            programStateList.remove(programStateList.size() - 1);
+            if(programStateList.size()>0){
+                programStateList.remove(programStateList.size() - 1);
+            }
             programStateList.add(serializedProgramState);
         } catch (IOException i) {
             i.printStackTrace();

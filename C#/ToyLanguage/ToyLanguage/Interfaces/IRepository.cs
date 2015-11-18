@@ -24,5 +24,10 @@ namespace ToyLanguage.Interfaces
          */
         void createProgram(IMyStack<IMyStatement> mExecutionStack, IMyDictionary<string, int> myDictionary, IMyList<string> mOutput, IMyStatement mInitialProgram);
 
+        void Serialize();
+
+        void DeSerialize();
+
+        void SaveStateInFile();
     }
 }

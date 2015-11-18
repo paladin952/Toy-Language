@@ -8,7 +8,7 @@ using ToyLanguage.Utils;
 
 namespace ToyLanguage.Model.Expressions
 {
-
+    [Serializable]
     /**
      * Created by Lucian on 11/3/2015.
      */

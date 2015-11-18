@@ -26,6 +26,12 @@ namespace ToyLanguage.Utils
 
         GRATER_EQUAL,
 
-        LESS_EQUAL
+        LESS_EQUAL,
+
+        AND,
+
+        OR,
+
+        NOT
     }
 }

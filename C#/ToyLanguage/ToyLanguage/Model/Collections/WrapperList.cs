@@ -8,6 +8,7 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Collections
 {
+    [Serializable]
     class WrapperList<T> : IMyList<T>
     {
         private List<T> data;

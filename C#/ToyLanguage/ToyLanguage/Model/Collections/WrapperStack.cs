@@ -8,6 +8,7 @@ using ToyLanguage.Interfaces;
 
 namespace ToyLanguage.Model.Collections
 {
+    [Serializable]
     class WrapperStack<T> : IMyStack<T> where T : IMyStatement
     {
         private Stack<T> stack;

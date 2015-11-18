@@ -9,6 +9,7 @@ using ToyLanguage.Utils;
 
 namespace ToyLanguage.Model.Expressions
 {
+    [Serializable]
     class ArithmeticExpression : IExpressions
     {
         /**
