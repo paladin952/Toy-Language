@@ -16,7 +16,7 @@ public interface Expression extends Serializable {
      * @param table Table of values
      * @return int result (for simplicity)
      */
-    int eval(IDictionary<String, Integer> table) throws ValueNotFoundException, DivideByZeroException;
+    int eval(IDictionary<String, Integer> table, IHeap<Integer, Integer>heap) throws ValueNotFoundException, DivideByZeroException;
 
 
     /**

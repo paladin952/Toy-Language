@@ -4,6 +4,7 @@ import Exceptions.DivideByZeroException;
 import Exceptions.ValueNotFoundException;
 import interfaces.Expression;
 import interfaces.IDictionary;
+import interfaces.IHeap;
 import model.OperatorsEnum;
 
 /**
@@ -69,19 +70,19 @@ public class ArithmeticExpression implements Expression {
      * @return int result
      */
     @Override
-    public int eval(IDictionary<String, Integer> table) throws ValueNotFoundException, DivideByZeroException {
+    public int eval(IDictionary<String, Integer> table, IHeap<Integer, Integer> heap) throws ValueNotFoundException, DivideByZeroException {
         switch (operatorType) {
             case ADD:
-                return (int)(firstExpression.eval(table) + secondExpression.eval(table));
+                return (int)(firstExpression.eval(table, heap) + secondExpression.eval(table, heap));
             case SUBSTRACT:
-                return (int)(firstExpression.eval(table) - secondExpression.eval(table));
+                return (int)(firstExpression.eval(table, heap) - secondExpression.eval(table, heap));
             case MULTIPLY:
-                return (int)(firstExpression.eval(table) * secondExpression.eval(table));
+                return (int)(firstExpression.eval(table, heap) * secondExpression.eval(table, heap));
             case DIVIDE:
-                if(secondExpression.eval(table) == 0){
+                if(secondExpression.eval(table, heap) == 0){
                     throw new DivideByZeroException();
                 }
-                return (int)(firstExpression.eval(table) / secondExpression.eval(table));
+                return (int)(firstExpression.eval(table, heap) / secondExpression.eval(table, heap));
             default:
                 return Integer.MIN_VALUE;
         }

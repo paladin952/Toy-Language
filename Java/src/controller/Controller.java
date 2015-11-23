@@ -2,9 +2,11 @@ package controller;
 
 import Exceptions.*;
 import interfaces.*;
+import model.Collections.MyHeap;
 import model.Collections.WrapperDictionary;
 import model.Collections.WrapperList;
 import model.Collections.WrapperStack;
+import model.Statements.WriteHeapStatement;
 import model.ProgramState;
 import model.Statements.*;
 import utils.Constants;
@@ -52,7 +54,7 @@ public class Controller {
      * @param initialStatement initial IStatement
      */
     public void createProgram(IStatement initialStatement) {
-        repository.createProgram(new WrapperStack<>(), new WrapperDictionary<>(), new WrapperList<>(), initialStatement);
+        repository.createProgram(new WrapperStack<>(), new WrapperDictionary<>(), new WrapperList<>(), new MyHeap(), initialStatement);
     }
 
     /**
@@ -72,7 +74,9 @@ public class Controller {
      */
     private void oneStep(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
         IStack<IStatement> myStack = programState.getExecutionStack();
-
+        IHeap<Integer, Integer>heap = programState.getHeap();
+        IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
+        IList<String> output = programState.getOutput();
         if (myStack.isEmpty())
             throw new StatementExecutionException();
         IStatement statement = myStack.pop();
@@ -88,27 +92,24 @@ public class Controller {
             AssignStatement assignStatement = (AssignStatement) statement;
             Expression expression = assignStatement.getExpression();
             String id = assignStatement.getVariableName();
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
 
-            int val = expression.eval(myDictionary);
+            int val = expression.eval(myDictionary, heap);
             //insert or update
             myDictionary.put(id, val);
             return;
         }
 
         if (statement instanceof PrintStatement) {
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
-            IList<String> output = programState.getOutput();
+
             PrintStatement printStatement = (PrintStatement) statement;
             Expression expr = printStatement.getExpression();
-            output.add(String.valueOf(expr.eval(myDictionary)));
+            output.add(String.valueOf(expr.eval(myDictionary, heap)));
             return;
         }
 
         if (statement instanceof IfStatement) {
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
             IfStatement ifStatement = (IfStatement) statement;
-            if (ifStatement.getExpression().eval(myDictionary) != 0) {
+            if (ifStatement.getExpression().eval(myDictionary, heap) != 0) {
                 myStack.push(ifStatement.getThenStatement());
             } else {
                 if (ifStatement.getElseStatement() != null) {
@@ -119,12 +120,10 @@ public class Controller {
         }
 
         if (statement instanceof WhileStatement) {
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
-            IList<String> output = programState.getOutput();
             WhileStatement whileStatement = (WhileStatement) statement;
             IStack<IStatement> secondStack = new WrapperStack<>();
-            ProgramState secondProgramState = new ProgramState(secondStack, myDictionary, output, whileStatement.getStatement());
-            while (whileStatement.getExpression().eval(myDictionary) != 0) {
+            ProgramState secondProgramState = new ProgramState(secondStack, myDictionary, output, heap, whileStatement.getStatement());
+            while (whileStatement.getExpression().eval(myDictionary, heap) != 0) {
                 runAllSteps(secondProgramState);
                 secondStack.push(whileStatement.getStatement());
             }
@@ -136,16 +135,27 @@ public class Controller {
         }
 
         if (statement instanceof SwitchStatement) {
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
             SwitchStatement switchStatement = (SwitchStatement) statement;
             Expression expression = switchStatement.getExpression();
-            if (switchStatement.getCase1().eval(myDictionary) == expression.eval(myDictionary)) {
+            if (switchStatement.getCase1().eval(myDictionary, heap) == expression.eval(myDictionary, heap)) {
                 myStack.push(switchStatement.getStatementCase1());
             }
-            if (switchStatement.getCase2().eval(myDictionary) == expression.eval(myDictionary)) {
+            if (switchStatement.getCase2().eval(myDictionary, heap) == expression.eval(myDictionary, heap)) {
                 myStack.push(switchStatement.getStatementCase2());
             }
             myStack.push(switchStatement.getStatementDefault());
+        }
+
+        if(statement instanceof HeapAllocation){
+            HeapAllocation heapAllocation = (HeapAllocation)statement;
+            int pointer = heap.size();
+            heap.put(pointer, heapAllocation.getExpression().eval(myDictionary, heap));
+            myDictionary.put(heapAllocation.getVariableName(), pointer);
+        }
+
+        if(statement instanceof WriteHeapStatement){
+            WriteHeapStatement writeHeapStatement = (WriteHeapStatement)statement;
+            heap.put(myDictionary.lookUp(writeHeapStatement.getVariableName()), writeHeapStatement.getExpression().eval(myDictionary, heap));
         }
     }
 

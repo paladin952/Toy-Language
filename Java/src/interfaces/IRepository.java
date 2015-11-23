@@ -23,7 +23,7 @@ public interface IRepository {
      * @param mOutput         The output list of the program
      * @param mInitialProgram The initial statement
      */
-    void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IStatement mInitialProgram);
+    void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IHeap<Integer, Integer>heap, IStatement mInitialProgram);
 
     /**
      * Serialize the repository in text file

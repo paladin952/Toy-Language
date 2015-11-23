@@ -4,6 +4,7 @@ import Exceptions.DivideByZeroException;
 import Exceptions.ValueNotFoundException;
 import interfaces.Expression;
 import interfaces.IDictionary;
+import interfaces.IHeap;
 import model.OperatorsEnum;
 
 /**
@@ -63,18 +64,18 @@ public class LogicExpression implements Expression {
      * @return int result
      */
     @Override
-    public int eval(IDictionary<String, Integer> table) throws ValueNotFoundException, DivideByZeroException {
+    public int eval(IDictionary<String, Integer> table, IHeap<Integer, Integer> heap) throws ValueNotFoundException, DivideByZeroException {
 
         boolean firstBoolean;
         boolean secondBoolean;
 
-        if(firstExpression.eval(table) == 0){
+        if(firstExpression.eval(table, heap) == 0){
             firstBoolean = false;
         }else{
             firstBoolean = true;
         }
 
-        if(firstExpression.eval(table) == 0){
+        if(firstExpression.eval(table, heap) == 0){
             secondBoolean = false;
         }else{
             secondBoolean = true;

@@ -29,8 +29,8 @@ public class Repository implements IRepository {
         programStateList = new ArrayList<>();
     }
 
-    public void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IStatement mInitialProgram) {
-        programStateList.add(new ProgramState(mExecutionStack, myDictionary, mOutput, mInitialProgram));
+    public void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IHeap<Integer, Integer>heap, IStatement mInitialProgram) {
+        programStateList.add(new ProgramState(mExecutionStack, myDictionary, mOutput, heap, mInitialProgram));
     }
 
     @Override
