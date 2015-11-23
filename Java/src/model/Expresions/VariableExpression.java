@@ -3,6 +3,7 @@ package model.Expresions;
 import Exceptions.ValueNotFoundException;
 import interfaces.Expression;
 import interfaces.IDictionary;
+import interfaces.IHeap;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -28,7 +29,7 @@ public class VariableExpression implements Expression {
      * @return int value
      */
     @Override
-    public int eval(IDictionary<String, Integer> table) throws ValueNotFoundException {
+    public int eval(IDictionary<String, Integer> table, IHeap<Integer, Integer> heap) throws ValueNotFoundException {
         return table.lookUp(name);
     }
 

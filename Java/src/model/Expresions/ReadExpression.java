@@ -3,6 +3,7 @@ package model.Expresions;
 import Exceptions.ValueNotFoundException;
 import interfaces.Expression;
 import interfaces.IDictionary;
+import interfaces.IHeap;
 import interfaces.IStatement;
 
 import java.util.Scanner;
@@ -30,7 +31,7 @@ public class ReadExpression implements Expression {
 
 
     @Override
-    public int eval(IDictionary<String, Integer> table) throws ValueNotFoundException {
+    public int eval(IDictionary<String, Integer> table, IHeap<Integer, Integer> heap) throws ValueNotFoundException {
         return number;
     }
 

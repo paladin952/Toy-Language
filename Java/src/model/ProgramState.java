@@ -1,9 +1,6 @@
 package model;
 
-import interfaces.IDictionary;
-import interfaces.IList;
-import interfaces.IStack;
-import interfaces.IStatement;
+import interfaces.*;
 
 /**
  * Created by Lucian on 10/19/2015.
@@ -27,17 +24,22 @@ public class ProgramState implements java.io.Serializable {
     private IList<String> output;
 
     /**
+     * The heap
+     */
+    private IHeap<Integer, Integer> heap;
+    /**
      * A copy of the original program
      * I don't need to serialize it
      */
     private transient IStatement originalProgram;
 
-    public ProgramState(IStack<IStatement> executionStack, IDictionary<String, Integer> myDictionary, IList<String> output, IStatement originalProgram) {
+    public ProgramState(IStack<IStatement> executionStack, IDictionary<String, Integer> myDictionary, IList<String> output, IHeap<Integer, Integer> heap, IStatement originalProgram) {
         this.executionStack = executionStack;
         this.myDictionary = myDictionary;
         this.output = output;
         this.originalProgram = originalProgram;
         this.executionStack.push(originalProgram);
+        this.heap = heap;
     }
 
     /**
@@ -51,6 +53,9 @@ public class ProgramState implements java.io.Serializable {
         result.append("Execution stack: \n");
         result.append(executionStack.toString());
 
+        result.append("HEAP: \n");
+        result.append(heap.toString());
+
         result.append("My dictionary: \n");
         result.append("\n");
         result.append(myDictionary.toString());
@@ -60,9 +65,19 @@ public class ProgramState implements java.io.Serializable {
         return result.toString();
     }
 
+    public IHeap<Integer, Integer> getHeap() {
+        return heap;
+    }
+
+    public void setHeap(IHeap<Integer, Integer> heap) {
+        this.heap = heap;
+    }
+
     /**
      * Getters and setters
      */
+
+
 
     public IStack<IStatement> getExecutionStack() {
         return executionStack;
