@@ -1,7 +1,8 @@
 package model.Statements;
 
-import interfaces.IStatement;
-import interfaces.Expression;
+import Exceptions.DivideByZeroException;
+import Exceptions.ValueNotFoundException;
+import interfaces.*;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -46,6 +47,17 @@ public class IfStatement implements IStatement {
         }
         return "IF(" + expression.toString() +")THEN(" + thenStatement.toString() + ")ELSE("
                 + elseStatement.toString() +")";
+    }
+
+    @Override
+    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+        if (getExpression().eval(myDictionary, heap) != 0) {
+            myStack.push(getThenStatement());
+        } else {
+            if (getElseStatement() != null) {
+                myStack.push(getElseStatement());
+            }
+        }
     }
 
     /**
