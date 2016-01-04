@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using ToyLanguage.Exceptions;
 using ToyLanguage.Interfaces;
 using ToyLanguage.Model;
+using ToyLanguage.Model.Collections;
 
 namespace ToyLanguage
 {
@@ -28,9 +29,9 @@ namespace ToyLanguage
             programStateList = new List<ProgramState>();
         }
 
-        public void createProgram(IMyStack<IMyStatement> mExecutionStack, IMyDictionary<String, int> myDictionary, IMyList<String> mOutput, IMyStatement mInitialProgram)
+        public void createProgram(IMyStack<IMyStatement> mExecutionStack, IMyDictionary<String, int> myDictionary, IMyList<String> mOutput, IHeap<int, int> heap, IMyStatement mInitialProgram)
         {
-            programStateList.Add(new ProgramState(mExecutionStack, myDictionary, mOutput, mInitialProgram));
+            programStateList.Add(new ProgramState(mExecutionStack, myDictionary, mOutput, heap, mInitialProgram));
         }
 
        
@@ -85,5 +86,7 @@ namespace ToyLanguage
             file.WriteLine(programState.getOutput().ToString());
             file.Close();
         }
+
+       
     }
 }

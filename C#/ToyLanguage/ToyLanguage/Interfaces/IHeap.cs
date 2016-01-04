@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToyLanguage.Interfaces
 {
-    interface IExpressions
+    interface IHeap<K, V> : IMyDictionary<K, V>
     {
-        int eval(IMyDictionary<string, int> table, IHeap<int, int> heap);
-
-        string MyToString();
     }
 }

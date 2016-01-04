@@ -1,10 +1,6 @@
 package model.Statements;
 
-import Exceptions.DivideByZeroException;
-import Exceptions.ValueNotFoundException;
 import interfaces.Expression;
-import interfaces.IDictionary;
-import interfaces.IHeap;
 import interfaces.IStatement;
 
 /**
@@ -24,8 +20,9 @@ public class WriteHeapStatement implements IStatement {
 
     /**
      * The constructor
+     *
      * @param variableName The var name
-     * @param expression the expression
+     * @param expression   the expression
      */
     public WriteHeapStatement(String variableName, Expression expression) {
         this.variableName = variableName;
@@ -42,6 +39,6 @@ public class WriteHeapStatement implements IStatement {
 
     @Override
     public String toString() {
-        return "ReadHeap( "+ variableName + " )";
+        return "WriteHeap( " + variableName + "=" + expression.toString() + " )";
     }
 }

@@ -43,7 +43,15 @@ namespace ToyLanguage.Model.Collections
 
         public void put(K key, V value)
         {
-            map.Add(key, value);
+            if (map.ContainsKey(key))
+            {
+                map[key] = value;
+            }
+            else
+            {
+                map.Add(key, value);
+            }
+            
         }
 
         public void remove(K key)

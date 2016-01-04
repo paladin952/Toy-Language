@@ -27,7 +27,7 @@ namespace ToyLanguage.Model.Expressions
             number = Int32.Parse(Console.ReadLine());
         }
 
-        public int eval(IMyDictionary<string, int> table)
+        public int eval(IMyDictionary<string, int> table, IHeap<int, int> heap)
         {
             return number;
         }
