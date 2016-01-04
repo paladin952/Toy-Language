@@ -4,6 +4,7 @@ import Exceptions.ValueNotFoundException;
 import interfaces.IDictionary;
 
 import java.util.Arrays;
+import java.util.Map;
 
 /**
  * Created by Lucian on 10/12/2015.
@@ -201,5 +202,15 @@ public class MyDictionary<K, V> implements IDictionary<K, V> {
             result.append(array[i].key + "->" + array[i].value + "\n");
         }
         return result.toString();
+    }
+
+    @Override
+    public void addAll(Map<K, V> all) {
+        //blabla
+    }
+
+    @Override
+    public Map<K, V> getMap() {
+        return null;
     }
 }

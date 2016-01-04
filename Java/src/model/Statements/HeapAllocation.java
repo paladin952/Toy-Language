@@ -3,6 +3,7 @@ package model.Statements;
 import Exceptions.DivideByZeroException;
 import Exceptions.ValueNotFoundException;
 import interfaces.*;
+import model.ProgramState;
 
 /**
  * Created by Lucian on 11/21/2015.
@@ -43,9 +44,12 @@ public class HeapAllocation implements IStatement {
     }
 
     @Override
-    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+    public ProgramState execute(ProgramState programState) throws DivideByZeroException, ValueNotFoundException {
+        IHeap<Integer, Integer> heap = programState.getHeap();
+        IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
         int pointer = heap.size();
         heap.put(pointer, getExpression().eval(myDictionary, heap));
         myDictionary.put(getVariableName(), pointer);
+        return null;
     }
 }

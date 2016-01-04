@@ -2,6 +2,8 @@ package interfaces;
 
 import Exceptions.ValueNotFoundException;
 
+import java.util.Map;
+
 /**
  * Created by Lucian on 10/11/2015.
  */
@@ -59,5 +61,17 @@ public interface IDictionary<K, V> extends java.io.Serializable {
      * @return string
      */
     String toString();
+
+    /**
+     * Add a map to the map
+     * @param all
+     */
+    void addAll(Map<K, V> all);
+
+    /**
+     * Get the map
+     * @return The map
+     */
+    Map<K, V> getMap();
 
 }
