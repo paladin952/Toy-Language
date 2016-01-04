@@ -28,7 +28,7 @@ public class WrapperList<T> implements IList<T>{
      * @param element T element
      */
     @Override
-    public void add(T element) {
+    synchronized public void add(T element) {
         data.add(element);
     }
 
@@ -39,7 +39,7 @@ public class WrapperList<T> implements IList<T>{
      * @return The element
      */
     @Override
-    public T get(int position) {
+    synchronized public T get(int position) {
         return data.get(position);
     }
 

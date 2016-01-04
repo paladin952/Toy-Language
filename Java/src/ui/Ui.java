@@ -102,10 +102,10 @@ public class Ui implements Controller.PrintState {
 //                    IStatement readStatement =
 //                            new CompoundStatement(new AssignStatement("a", new ArithmeticExpression("+", new ConstantExpression(1), new ReadExpression())),
 //                                new PrintStatement(new VariableExpression("a")));
-//                    IStatement whileStatement =
-//                            new CompoundStatement(new AssignStatement("a", new ConstantExpression(12)),
-//                                new WhileStatement(new CompoundStatement(new PrintStatement(new VariableExpression("a")),
-//                                    new AssignStatement("a",new ArithmeticExpression("-", new VariableExpression("a"), new ConstantExpression(1)))),new VariableExpression("a")));
+                    IStatement whileStatement =
+                            new CompoundStatement(new AssignStatement("a", new ConstantExpression(12)),
+                                new WhileStatement(new CompoundStatement(new PrintStatement(new VariableExpression("a")),
+                                    new AssignStatement("a",new ArithmeticExpression("-", new VariableExpression("a"), new ConstantExpression(1)))),new VariableExpression("a")));
 //
 //                    IStatement switchStatement =
 //                            new CompoundStatement(new AssignStatement("a", new ConstantExpression(2)),
@@ -130,7 +130,19 @@ public class Ui implements Controller.PrintState {
                                                 new CompoundStatement(new WriteHeapStatement("a", new ConstantExpression(30)),
                                                         new CompoundStatement(new PrintStatement(new VariableExpression("a")), new PrintStatement(new ReadHeap("a")))))));
 
-                    controller.createProgram(writeHeap);
+                    IStatement fork =
+                            new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                                    new CompoundStatement(new HeapAllocation("a", new ConstantExpression(22)),
+                                            new CompoundStatement(new ForkStatement(new WriteHeapStatement("a", new ConstantExpression(30))),
+                                                    new CompoundStatement(new AssignStatement("v", new ConstantExpression(32)),
+                                                            new CompoundStatement(new PrintStatement(new VariableExpression("v")),
+                                                                    new CompoundStatement(new PrintStatement(new ReadHeap("a")),
+                                                                            new CompoundStatement(new PrintStatement(new VariableExpression("v")), new PrintStatement(new ReadHeap("a")))))))));
+
+                    IStatement fork2 = new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                            new CompoundStatement(new ForkStatement(new PrintStatement(new ConstantExpression(99))), new PrintStatement(new ConstantExpression(1))));
+
+                    controller.createProgram(fork);
                     break;
             }
         } while (true);

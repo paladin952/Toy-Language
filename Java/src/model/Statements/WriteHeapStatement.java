@@ -3,6 +3,7 @@ package model.Statements;
 import Exceptions.DivideByZeroException;
 import Exceptions.ValueNotFoundException;
 import interfaces.*;
+import model.ProgramState;
 
 /**
  * Created by Lucian on 11/23/2015.
@@ -44,7 +45,10 @@ public class WriteHeapStatement implements IStatement {
     }
 
     @Override
-    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+    public ProgramState execute(ProgramState programState) throws DivideByZeroException, ValueNotFoundException {
+        IHeap<Integer, Integer> heap = programState.getHeap();
+        IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
         heap.put(myDictionary.lookUp(getVariableName()), getExpression().eval(myDictionary, heap));
+        return null;
     }
 }

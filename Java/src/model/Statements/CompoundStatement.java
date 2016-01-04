@@ -1,6 +1,7 @@
 package model.Statements;
 
 import interfaces.*;
+import model.ProgramState;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -55,8 +56,10 @@ public class CompoundStatement implements IStatement {
     }
 
     @Override
-    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) {
+    public ProgramState execute(ProgramState programState) {
+        IStack<IStatement> myStack = programState.getExecutionStack();
         myStack.push(getSecondStatement());
         myStack.push(getFirstStatement());
+        return null;
     }
 }

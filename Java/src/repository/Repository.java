@@ -16,6 +16,7 @@ public class Repository implements IRepository {
     public static final String PATH_TO_SERIALIZATION_FILE = "src/file.ser";
     public static final String PATH_TO_SAVE_STATE_FILE = "src/saveState.txt";
 
+
     /**
      * The list of current program states
      * For now only one item will be there
@@ -29,7 +30,14 @@ public class Repository implements IRepository {
         programStateList = new ArrayList<>();
     }
 
-    public void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IHeap<Integer, Integer>heap, IStatement mInitialProgram) {
+    public ProgramState getCurrentState() throws InvalidPositionException {
+        if (programStateList.size() > 0) {
+            return programStateList.get(programStateList.size() - 1);
+        }
+        throw new InvalidPositionException();
+    }
+
+    public void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IHeap<Integer, Integer> heap, IStatement mInitialProgram) {
         programStateList.add(new ProgramState(mExecutionStack, myDictionary, mOutput, heap, mInitialProgram));
     }
 
@@ -58,7 +66,7 @@ public class Repository implements IRepository {
             /**
              * Replacing old program state
              */
-            if(programStateList.size()>0){
+            if (programStateList.size() > 0) {
                 programStateList.remove(programStateList.size() - 1);
             }
             programStateList.add(serializedProgramState);
@@ -90,17 +98,37 @@ public class Repository implements IRepository {
         }
     }
 
-    /**
-     * Get the latest program state
-     *
-     * @return The ProgramState
-     */
     @Override
-    public ProgramState getCurrentState() throws InvalidPositionException {
-        if (programStateList.size() > 0) {
-            return programStateList.get(programStateList.size() - 1);
+    public ProgramState getBiggerProgramState() {
+        int max = -1;
+        ProgramState result = null;
+        for(ProgramState states:programStateList){
+            if(states.getExecutionStack().size()>max){
+                max = states.getExecutionStack().size();
+                result = states;
+            }
         }
-        throw new InvalidPositionException();
+        return result;
+    }
+
+    @Override
+    public void removeCompleteProgramState() {
+        List<ProgramState> copyOfList = new ArrayList<ProgramState>(programStateList);
+        for(ProgramState state:copyOfList){
+            if (state.isComplete()){
+                programStateList.remove(state);
+            }
+        }
+    }
+
+    @Override
+    public void setProgramStateList(List<ProgramState> list) {
+        programStateList = list;
+    }
+
+    @Override
+    public List<ProgramState> getProgramStateList() {
+        return programStateList;
     }
 
 }

@@ -3,6 +3,7 @@ package model.Statements;
 import Exceptions.DivideByZeroException;
 import Exceptions.ValueNotFoundException;
 import interfaces.*;
+import model.ProgramState;
 
 /**
  * Created by Lucian on 11/10/2015.
@@ -37,7 +38,11 @@ public class SwitchStatement implements IStatement {
     }
 
     @Override
-    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+    public ProgramState execute(ProgramState programState) throws DivideByZeroException, ValueNotFoundException {
+        IHeap<Integer, Integer> heap = programState.getHeap();
+        IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
+        IStack<IStatement> myStack = programState.getExecutionStack();
+
         Expression expression = getExpression();
         if (getCase1().eval(myDictionary, heap) == expression.eval(myDictionary, heap)) {
             myStack.push(getStatementCase1());
@@ -46,6 +51,7 @@ public class SwitchStatement implements IStatement {
             myStack.push(getStatementCase2());
         }
         myStack.push(getStatementDefault());
+        return null;
     }
 
     public Expression getExpression() {

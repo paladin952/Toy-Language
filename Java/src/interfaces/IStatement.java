@@ -1,7 +1,7 @@
 package interfaces;
 
-import Exceptions.DivideByZeroException;
-import Exceptions.ValueNotFoundException;
+import Exceptions.*;
+import model.ProgramState;
 
 import java.io.Serializable;
 
@@ -19,13 +19,6 @@ public interface IStatement extends Serializable{
 
     /**
      * run one step for the current statement
-     * @param myStack The stack
-     * @param heap The heap
-     * @param myDictionary The dictionary
-     * @param output The output list
-     * @throws DivideByZeroException in case of division with 0
-     * @throws ValueNotFoundException If no value is found in the table
      */
-    void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer>heap, IDictionary<String, Integer> myDictionary,
-                 IList<String> output) throws DivideByZeroException, ValueNotFoundException;
+    ProgramState execute(ProgramState programState) throws DivideByZeroException, ValueNotFoundException, StatementExecutionException, InvalidPositionException, EmptyStackException;
 }
