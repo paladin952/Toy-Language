@@ -4,6 +4,7 @@ import Exceptions.*;
 import interfaces.*;
 import model.Collections.WrapperStack;
 import model.ProgramState;
+import utils.Constants;
 
 /**
  * Created by Lucian on 11/10/2015.
@@ -41,7 +42,42 @@ public class WhileStatement implements IStatement {
     }
 
     @Override
-    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+    public ProgramState execute(ProgramState programState) throws DivideByZeroException, ValueNotFoundException, StatementExecutionException, InvalidPositionException, EmptyStackException {
         //TODO think how to solve the coupling with the controller
+        IHeap<Integer, Integer> heap = programState.getHeap();
+        IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
+        IList<String> output = programState.getOutput();
+        IStack<IStatement> secondStack = new WrapperStack<>();
+        ProgramState secondProgramState = new ProgramState(secondStack, myDictionary, output, heap, getStatement());
+        while (getExpression().eval(myDictionary, heap) != 0) {
+            runAllSteps(secondProgramState);
+            secondStack.push(getStatement());
+        }
+        return null;
+    }
+
+    /**
+     * Run all program
+     *
+     * @throws StatementExecutionException
+     */
+    private void runAllSteps(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
+        while (!programState.getExecutionStack().isEmpty()) {
+            oneStep(programState);
+        }
+    }
+
+    /**
+     * Run the program in debug mode, one step at a time
+     *
+     * @param programState The program
+     * @throws StatementExecutionException
+     */
+    private void oneStep(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
+        IStack<IStatement> myStack = programState.getExecutionStack();
+        if (myStack.isEmpty())
+            throw new StatementExecutionException();
+        IStatement statement = myStack.pop();
+        statement.execute(programState);
     }
 }

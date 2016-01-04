@@ -3,6 +3,7 @@ package model.Statements;
 import Exceptions.DivideByZeroException;
 import Exceptions.ValueNotFoundException;
 import interfaces.*;
+import model.ProgramState;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -26,7 +27,8 @@ public class IfStatement implements IStatement {
 
     /**
      * The constructor
-     * @param expression The expression
+     *
+     * @param expression    The expression
      * @param thenStatement The correct statement
      * @param elseStatement The false statement
      */
@@ -38,19 +40,24 @@ public class IfStatement implements IStatement {
 
     /**
      * String representation
+     *
      * @return String
      */
     @Override
     public String toString() {
-        if(elseStatement == null){
-            return "IF(" + expression.toString() +")";
+        if (elseStatement == null) {
+            return "IF(" + expression.toString() + ")";
         }
-        return "IF(" + expression.toString() +")THEN(" + thenStatement.toString() + ")ELSE("
-                + elseStatement.toString() +")";
+        return "IF(" + expression.toString() + ")THEN(" + thenStatement.toString() + ")ELSE("
+                + elseStatement.toString() + ")";
     }
 
     @Override
-    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+    public ProgramState execute(ProgramState programState) throws DivideByZeroException, ValueNotFoundException {
+        IHeap<Integer, Integer> heap = programState.getHeap();
+        IStack<IStatement> myStack = programState.getExecutionStack();
+        IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
+
         if (getExpression().eval(myDictionary, heap) != 0) {
             myStack.push(getThenStatement());
         } else {
@@ -58,6 +65,7 @@ public class IfStatement implements IStatement {
                 myStack.push(getElseStatement());
             }
         }
+        return null;
     }
 
     /**

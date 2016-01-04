@@ -4,16 +4,26 @@ import Exceptions.InvalidPositionException;
 import model.ProgramState;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Lucian on 10/13/2015.
  */
 public interface IRepository {
 
-    /**
-     * @return The current Program's state
-     */
     ProgramState getCurrentState() throws InvalidPositionException;
+
+    /**
+     * Set the list of program states
+     * @param list the list
+     */
+    void setProgramStateList(List<ProgramState> list);
+
+    /**
+     * Get the program state list
+     * @return The list
+     */
+    List<ProgramState> getProgramStateList();
 
     /**
      * Creates a new program
@@ -39,5 +49,16 @@ public interface IRepository {
      * Save the state of the repo in file
      */
     void saveStateInFile();
+
+    /**
+     * Return the program state with the most elements
+     * @return The program state
+     */
+    ProgramState getBiggerProgramState();
+
+    /**
+     * Remove all the program states that are complete
+     */
+    void removeCompleteProgramState();
 
 }

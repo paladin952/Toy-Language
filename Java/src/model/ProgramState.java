@@ -1,6 +1,9 @@
 package model;
 
+import Exceptions.*;
 import interfaces.*;
+import model.Collections.WrapperStack;
+import model.Statements.WhileStatement;
 
 /**
  * Created by Lucian on 10/19/2015.
@@ -65,19 +68,48 @@ public class ProgramState implements java.io.Serializable {
         return result.toString();
     }
 
+    /**
+     * @return The heap object
+     */
     public IHeap<Integer, Integer> getHeap() {
         return heap;
     }
 
+    /**
+     * Set the heap
+     *
+     * @param heap The heap
+     */
     public void setHeap(IHeap<Integer, Integer> heap) {
         this.heap = heap;
     }
 
     /**
+     * @return True if executionStack is complete, false otherwise
+     */
+    public boolean isComplete() {
+        return executionStack.isEmpty();
+    }
+
+    /**
+     * Run the program in debug mode, one step at a time
+     *
+     * @param programState The program
+     * @throws StatementExecutionException
+     */
+    public ProgramState oneStep(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
+        IStack<IStatement> myStack = getExecutionStack();
+        if (myStack.isEmpty())
+            throw new StatementExecutionException();
+        IStatement statement = myStack.pop();
+        return statement.execute(programState);
+
+
+    }
+
+    /**
      * Getters and setters
      */
-
-
 
     public IStack<IStatement> getExecutionStack() {
         return executionStack;
