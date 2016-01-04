@@ -81,43 +81,45 @@ public class Controller {
             throw new StatementExecutionException();
         IStatement statement = myStack.pop();
 
-        if (statement instanceof CompoundStatement) {
-            CompoundStatement compoundStatement1 = (CompoundStatement) statement;
-            myStack.push(compoundStatement1.getSecondStatement());
-            myStack.push(compoundStatement1.getFirstStatement());
-            return;
-        }
+        statement.oneStep(myStack, heap, myDictionary, output);
 
-        if (statement instanceof AssignStatement) {
-            AssignStatement assignStatement = (AssignStatement) statement;
-            Expression expression = assignStatement.getExpression();
-            String id = assignStatement.getVariableName();
+//        if (statement instanceof CompoundStatement) {
+//            CompoundStatement compoundStatement1 = (CompoundStatement) statement;
+//            myStack.push(compoundStatement1.getSecondStatement());
+//            myStack.push(compoundStatement1.getFirstStatement());
+//            return;
+//        }
 
-            int val = expression.eval(myDictionary, heap);
-            //insert or update
-            myDictionary.put(id, val);
-            return;
-        }
+//        if (statement instanceof AssignStatement) {
+//            AssignStatement assignStatement = (AssignStatement) statement;
+//            Expression expression = assignStatement.getExpression();
+//            String id = assignStatement.getVariableName();
+//
+//            int val = expression.eval(myDictionary, heap);
+//            //insert or update
+//            myDictionary.put(id, val);
+//            return;
+//        }
 
-        if (statement instanceof PrintStatement) {
+//        if (statement instanceof PrintStatement) {
+//
+//            PrintStatement printStatement = (PrintStatement) statement;
+//            Expression expr = printStatement.getExpression();
+//            output.add(String.valueOf(expr.eval(myDictionary, heap)));
+//            return;
+//        }
 
-            PrintStatement printStatement = (PrintStatement) statement;
-            Expression expr = printStatement.getExpression();
-            output.add(String.valueOf(expr.eval(myDictionary, heap)));
-            return;
-        }
-
-        if (statement instanceof IfStatement) {
-            IfStatement ifStatement = (IfStatement) statement;
-            if (ifStatement.getExpression().eval(myDictionary, heap) != 0) {
-                myStack.push(ifStatement.getThenStatement());
-            } else {
-                if (ifStatement.getElseStatement() != null) {
-                    myStack.push(ifStatement.getElseStatement());
-                }
-            }
-            return;
-        }
+//        if (statement instanceof IfStatement) {
+//            IfStatement ifStatement = (IfStatement) statement;
+//            if (ifStatement.getExpression().eval(myDictionary, heap) != 0) {
+//                myStack.push(ifStatement.getThenStatement());
+//            } else {
+//                if (ifStatement.getElseStatement() != null) {
+//                    myStack.push(ifStatement.getElseStatement());
+//                }
+//            }
+//            return;
+//        }
 
         if (statement instanceof WhileStatement) {
             WhileStatement whileStatement = (WhileStatement) statement;
@@ -130,33 +132,33 @@ public class Controller {
             return;
         }
 
-        if (statement instanceof SkipStatement) {
-            return;
-        }
+//        if (statement instanceof SkipStatement) {
+//            return;
+//        }
 
-        if (statement instanceof SwitchStatement) {
-            SwitchStatement switchStatement = (SwitchStatement) statement;
-            Expression expression = switchStatement.getExpression();
-            if (switchStatement.getCase1().eval(myDictionary, heap) == expression.eval(myDictionary, heap)) {
-                myStack.push(switchStatement.getStatementCase1());
-            }
-            if (switchStatement.getCase2().eval(myDictionary, heap) == expression.eval(myDictionary, heap)) {
-                myStack.push(switchStatement.getStatementCase2());
-            }
-            myStack.push(switchStatement.getStatementDefault());
-        }
+//        if (statement instanceof SwitchStatement) {
+//            SwitchStatement switchStatement = (SwitchStatement) statement;
+//            Expression expression = switchStatement.getExpression();
+//            if (switchStatement.getCase1().eval(myDictionary, heap) == expression.eval(myDictionary, heap)) {
+//                myStack.push(switchStatement.getStatementCase1());
+//            }
+//            if (switchStatement.getCase2().eval(myDictionary, heap) == expression.eval(myDictionary, heap)) {
+//                myStack.push(switchStatement.getStatementCase2());
+//            }
+//            myStack.push(switchStatement.getStatementDefault());
+//        }
 
-        if(statement instanceof HeapAllocation){
-            HeapAllocation heapAllocation = (HeapAllocation)statement;
-            int pointer = heap.size();
-            heap.put(pointer, heapAllocation.getExpression().eval(myDictionary, heap));
-            myDictionary.put(heapAllocation.getVariableName(), pointer);
-        }
+//        if(statement instanceof HeapAllocation){
+//            HeapAllocation heapAllocation = (HeapAllocation)statement;
+//            int pointer = heap.size();
+//            heap.put(pointer, heapAllocation.getExpression().eval(myDictionary, heap));
+//            myDictionary.put(heapAllocation.getVariableName(), pointer);
+//        }
 
-        if(statement instanceof WriteHeapStatement){
-            WriteHeapStatement writeHeapStatement = (WriteHeapStatement)statement;
-            heap.put(myDictionary.lookUp(writeHeapStatement.getVariableName()), writeHeapStatement.getExpression().eval(myDictionary, heap));
-        }
+//        if(statement instanceof WriteHeapStatement){
+//            WriteHeapStatement writeHeapStatement = (WriteHeapStatement)statement;
+//            heap.put(myDictionary.lookUp(writeHeapStatement.getVariableName()), writeHeapStatement.getExpression().eval(myDictionary, heap));
+//        }
     }
 
     /**
