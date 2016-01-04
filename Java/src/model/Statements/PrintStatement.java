@@ -1,7 +1,8 @@
 package model.Statements;
 
-import interfaces.IStatement;
-import interfaces.Expression;
+import Exceptions.DivideByZeroException;
+import Exceptions.ValueNotFoundException;
+import interfaces.*;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -43,5 +44,11 @@ public class PrintStatement implements IStatement {
     public String toString() {
         return "Print(" + expression.toString() + ")";
 
+    }
+
+    @Override
+    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+        Expression expr = getExpression();
+        output.add(String.valueOf(expr.eval(myDictionary, heap)));
     }
 }

@@ -1,7 +1,8 @@
 package model.Statements;
 
-import interfaces.Expression;
-import interfaces.IStatement;
+import Exceptions.DivideByZeroException;
+import Exceptions.ValueNotFoundException;
+import interfaces.*;
 
 /**
  * Created by Lucian on 11/10/2015.
@@ -33,6 +34,18 @@ public class SwitchStatement implements IStatement {
                 + "case " + case1.toString() + "\n" +  statementCase1.toString()
                 + "\ncase " + case2.toString() + "\n" + statementCase2.toString()
                 + "\ndefault " + statementDefault.toString();
+    }
+
+    @Override
+    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+        Expression expression = getExpression();
+        if (getCase1().eval(myDictionary, heap) == expression.eval(myDictionary, heap)) {
+            myStack.push(getStatementCase1());
+        }
+        if (getCase2().eval(myDictionary, heap) == expression.eval(myDictionary, heap)) {
+            myStack.push(getStatementCase2());
+        }
+        myStack.push(getStatementDefault());
     }
 
     public Expression getExpression() {

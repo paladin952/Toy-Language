@@ -1,7 +1,9 @@
 package model.Statements;
 
-import interfaces.Expression;
-import interfaces.IStatement;
+import Exceptions.*;
+import interfaces.*;
+import model.Collections.WrapperStack;
+import model.ProgramState;
 
 /**
  * Created by Lucian on 11/10/2015.
@@ -36,5 +38,10 @@ public class WhileStatement implements IStatement {
     @Override
     public String toString() {
         return "While( " + expression.toString() + " )" + "{ " + statement.toString() + "\n}";
+    }
+
+    @Override
+    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+        //TODO think how to solve the coupling with the controller
     }
 }

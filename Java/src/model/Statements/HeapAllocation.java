@@ -2,11 +2,7 @@ package model.Statements;
 
 import Exceptions.DivideByZeroException;
 import Exceptions.ValueNotFoundException;
-import interfaces.Expression;
-import interfaces.IDictionary;
-import interfaces.IHeap;
-import interfaces.IStatement;
-import model.Collections.MyHeap;
+import interfaces.*;
 
 /**
  * Created by Lucian on 11/21/2015.
@@ -23,7 +19,7 @@ public class HeapAllocation implements IStatement {
     /**
      * Private contructor, use builder
      */
-    public HeapAllocation(String variableName, Expression expression){
+    public HeapAllocation(String variableName, Expression expression) {
         this.variableName = variableName;
 //        this.expressionResult = expression.eval(symbolicTable);
         this.expression = expression;
@@ -44,5 +40,12 @@ public class HeapAllocation implements IStatement {
     @Override
     public String toString() {
         return "HeapAllocation{ " + variableName + " -> " + expression.toString() + " }";
+    }
+
+    @Override
+    public void oneStep(IStack<IStatement> myStack, IHeap<Integer, Integer> heap, IDictionary<String, Integer> myDictionary, IList<String> output) throws DivideByZeroException, ValueNotFoundException {
+        int pointer = heap.size();
+        heap.put(pointer, getExpression().eval(myDictionary, heap));
+        myDictionary.put(getVariableName(), pointer);
     }
 }
