@@ -60,7 +60,7 @@ namespace ToyLanguage
     */
         public void createProgram(IMyStatement initialStatement)
         {
-            repository.createProgram(new WrapperStack<IMyStatement>(), new WrapperDictionary<string, int>(), new WrapperList<string>(), initialStatement);
+            repository.createProgram(new WrapperStack<IMyStatement>(), new WrapperDictionary<string, int>(), new WrapperList<string>(), new MyHeap<int, int>(), initialStatement);
         }
 
         /**
@@ -71,7 +71,8 @@ namespace ToyLanguage
         private void oneStep(ProgramState programState)
         {
             IMyStack<IMyStatement> myStack = repository.getCurrentState().getExecutionStack();
-
+            IMyDictionary<string, int> myDictionary = programState.getMyDictionary();
+            IHeap<int, int> heap = programState.getHeap();
             if (myStack.isEmpty())
                 throw new StatementExecutionException();
             IMyStatement statement = myStack.pop();
@@ -87,27 +88,27 @@ namespace ToyLanguage
                 AssignStatement assignStatement = (AssignStatement)statement;
                 IExpressions expression = assignStatement.getExpression();
                 String id = assignStatement.getVariableName();
-                IMyDictionary<String, int> myDictionary = programState.getMyDictionary();
+ 
 
-                int val = expression.eval(myDictionary);
+                int val = expression.eval(myDictionary, heap);
                 //insert or update
                 myDictionary.put(id, val);
                 return;
             }
 
             if (statement.GetType() == typeof(PrintStatement)) {
-                IMyDictionary<String, int> myDictionary = programState.getMyDictionary();
+ 
                 IMyList<String> output = programState.getOutput();
                 PrintStatement printStatement = (PrintStatement)statement;
                 IExpressions expr = printStatement.getExpression();
-                output.add(expr.eval(myDictionary).ToString());
+                output.add(expr.eval(myDictionary, heap).ToString());
                 return;
             }
 
             if (statement.GetType() == typeof(IfStatement)) {
-                IMyDictionary<String, int> myDictionary = programState.getMyDictionary();
+                
                 IfStatement ifStatement = (IfStatement)statement;
-                if (ifStatement.getExpression().eval(myDictionary) != 0)
+                if (ifStatement.getExpression().eval(myDictionary, heap) != 0)
                 {
                     myStack.push(ifStatement.getThenStatement());
                 }
@@ -116,6 +117,18 @@ namespace ToyLanguage
                     myStack.push(ifStatement.getElseStatement());
                 }
                 return;
+            }
+
+            if (statement.GetType() ==  typeof(HeapAllocation)){
+                HeapAllocation heapAllocation = (HeapAllocation)statement;
+                int pointer = heap.size();
+                heap.put(pointer, heapAllocation.getExpression().eval(myDictionary, heap));
+                myDictionary.put(heapAllocation.getVariableName(), pointer);
+            }
+
+            if (statement.GetType() == typeof(WriteHeapStatement)){
+                WriteHeapStatement writeHeapStatement = (WriteHeapStatement)statement;
+                heap.put(myDictionary.lookUp(writeHeapStatement.getVariableName()), writeHeapStatement.getExpression().eval(myDictionary, heap));
             }
         }
 

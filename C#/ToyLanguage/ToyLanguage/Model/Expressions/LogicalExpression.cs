@@ -63,13 +63,13 @@ namespace ToyLanguage.Model.Expressions
          * @param table The table of values in case of a variable
          * @return int result
          */
-     public int eval(IMyDictionary<string, int> table)
+     public int eval(IMyDictionary<string, int> table, IHeap<int, int> heap)
         {
 
             bool firstBoolean;
             bool secondBoolean;
 
-            if (firstExpression.eval(table) == 0)
+            if (firstExpression.eval(table, heap) == 0)
             {
                 firstBoolean = false;
             }
@@ -78,7 +78,7 @@ namespace ToyLanguage.Model.Expressions
                 firstBoolean = true;
             }
 
-            if (firstExpression.eval(table) == 0)
+            if (firstExpression.eval(table, heap) == 0)
             {
                 secondBoolean = false;
             }

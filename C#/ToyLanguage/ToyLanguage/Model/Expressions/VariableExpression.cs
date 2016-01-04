@@ -30,7 +30,7 @@ namespace ToyLanguage.Model.Expressions
          * @return int value
          */
    
-    public int eval(IMyDictionary<string, int> table)
+    public int eval(IMyDictionary<string, int> table, IHeap<int, int> heap)
         {
             return table.lookUp(name);
         }

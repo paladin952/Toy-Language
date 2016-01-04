@@ -115,7 +115,8 @@ namespace ToyLanguage.UiPackage
                         break;
                     case 5:
                         controller.DeSerialize();
-                        break;                    case 6: // for testing
+                        break;
+                    case 6: // for testing
                             //                    IStatement logical1 = new CompoundStatement(new AssignStatement("a", new LogicExpression("&&", new ConstantExpression(10), new ArithmeticExpression("-", new ConstantExpression(10),
                             //                            new ConstantExpression(10)))), new PrintStatement(new VariableExpression("a")));
                             //
@@ -127,7 +128,29 @@ namespace ToyLanguage.UiPackage
 
                         IMyStatement switchStatement = new CompoundStatement(new AssignStatement("a", new ConstantExpression(2)),
                                 new SwitchStatement(new VariableExpression("a"), new ConstantExpression(3), new ConstantExpression(2), new PrintStatement(new ConstantExpression(100)), new PrintStatement(new ConstantExpression(3)), new PrintStatement(new ConstantExpression(2))));
-                        controller.createProgram(switchStatement);
+
+                        IMyStatement allocation =
+                           new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                               new CompoundStatement(new HeapAllocation("v", new ConstantExpression(20)),
+                                   new CompoundStatement(new HeapAllocation("a", new ConstantExpression(22)), new PrintStatement(new VariableExpression("v")))));
+
+                        IMyStatement readHeap =
+                                new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                                    new CompoundStatement(new HeapAllocation("v", new ConstantExpression(20)),
+                                        new CompoundStatement(new HeapAllocation("a", new ConstantExpression(22)),
+                                            new CompoundStatement(new PrintStatement(new ArithmeticExpression("+", new ConstantExpression(100), new ReadHeap("v"))),
+                                                new PrintStatement(new ArithmeticExpression("+", new ConstantExpression(100), new ReadHeap("a")))))));
+
+                        IMyStatement writeHeap =
+                                new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                                    new CompoundStatement(new HeapAllocation("v", new ConstantExpression(20)),
+                                            new CompoundStatement(new HeapAllocation("a", new ConstantExpression(22)),
+                                                    new CompoundStatement(new WriteHeapStatement("a", new ConstantExpression(30)),
+                                                            new CompoundStatement(new PrintStatement(new VariableExpression("a")), new PrintStatement(new ReadHeap("a")))))));
+
+
+
+                        controller.createProgram(writeHeap);
                         break;
 
                 }

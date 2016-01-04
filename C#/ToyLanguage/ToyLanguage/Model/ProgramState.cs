@@ -31,13 +31,19 @@ namespace ToyLanguage.Model
          */
         private IMyStatement originalProgram;
 
-        public ProgramState(IMyStack<IMyStatement> executionStack, IMyDictionary<string, int> myDictionary, IMyList<string> output, IMyStatement originalProgram)
+        /**
+    * The heap
+    */
+        private IHeap<int, int> heap;
+
+        public ProgramState(IMyStack<IMyStatement> executionStack, IMyDictionary<string, int> myDictionary, IMyList<string> output, IHeap<int, int> heap, IMyStatement originalProgram)
         {
             this.executionStack = executionStack;
             this.myDictionary = myDictionary;
             this.output = output;
             this.originalProgram = originalProgram;
             this.executionStack.push(originalProgram);
+            this.heap = heap;
         }
 
         /**
@@ -52,6 +58,9 @@ namespace ToyLanguage.Model
             result.Append("Execution stack: \n");
             result.Append(executionStack.ToString());
 
+            result.Append("HEAP: \n");
+            result.Append(heap.ToString());
+
             result.Append("My dictionary: \n");
             result.Append("\n");
             result.Append(myDictionary.ToString());
@@ -64,6 +73,16 @@ namespace ToyLanguage.Model
         /**
          * Getters and setters
          */
+
+        public IHeap<int, int> getHeap()
+        {
+            return heap;
+        }
+
+        public void setHeap(IHeap<int, int> heap)
+        {
+            this.heap = heap;
+        }
 
         public IMyStack<IMyStatement> getExecutionStack()
         {
