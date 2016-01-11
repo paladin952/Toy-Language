@@ -81,17 +81,18 @@ public class Repository implements IRepository {
     }
 
     @Override
-    public void saveStateInFile() {
+    public void saveStateInFile(String message) {
         PrintWriter writer = null;
         ProgramState programState = programStateList.get(programStateList.size() - 1);
         try {
             writer = new PrintWriter(PATH_TO_SAVE_STATE_FILE, "UTF-8");
-            writer.println("STACK:");
-            writer.println(programState.getExecutionStack().toString());
-            writer.println("Symbolic Table");
-            writer.println(programState.getMyDictionary().toString());
-            writer.println("Output");
-            writer.println(programState.getOutput().toString());
+//            writer.println("STACK:");
+//            writer.println(programState.getExecutionStack().toString());
+//            writer.println("Symbolic Table");
+//            writer.println(programState.getMyDictionary().toString());
+//            writer.println("Output");
+//            writer.println(programState.getOutput().toString());
+            writer.println(message);
             writer.close();
         } catch (FileNotFoundException | UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -115,7 +116,7 @@ public class Repository implements IRepository {
     public void removeCompleteProgramState() {
         List<ProgramState> copyOfList = new ArrayList<ProgramState>(programStateList);
         for(ProgramState state:copyOfList){
-            if (state.isComplete()){
+            if (state.isNotCompleted()){
                 programStateList.remove(state);
             }
         }

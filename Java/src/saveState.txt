@@ -1,9 +1,12 @@
 STACK:
 
 Symbolic Table
-a->2
+a->0
+v->32
 
 Output
-100
-2
+32
+22
+32
+22
 

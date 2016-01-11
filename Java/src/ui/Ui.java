@@ -62,6 +62,8 @@ public class Ui implements Controller.PrintState {
                             System.out.println(e.toString());
                         } catch (DivideByZeroException e) {
                             System.out.println("Divide by zero!");
+                        } catch (InterruptedException e) {
+                            System.out.println("Intreruption exception");
                         }
                     } else { //all steps
                         try {
@@ -72,6 +74,8 @@ public class Ui implements Controller.PrintState {
                             e.printStackTrace();
                         } catch (DivideByZeroException e) {
                             System.out.println("Divide by zero!");
+                        } catch (InterruptedException e) {
+                            System.out.println("Intreruption exception");
                         }
                     }
                     break;
@@ -321,7 +325,7 @@ public class Ui implements Controller.PrintState {
     }
 
     @Override
-    public void print(String message) {
+    synchronized public void print(String message) {
         System.out.println(message);
     }
 }
