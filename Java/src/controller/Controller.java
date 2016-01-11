@@ -7,11 +7,14 @@ import model.Collections.WrapperDictionary;
 import model.Collections.WrapperList;
 import model.Collections.WrapperStack;
 import model.ProgramState;
-import threads.ForkThread;
 import utils.Constants;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -69,31 +72,55 @@ public class Controller {
     }
 
     /**
+     * Removes the completed program states
+     *
+     * @param inPrgList The program state lists
+     * @return The program state list
+     */
+    public java.util.List<ProgramState> removeCompletedPrg(java.util.List<ProgramState> inPrgList) {
+        return inPrgList.stream()
+                .filter(ProgramState::isNotCompleted)
+                .collect(Collectors.toList());
+    }
+
+    /**
      * Run the program in debug mode, one step at a time
      *
      * @throws StatementExecutionException
      */
-    private void oneStepForAll() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
+    private void oneStepForAll() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException, InterruptedException {
 
-        List<ProgramState> list = repository.getProgramStateList();
-        Collections.synchronizedList(list);
-        repository.removeCompleteProgramState();
-        ProgramState isFork;
+        List<ProgramState> programStatesList = repository.getProgramStateList();
+        ExecutorService executor = Executors.newSingleThreadExecutor();
 
-        for (int i = 0; i < list.size(); i++) {
-            isFork = list.get(i).oneStep(list.get(i));
+        java.util.List<Callable<ProgramState>> callList = programStatesList.stream()
+                .map(p -> (Callable<ProgramState>) p::oneStep)
+                .collect(Collectors.toList());
 
-            if (isFork != null) {
-                Runnable runnable = new ForkThread(isFork, printListener);
-                new Thread(runnable).start();
-            }
+        java.util.List<ProgramState> newProgramState = executor.invokeAll(callList).stream()
+                .map(future -> {
+                    try {
+                        return future.get();
+                    } catch (Exception e) {
+                        return null;
+                    }
+                })
+                .filter(p -> p != null)
+                .collect(Collectors.toList());
 
-            if (PRINT_FLAG == Constants.PRINT_CONSOLE) {
-                System.out.println("Id=1");
-                printListener.print(list.get(i).toString());
-            } else if (PRINT_FLAG == Constants.PRINT_IN_FILE) {
-                repository.saveStateInFile();
-            }
+        programStatesList.forEach(p -> {
+            if (!newProgramState.stream().anyMatch(s -> s.getStateId() == p.getStateId()))
+                newProgramState.add(p);
+        });
+
+        repository.setProgramStateList(programStatesList);
+
+        executor.shutdown();
+
+        if (PRINT_FLAG == Constants.PRINT_IN_FILE) {
+            newProgramState.forEach(p -> saveInFile(p.toString()));
+        } else if (PRINT_FLAG == Constants.PRINT_CONSOLE) {
+            newProgramState.forEach(p -> printListener.print(p.toString()));
         }
     }
 
@@ -102,9 +129,14 @@ public class Controller {
      *
      * @throws StatementExecutionException
      */
-    public void runAllSteps() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
-        while (!repository.getBiggerProgramState().getExecutionStack().isEmpty()) {
-            oneStepForAll();
+    public void runAllSteps() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException, InterruptedException {
+        while (true) {
+            java.util.List<ProgramState> prgList = removeCompletedPrg(repository.getProgramStateList());
+            if (prgList.size() == 0) {
+                return;
+            } else {
+                oneStepForAll();
+            }
         }
     }
 
@@ -113,8 +145,11 @@ public class Controller {
      *
      * @throws StatementExecutionException
      */
-    public void runOneStep() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
-        if (repository.getBiggerProgramState().getExecutionStack().size() > 0) {
+    public void runOneStep() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException, InterruptedException {
+        java.util.List<ProgramState> prgList = removeCompletedPrg(repository.getProgramStateList());
+        if (prgList.size() == 0) {
+            return;
+        } else {
             oneStepForAll();
         }
     }
@@ -127,13 +162,13 @@ public class Controller {
     }
 
     /**
-     * Deserializing the program state
+     * Deserialisation the program state
      */
     public void deSerialize() {
         repository.deSerialize();
     }
 
-    public void saveInFile() {
-        repository.saveStateInFile();
+    public void saveInFile(String message) {
+        repository.saveStateInFile(message);
     }
 }

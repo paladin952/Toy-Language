@@ -27,6 +27,16 @@ public class ProgramState implements java.io.Serializable {
     private IList<String> output;
 
     /**
+     * The state id
+     */
+    private int stateId;
+
+    /**
+     * The global state id
+     */
+    private static int globalStateId = 0;
+
+    /**
      * The heap
      */
     private IHeap<Integer, Integer> heap;
@@ -36,6 +46,7 @@ public class ProgramState implements java.io.Serializable {
      */
     private transient IStatement originalProgram;
 
+
     public ProgramState(IStack<IStatement> executionStack, IDictionary<String, Integer> myDictionary, IList<String> output, IHeap<Integer, Integer> heap, IStatement originalProgram) {
         this.executionStack = executionStack;
         this.myDictionary = myDictionary;
@@ -43,6 +54,17 @@ public class ProgramState implements java.io.Serializable {
         this.originalProgram = originalProgram;
         this.executionStack.push(originalProgram);
         this.heap = heap;
+        this.stateId = globalStateId ++;
+    }
+
+    public ProgramState(IStack<IStatement> executionStack, IDictionary<String, Integer> myDictionary, IList<String> output, IHeap<Integer, Integer> heap, IStatement originalProgram, int id) {
+        this.executionStack = executionStack;
+        this.myDictionary = myDictionary;
+        this.output = output;
+        this.originalProgram = originalProgram;
+        this.executionStack.push(originalProgram);
+        this.heap = heap;
+        this.stateId = id;
     }
 
     /**
@@ -53,6 +75,7 @@ public class ProgramState implements java.io.Serializable {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
+        result.append("Id: " + stateId + "\n");
         result.append("Execution stack: \n");
         result.append(executionStack.toString());
 
@@ -87,29 +110,30 @@ public class ProgramState implements java.io.Serializable {
     /**
      * @return True if executionStack is complete, false otherwise
      */
-    public boolean isComplete() {
-        return executionStack.isEmpty();
+    public boolean isNotCompleted() {
+        return !executionStack.isEmpty();
     }
 
     /**
      * Run the program in debug mode, one step at a time
      *
-     * @param programState The program
      * @throws StatementExecutionException
      */
-    public ProgramState oneStep(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
+    public ProgramState oneStep() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
         IStack<IStatement> myStack = getExecutionStack();
         if (myStack.isEmpty())
             throw new StatementExecutionException();
         IStatement statement = myStack.pop();
-        return statement.execute(programState);
-
-
+        return statement.execute(this);
     }
 
     /**
      * Getters and setters
      */
+
+    public int getStateId(){
+        return stateId;
+    }
 
     public IStack<IStatement> getExecutionStack() {
         return executionStack;

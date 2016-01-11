@@ -48,7 +48,7 @@ public interface IRepository {
     /**
      * Save the state of the repo in file
      */
-    void saveStateInFile();
+    void saveStateInFile(String message);
 
     /**
      * Return the program state with the most elements
