@@ -13,7 +13,7 @@ public class WrapperDictionary<K, V> implements IDictionary<K, V> {
     /**
      * The storage map
      */
-    private Map<K, V> map;
+    protected Map<K, V> map;
 
     /**
      * The constructor
