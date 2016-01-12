@@ -149,7 +149,14 @@ public class Ui implements Controller.PrintState {
                     controller.createProgram(fork);
                     break;
             }
-        } while (true);
+        } while (true);dsadsadsadsadsa
+    }
+
+    /**
+     * main function for showing the graphical interface
+     */
+    private void showGUI(){
+
     }
 
     /**

@@ -226,10 +226,12 @@
         <option value="$PROJECT_DIR$/src/model/Collections/WrapperList.java" />
         <option value="$PROJECT_DIR$/src/threads/ForkThread.java" />
         <option value="$PROJECT_DIR$/src/model/ProgramState.java" />
-        <option value="$PROJECT_DIR$/src/ui/Ui.java" />
         <option value="$PROJECT_DIR$/src/repository/Repository.java" />
         <option value="$PROJECT_DIR$/src/interfaces/IRepository.java" />
         <option value="$PROJECT_DIR$/src/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/model/Collections/WrapperDictionary.java" />
+        <option value="$PROJECT_DIR$/src/model/Statements/HeapAllocation.java" />
+        <option value="$PROJECT_DIR$/src/model/Collections/MyHeap.java" />
       </list>
     </option>
   </component>
@@ -731,7 +733,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ui/Ui.java</url>
-          <line>289</line>
+          <line>296</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
@@ -1225,7 +1227,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/Ui.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="145" column="100" selection-start-line="145" selection-start-column="100" selection-end-line="145" selection-end-column="100" />
@@ -1235,8 +1237,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67105263">
-          <caret line="111" column="80" selection-start-line="111" selection-start-column="80" selection-end-line="111" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.7923664">
+          <caret line="120" column="67" selection-start-line="120" selection-start-column="67" selection-end-line="120" selection-end-column="67" />
           <folding>
             <element signature="e#3454#3455#0" expanded="true" />
             <element signature="e#3492#3493#0" expanded="true" />
@@ -1245,6 +1247,14 @@
             <element signature="e#3652#3653#0" expanded="true" />
             <element signature="e#3696#3697#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/Ui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4204793">
+          <caret line="151" column="38" selection-start-line="151" selection-start-column="38" selection-end-line="151" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
