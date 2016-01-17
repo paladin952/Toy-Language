@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +73,7 @@
     <Compile Include="Model\ProgramState.cs" />
     <Compile Include="Model\Statements\AssignStatement.cs" />
     <Compile Include="Model\Statements\CompoundStatement.cs" />
+    <Compile Include="Model\Statements\ForkStatement.cs" />
     <Compile Include="Model\Statements\HeapAllocation.cs" />
     <Compile Include="Model\Statements\IfStatement.cs" />
     <Compile Include="Model\Statements\PrintStatement.cs" />
@@ -81,6 +84,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="UiPackage\Gui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiPackage\Gui.Designer.cs">
+      <DependentUpon>Gui.cs</DependentUpon>
+    </Compile>
     <Compile Include="UiPackage\UserInterface.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\MenuUtils.cs" />
@@ -91,6 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UiPackage\Gui.resx">
+      <DependentUpon>Gui.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

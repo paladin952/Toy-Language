@@ -51,5 +51,12 @@ namespace ToyLanguage.Model.Statements
                 return "Print(" + expression.MyToString() + ")";
 
         }
+
+        public ProgramState execute(ProgramState programState)
+        {
+            IMyList<String> output = programState.getOutput();
+            output.add(expression.eval(programState.getMyDictionary(), programState.getHeap()).ToString());
+            return null;
+        }
     }
 }

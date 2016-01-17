@@ -10,6 +10,12 @@ namespace ToyLanguage.Model.Statements
     [Serializable]
     class SkipStatement : IMyStatement
     {
+        public ProgramState execute(ProgramState programState)
+        {
+            //do nothing
+            return null;
+        }
+
         public string MyToString()
         {
             return "Skip";

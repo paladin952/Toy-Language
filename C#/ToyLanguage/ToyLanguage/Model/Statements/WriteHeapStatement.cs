@@ -47,5 +47,12 @@ namespace ToyLanguage.Model.Statements
     {
         return "ReadHeap( " + variableName + " )";
     }
+
+        public ProgramState execute(ProgramState programState)
+        {
+          
+            programState.getHeap().put(programState.getMyDictionary().lookUp(variableName), expression.eval(programState.getMyDictionary(), programState.getHeap()));
+            return null;
+        }
     }
 }

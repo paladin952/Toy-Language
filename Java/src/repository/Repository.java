@@ -82,19 +82,19 @@ public class Repository implements IRepository {
 
     @Override
     public void saveStateInFile(String message) {
-        PrintWriter writer = null;
+        PrintWriter writer;
         ProgramState programState = programStateList.get(programStateList.size() - 1);
         try {
-            writer = new PrintWriter(PATH_TO_SAVE_STATE_FILE, "UTF-8");
-//            writer.println("STACK:");
-//            writer.println(programState.getExecutionStack().toString());
-//            writer.println("Symbolic Table");
-//            writer.println(programState.getMyDictionary().toString());
-//            writer.println("Output");
-//            writer.println(programState.getOutput().toString());
+            writer = new PrintWriter(new BufferedWriter(new FileWriter(PATH_TO_SAVE_STATE_FILE, true)));
+            writer.println("STACK:");
+            writer.println(programState.getExecutionStack().toString());
+            writer.println("Symbolic Table");
+            writer.println(programState.getMyDictionary().toString());
+            writer.println("Output");
+            writer.println(programState.getOutput().toString());
             writer.println(message);
             writer.close();
-        } catch (FileNotFoundException | UnsupportedEncodingException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -103,8 +103,8 @@ public class Repository implements IRepository {
     public ProgramState getBiggerProgramState() {
         int max = -1;
         ProgramState result = null;
-        for(ProgramState states:programStateList){
-            if(states.getExecutionStack().size()>max){
+        for (ProgramState states : programStateList) {
+            if (states.getExecutionStack().size() > max) {
                 max = states.getExecutionStack().size();
                 result = states;
             }
@@ -115,8 +115,8 @@ public class Repository implements IRepository {
     @Override
     public void removeCompleteProgramState() {
         List<ProgramState> copyOfList = new ArrayList<ProgramState>(programStateList);
-        for(ProgramState state:copyOfList){
-            if (state.isNotCompleted()){
+        for (ProgramState state : copyOfList) {
+            if (state.isNotCompleted()) {
                 programStateList.remove(state);
             }
         }

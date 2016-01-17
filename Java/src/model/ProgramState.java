@@ -57,15 +57,6 @@ public class ProgramState implements java.io.Serializable {
         this.stateId = globalStateId ++;
     }
 
-    public ProgramState(IStack<IStatement> executionStack, IDictionary<String, Integer> myDictionary, IList<String> output, IHeap<Integer, Integer> heap, IStatement originalProgram, int id) {
-        this.executionStack = executionStack;
-        this.myDictionary = myDictionary;
-        this.output = output;
-        this.originalProgram = originalProgram;
-        this.executionStack.push(originalProgram);
-        this.heap = heap;
-        this.stateId = id;
-    }
 
     /**
      * String representation

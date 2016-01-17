@@ -94,5 +94,18 @@ namespace ToyLanguage.Model.Statements
         {
             this.elseStatement = elseStatement;
         }
+
+        public ProgramState execute(ProgramState programState)
+        {
+            if (expression.eval(programState.getMyDictionary(), programState.getHeap()) != 0)
+            {
+                programState.getExecutionStack().push(thenStatement);
+            }
+            else
+            {
+                programState.getExecutionStack().push(elseStatement);
+            }
+            return null;
+        }
     }
 }
