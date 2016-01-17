@@ -33,10 +33,10 @@ namespace ToyLanguage.Model.Statements
 
         public String MyToString()
         {
-            return "switch(" + expression.MyToString() + ")\n{"
-                    + "case " + case1.MyToString() + "\n" + statementCase1.MyToString()
-                    + "\ncase " + case2.MyToString() + "\n" + statementCase2.MyToString()
-                    + "\ndefault " + statementDefault.MyToString();
+            return "switch(" + expression.MyToString() + ")"+ Environment.NewLine +"{"
+                    + "case " + case1.MyToString() + Environment.NewLine + statementCase1.MyToString()
+                    + Environment.NewLine+"case " + case2.MyToString() + Environment.NewLine + statementCase2.MyToString()
+                    + Environment.NewLine+"default " + statementDefault.MyToString();
         }
 
         public IExpressions getExpression()
@@ -67,6 +67,11 @@ namespace ToyLanguage.Model.Statements
         public IMyStatement getStatementCase2()
         {
             return statementCase2;
+        }
+
+        public ProgramState execute(ProgramState programState)
+        {
+            throw new NotImplementedException();
         }
     }
 }

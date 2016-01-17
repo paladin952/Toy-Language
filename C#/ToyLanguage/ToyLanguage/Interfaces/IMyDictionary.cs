@@ -16,6 +16,10 @@ namespace ToyLanguage.Interfaces
          */
         V lookUp(K id);
 
+        void addAll(Dictionary<K, V> all);
+
+        Dictionary<K, V> getMap();
+
         /**
          * Check if dictionary is empty
          *

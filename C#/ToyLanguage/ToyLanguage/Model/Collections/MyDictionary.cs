@@ -223,5 +223,15 @@ namespace ToyLanguage.Model.Collections
         }
         return result.ToString();
     }
-}
+
+        public void addAll(Dictionary<K, V> all)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Dictionary<K, V> getMap()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

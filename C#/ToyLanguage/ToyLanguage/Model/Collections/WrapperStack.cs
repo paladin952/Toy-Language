@@ -61,7 +61,7 @@ namespace ToyLanguage.Model.Collections
 
             foreach(T element in stack){
                 result.Append(element.MyToString());
-                result.Append("\n");
+                result.Append(Environment.NewLine);
                
             }
             return result.ToString();

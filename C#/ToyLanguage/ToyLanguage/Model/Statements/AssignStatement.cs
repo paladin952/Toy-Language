@@ -64,5 +64,14 @@ namespace ToyLanguage.Model.Statements
             
             return variableName + "=" + expression.MyToString();
         }
+
+        public ProgramState execute(ProgramState programState)
+        {
+           
+            int val = expression.eval(programState.getMyDictionary(), programState.getHeap());
+            //insert or update
+            programState.getMyDictionary().put(variableName, val);
+            return null;
+        }
     }
 }

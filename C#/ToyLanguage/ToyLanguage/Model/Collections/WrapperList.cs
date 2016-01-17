@@ -59,7 +59,7 @@ namespace ToyLanguage.Model.Collections
         {
             StringBuilder result = new StringBuilder();
             foreach (T element in data){
-                result.Append(element.ToString() + "\n");
+                result.Append(element.ToString() + Environment.NewLine);
             }
             return result.ToString();
         }

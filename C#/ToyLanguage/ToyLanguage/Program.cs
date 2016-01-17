@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using ToyLanguage.Interfaces;
 using ToyLanguage.UiPackage;
 
@@ -12,13 +13,8 @@ namespace ToyLanguage
     {
         static void Main(string[] args)
         {
-            //init objects
-            IRepository repository = new Repository();
-            Controller controller = new Controller(repository);
-            UserInterface ui = new UserInterface(controller);
-
-            //start ui
-            ui.run();
+            Application.Run(new Gui());
+                  
         }
     }
 }

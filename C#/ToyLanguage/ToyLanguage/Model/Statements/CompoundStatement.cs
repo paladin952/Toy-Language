@@ -62,5 +62,12 @@ namespace ToyLanguage.Model.Statements
         {
             return firstStatement.MyToString() + ";" + secondStatement.MyToString();
         }
+
+        public ProgramState execute(ProgramState programState)
+        {
+            programState.getExecutionStack().push(secondStatement);
+            programState.getExecutionStack().push(firstStatement);
+            return null;
+        }
     }
 }

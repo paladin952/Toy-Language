@@ -57,7 +57,7 @@ namespace ToyLanguage.UiPackage
                         { // one step at a time
                             try
                             {
-                                controller.runOneStep();
+                                controller.oneStepForAll();
                             }
                             catch (StatementExecutionException e)
                             {
@@ -148,9 +148,17 @@ namespace ToyLanguage.UiPackage
                                                     new CompoundStatement(new WriteHeapStatement("a", new ConstantExpression(30)),
                                                             new CompoundStatement(new PrintStatement(new VariableExpression("a")), new PrintStatement(new ReadHeap("a")))))));
 
+                        IMyStatement fork =
+                           new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                                   new CompoundStatement(new HeapAllocation("a", new ConstantExpression(22)),
+                                           new CompoundStatement(new ForkStatement(new WriteHeapStatement("a", new ConstantExpression(30))),
+                                                   new CompoundStatement(new AssignStatement("v", new ConstantExpression(32)),
+                                                           new CompoundStatement(new PrintStatement(new VariableExpression("v")),
+                                                                   new CompoundStatement(new PrintStatement(new ReadHeap("a")),
+                                                                           new CompoundStatement(new PrintStatement(new VariableExpression("v")), new PrintStatement(new ReadHeap("a")))))))));
 
 
-                        controller.createProgram(writeHeap);
+                        controller.createProgram(fork);
                         break;
 
                 }

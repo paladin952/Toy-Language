@@ -46,5 +46,13 @@ namespace ToyLanguage.Model.Statements
         {
             return "HeapAllocation{ " + variableName + " -> " + expression.MyToString() + " }";
         }
+
+        public ProgramState execute(ProgramState programState)
+        {
+            int pointer = programState.getHeap().size() + 1;
+            programState.getHeap().put(pointer,expression.eval(programState.getMyDictionary(), programState.getHeap()));
+            programState.getMyDictionary().put(variableName, pointer);
+            return null;
+        }
     }
 }

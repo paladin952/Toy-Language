@@ -30,5 +30,17 @@ namespace ToyLanguage.Interfaces
         void DeSerialize();
 
         void SaveStateInFile();
+
+        /**
+    * Set the list of program states
+    * @param list the list
+    */
+        void setProgramStateList(List<ProgramState> list);
+
+        /**
+         * Get the program state list
+         * @return The list
+         */
+        List<ProgramState> getProgramStateList();
     }
 }

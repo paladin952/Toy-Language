@@ -34,7 +34,17 @@ namespace ToyLanguage
             programStateList.Add(new ProgramState(mExecutionStack, myDictionary, mOutput, heap, mInitialProgram));
         }
 
-       
+    public void setProgramStateList(List<ProgramState> list)
+        {
+            programStateList = list;
+        }
+
+      
+    public List<ProgramState> getProgramStateList()
+        {
+            return programStateList;
+        }
+
         /**
          * Get the latest program state
          * @return The ProgramState
