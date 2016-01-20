@@ -2,8 +2,14 @@ package model;
 
 import Exceptions.*;
 import interfaces.*;
+import javafx.util.Pair;
+import model.Collections.WrapperDictionary;
 import model.Collections.WrapperStack;
 import model.Statements.WhileStatement;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * Created by Lucian on 10/19/2015.
@@ -14,11 +20,6 @@ public class ProgramState implements java.io.Serializable {
      * The execution stack containing statements
      */
     private IStack<IStatement> executionStack;
-
-    /**
-     * The table of variables as a hash map
-     */
-    private IDictionary<String, Integer> myDictionary;
 
     /**
      * List of output
@@ -36,6 +37,12 @@ public class ProgramState implements java.io.Serializable {
      */
     private static int globalStateId = 0;
 
+    private Stack<IDictionary<String, Integer>> symbolicTableStack;
+
+    private Map<String, Pair<List<String>, IStatement>> proceduresTable;
+
+
+
     /**
      * The heap
      */
@@ -47,9 +54,9 @@ public class ProgramState implements java.io.Serializable {
     private transient IStatement originalProgram;
 
 
-    public ProgramState(IStack<IStatement> executionStack, IDictionary<String, Integer> myDictionary, IList<String> output, IHeap<Integer, Integer> heap, IStatement originalProgram) {
+    public ProgramState(IStack<IStatement> executionStack, Stack<IDictionary<String, Integer>> symbolicTableStack, IList<String> output, IHeap<Integer, Integer> heap, IStatement originalProgram) {
         this.executionStack = executionStack;
-        this.myDictionary = myDictionary;
+        this.symbolicTableStack = symbolicTableStack;
         this.output = output;
         this.originalProgram = originalProgram;
         this.executionStack.push(originalProgram);
@@ -73,9 +80,9 @@ public class ProgramState implements java.io.Serializable {
         result.append("HEAP: \n");
         result.append(heap.toString());
 
-        result.append("My dictionary: \n");
-        result.append("\n");
-        result.append(myDictionary.toString());
+//        result.append("My dictionary: \n");
+//        result.append("\n");
+//        result.append(myDictionary.toString());
 
         result.append("Output: \n");
         result.append(output.toString());
@@ -135,11 +142,15 @@ public class ProgramState implements java.io.Serializable {
     }
 
     public IDictionary<String, Integer> getMyDictionary() {
-        return myDictionary;
+        return symbolicTableStack.pop();
     }
 
-    public void setMyDictionary(IDictionary<String, Integer> myDictionary) {
-        this.myDictionary = myDictionary;
+    public void setMyStackDictionary(Stack<IDictionary<String, Integer>> symbolicTableStack) {
+        this.symbolicTableStack = symbolicTableStack;
+    }
+
+    public Stack<IDictionary<String, Integer>> getStackDictionary(){
+        return symbolicTableStack;
     }
 
     public IList<String> getOutput() {

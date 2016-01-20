@@ -78,6 +78,7 @@
     <Compile Include="Model\Statements\IfStatement.cs" />
     <Compile Include="Model\Statements\PrintStatement.cs" />
     <Compile Include="Model\Statements\SkipStatement.cs" />
+    <Compile Include="Model\Statements\SleepStatement.cs" />
     <Compile Include="Model\Statements\SwitchStatement.cs" />
     <Compile Include="Model\Statements\WhileStatement.cs" />
     <Compile Include="Model\Statements\WriteHeapStatement.cs" />

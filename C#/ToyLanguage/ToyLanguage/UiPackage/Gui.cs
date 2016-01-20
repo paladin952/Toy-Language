@@ -36,7 +36,20 @@ namespace ToyLanguage.UiPackage
                                                            new CompoundStatement(new PrintStatement(new VariableExpression("v")),
                                                                    new CompoundStatement(new PrintStatement(new ReadHeap("a")),
                                                                             new CompoundStatement(new PrintStatement(new VariableExpression("v")), new PrintStatement(new ReadHeap("a")))))))));
-            controller.createProgram(fork);
+
+            //  v = 0;
+            //  (while (v < 3) (fork(print(v); v = v + 1); v = v + 1);
+            //  sleep(5);
+            //  print(v * 10)
+            //The final Out should be { 0,1,2,30}
+
+            IMyStatement sleep = new CompoundStatement(new AssignStatement("v", new Model.Expressions.ConstantExpression(0)),
+                new CompoundStatement(new WhileStatement(new CompoundStatement(new CompoundStatement(
+                    new ForkStatement(new PrintStatement(new VariableExpression("v"))), new AssignStatement("v", new ArithmeticExpression("+", new VariableExpression("v"), new Model.Expressions.ConstantExpression(1)))), 
+                    new AssignStatement("v", new ArithmeticExpression("+", new VariableExpression("v"), new Model.Expressions.ConstantExpression(1)))), new BooleanExpression("<", new VariableExpression("v"), new Model.Expressions.ConstantExpression(2))), 
+                new CompoundStatement(new SleepStatement(new Model.Expressions.ConstantExpression(5)),
+                new PrintStatement(new ArithmeticExpression("*", new VariableExpression("v"), new Model.Expressions.ConstantExpression(10))))));
+            controller.createProgram(sleep);
             controller.setListener(this);
         }
 

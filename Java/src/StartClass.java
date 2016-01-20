@@ -20,12 +20,12 @@ public class StartClass {
         new Tests();
 
         //init objects
-        IRepository repository = new Repository();
-        Controller controller = new Controller(repository);
 //        Ui ui = new Ui(controller);
 
         //start ui
 //        ui.run();
+        IRepository repository = new Repository();
+        Controller controller = new Controller(repository);
         Gui gui = new Gui(controller);
         gui.myShow();
     }

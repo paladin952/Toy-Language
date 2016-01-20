@@ -10,6 +10,8 @@ import model.Collections.WrapperStack;
 import model.ProgramState;
 
 import java.util.HashMap;
+import java.util.Objects;
+import java.util.Stack;
 
 /**
  * Created by Clapa Lucian on 1/4/2016.
@@ -34,9 +36,13 @@ public class ForkStatement implements IStatement {
         IStack<IStatement>stack = new WrapperStack<>();
         stack.push(statement);
 
-        IDictionary<String, Integer>copyDictionary = new WrapperDictionary<>();
-        copyDictionary.addAll(programState.getMyDictionary().getMap());
-        return new ProgramState(stack, copyDictionary, programState.getOutput(), programState.getHeap(), statement);
+//        IDictionary<String, Integer>copyDictionary = new WrapperDictionary<>();
+//        copyDictionary.addAll(programState.getMyDictionary().getMap());
+
+        Object copy = programState.getStackDictionary().clone();
+        Stack<IDictionary<String, Integer>> copyStack = (Stack<IDictionary<String, Integer>>)stack;
+
+        return new ProgramState(stack, copyStack, programState.getOutput(), programState.getHeap(), statement);
     }
 
     /**

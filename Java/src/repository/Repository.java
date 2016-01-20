@@ -7,6 +7,7 @@ import model.ProgramState;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by Lucian on 10/13/2015.
@@ -37,8 +38,8 @@ public class Repository implements IRepository {
         throw new InvalidPositionException();
     }
 
-    public void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IHeap<Integer, Integer> heap, IStatement mInitialProgram) {
-        programStateList.add(new ProgramState(mExecutionStack, myDictionary, mOutput, heap, mInitialProgram));
+    public void createProgram(IStack<IStatement> mExecutionStack, Stack<IDictionary<String, Integer>> symbolicTableStack, IList<String> mOutput, IHeap<Integer, Integer> heap, IStatement mInitialProgram) {
+        programStateList.add(new ProgramState(mExecutionStack, symbolicTableStack, mOutput, heap, mInitialProgram));
     }
 
     @Override

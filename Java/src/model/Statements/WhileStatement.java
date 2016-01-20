@@ -6,6 +6,8 @@ import model.Collections.WrapperStack;
 import model.ProgramState;
 import utils.Constants;
 
+import java.util.Stack;
+
 /**
  * Created by Lucian on 11/10/2015.
  */
@@ -48,7 +50,10 @@ public class WhileStatement implements IStatement {
         IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
         IList<String> output = programState.getOutput();
         IStack<IStatement> secondStack = new WrapperStack<>();
-        ProgramState secondProgramState = new ProgramState(secondStack, myDictionary, output, heap, getStatement());
+        Stack<IDictionary<String, Integer>> stackSymbolTable = new Stack<>();
+        stackSymbolTable.add(myDictionary);
+
+        ProgramState secondProgramState = new ProgramState(secondStack, stackSymbolTable, output, heap, getStatement());
         while (getExpression().eval(myDictionary, heap) != 0) {
             runAllSteps(secondProgramState);
             secondStack.push(getStatement());

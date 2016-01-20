@@ -11,6 +11,7 @@ import utils.Constants;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -59,7 +60,7 @@ public class Controller {
      * @param initialStatement initial IStatement
      */
     public void createProgram(IStatement initialStatement) {
-        repository.createProgram(new WrapperStack<>(), new WrapperDictionary<>(), new WrapperList<>(), new MyHeap(), initialStatement);
+        repository.createProgram(new WrapperStack<>(), new Stack<>(), new WrapperList<>(), new MyHeap(), initialStatement);
     }
 
     /**

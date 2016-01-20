@@ -1,24 +1,28 @@
 package ui;
 
 import Exceptions.*;
+import Exceptions.EmptyStackException;
 import controller.Controller;
+import interfaces.IProcedure;
 import interfaces.IStatement;
 import model.Expresions.ArithmeticExpression;
 import model.Expresions.ConstantExpression;
 import model.Expresions.ReadHeap;
 import model.Expresions.VariableExpression;
 import model.Statements.*;
+import model.procedure.Procedure;
 import utils.Constants;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
 
 /**
  * Created by Clapa Lucian on 1/12/2016.
  */
-public class Gui extends JFrame implements Controller.PrintState{
+public class Gui extends JFrame implements Controller.PrintState {
 
     private Controller controller;
 
@@ -31,7 +35,7 @@ public class Gui extends JFrame implements Controller.PrintState{
     private JButton deSerializeButton;
     private JButton saveToFileButton;
 
-    public Gui(Controller controller){
+    public Gui(Controller controller) {
         this.controller = controller;
         controller.setListener(this);
         mainPanel = new JPanel();
@@ -47,7 +51,7 @@ public class Gui extends JFrame implements Controller.PrintState{
      * Add ui listeners
      */
     private void addUiListeners() {
-//        loadProgram();
+        loadProgram();
         oneStepButton.addActionListener(e -> {
             try {
                 controller.runOneStep();
@@ -67,6 +71,7 @@ public class Gui extends JFrame implements Controller.PrintState{
         });
 
         allStepsButton.addActionListener(e -> {
+            loadProgram();
             try {
                 controller.runAllSteps();
             } catch (StatementExecutionException | EmptyStackException | InvalidPositionException ex) {
@@ -104,11 +109,11 @@ public class Gui extends JFrame implements Controller.PrintState{
     /**
      * Load hardcoded program
      */
-    private void loadProgram(){
+    private void loadProgram() {
         IStatement whileStatement =
                 new CompoundStatement(new AssignStatement("a", new ConstantExpression(12)),
                         new WhileStatement(new CompoundStatement(new PrintStatement(new VariableExpression("a")),
-                                new AssignStatement("a",new ArithmeticExpression("-", new VariableExpression("a"), new ConstantExpression(1)))),new VariableExpression("a")));
+                                new AssignStatement("a", new ArithmeticExpression("-", new VariableExpression("a"), new ConstantExpression(1)))), new VariableExpression("a")));
 
         IStatement fork =
                 new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
@@ -119,11 +124,30 @@ public class Gui extends JFrame implements Controller.PrintState{
                                                         new CompoundStatement(new PrintStatement(new ReadHeap("a")),
                                                                 new CompoundStatement(new PrintStatement(new VariableExpression("v")), new PrintStatement(new ReadHeap("a")))))))));
 
-        controller.createProgram(fork);
+        IStatement forStatement =
+                new CompoundStatement(new AssignStatement("v", new ConstantExpression(0)),
+                        new ForStatement(new VariableExpression("v"),
+                                new ConstantExpression(5), new AssignStatement("v", new ArithmeticExpression("+", new VariableExpression("v"), new ConstantExpression(1))), new PrintStatement(new VariableExpression("v"))));
+
+        java.util.List<String> sumParams = new ArrayList<>();
+        sumParams.add("a");
+        sumParams.add("b");
+        IProcedure sumProcedure = new Procedure("sumProcedure", sumParams, new CompoundStatement(new AssignStatement("v", new ArithmeticExpression("+", new VariableExpression("a"), new VariableExpression("b"))), new PrintStatement(new VariableExpression("v"))));
+
+
+        java.util.List<String> productParams = new ArrayList<>();
+        sumParams.add("a");
+        sumParams.add("b");
+        IProcedure producProcedure = new Procedure("producProcedure", sumParams, new CompoundStatement(new AssignStatement("v", new ArithmeticExpression("*", new VariableExpression("a"), new VariableExpression("b"))), new PrintStatement(new VariableExpression("v"))));
+
+
+
+        controller.createProgram(forStatement);
     }
 
     /**
      * Display the main windows
+     *
      * @return Return the Gui
      * @throws ClassNotFoundException
      * @throws UnsupportedLookAndFeelException
@@ -140,7 +164,7 @@ public class Gui extends JFrame implements Controller.PrintState{
         return this;
     }
 
-    private void addButtons(){
+    private void addButtons() {
         JPanel buttonsPanel = new JPanel(new GridLayout(5, 1));
 
         oneStepButton = new JButton("One Step");
@@ -160,7 +184,7 @@ public class Gui extends JFrame implements Controller.PrintState{
         mainPanel.add(buttonsPanel);
     }
 
-    public Gui myShow(){
+    public Gui myShow() {
         javax.swing.SwingUtilities.invokeLater(() -> {
             try {
                 displayMainWindow();
@@ -180,7 +204,7 @@ public class Gui extends JFrame implements Controller.PrintState{
     /**
      * Add the text area
      */
-    private void addTextArea(){
+    private void addTextArea() {
         textArea = new JTextArea("", 30, 2);
         final JScrollPane scroll = new JScrollPane(textArea);
 
