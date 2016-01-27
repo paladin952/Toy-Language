@@ -22,10 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Gui.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61388886">
+            <state vertical-scroll-proportion="0.0">
               <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
               <folding />
             </state>
@@ -37,12 +37,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding>
-                <element signature="e#3623#3624#0" expanded="true" />
-                <element signature="e#3670#3671#0" expanded="true" />
-                <element signature="e#3896#3897#0" expanded="true" />
-                <element signature="e#3937#3938#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,8 +49,6 @@
               <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1779#1780#0" expanded="true" />
-                <element signature="e#1857#1858#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,8 +75,8 @@
       <file leaf-file-name="ExpressionsDialog.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/ExpressionsDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.4792285">
+              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -93,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/src/ui/StandardInputDialog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="68" column="35" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,11 +96,8 @@
         <entry file="file://$PROJECT_DIR$/src/repository/Repository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-              <folding>
-                <element signature="e#672#673#0" expanded="true" />
-                <element signature="e#724#725#0" expanded="true" />
-              </folding>
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,17 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/model/Statements/ReadStatement.java" />
-        <option value="$PROJECT_DIR$/src/model/Expresions/ReadStatement.java" />
-        <option value="$PROJECT_DIR$/src/Exceptions/DivideByZeroException.java" />
-        <option value="$PROJECT_DIR$/src/StartClass.java" />
-        <option value="$PROJECT_DIR$/src/keygen.java" />
-        <option value="$PROJECT_DIR$/src/model/Collections/WrapperStack.java" />
-        <option value="$PROJECT_DIR$/src/interfaces/IStack.java" />
-        <option value="$PROJECT_DIR$/src/interfaces/IList.java" />
-        <option value="$PROJECT_DIR$/src/interfaces/IDictionary.java" />
-        <option value="$PROJECT_DIR$/src/utils/Constants.java" />
-        <option value="$PROJECT_DIR$/src/model/Statements/Heap.java" />
         <option value="$PROJECT_DIR$/src/interfaces/IHeap.java" />
         <option value="$PROJECT_DIR$/src/model/Collections/Heap.java" />
         <option value="$PROJECT_DIR$/src/model/Collections/MyHeap.java" />
@@ -212,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/model/Collections/MyHeap.java" />
         <option value="$PROJECT_DIR$/src/ui/StandardInputDialog.java" />
         <option value="$PROJECT_DIR$/src/ui/StatementDialog.java" />
-        <option value="$PROJECT_DIR$/src/ui/ExpressionsDialog.java" />
         <option value="$PROJECT_DIR$/src/StartClass.java" />
         <option value="$PROJECT_DIR$/src/model/Statements/ForStatement.java" />
         <option value="$PROJECT_DIR$/src/model/Statements/ForkStatement.java" />
@@ -224,6 +202,7 @@
         <option value="$PROJECT_DIR$/src/interfaces/IProcedure.java" />
         <option value="$PROJECT_DIR$/src/model/procedure/Procedure.java" />
         <option value="$PROJECT_DIR$/src/ui/Gui.java" />
+        <option value="$PROJECT_DIR$/src/ui/ExpressionsDialog.java" />
       </list>
     </option>
   </component>
@@ -237,8 +216,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -284,21 +263,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laba2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -583,6 +547,21 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lab2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laba2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -896,34 +875,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32241014" sideWeight="0.49166667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32346722" sideWeight="0.49166667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29173046" sideWeight="0.52552086" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24543081" sideWeight="0.47447917" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25792813" sideWeight="0.47447917" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2275574" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22708334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2832981" sideWeight="0.49270833" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32418162" sideWeight="0.49166667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25792813" sideWeight="0.47447917" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1032,64 +1009,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="392" column="13" selection-start-line="392" selection-start-column="13" selection-end-line="392" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaces/Expression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Expresions/BooleanExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="84" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Expresions/LogicExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="84" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaces/IHeap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="55" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Collections/MyHeap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="100" selection-start-line="7" selection-start-column="100" selection-end-line="7" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Expresions/ReadHeap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Expresions/VariableExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Statements/AssignStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1256,7 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1272,26 +1190,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#747#748#0" expanded="false" />
-            <element signature="e#784#785#0" expanded="false" />
-            <element signature="e#848#849#0" expanded="false" />
-            <element signature="e#900#901#0" expanded="false" />
-            <element signature="e#946#947#0" expanded="false" />
-            <element signature="e#984#985#0" expanded="false" />
-            <element signature="e#1050#1051#0" expanded="false" />
-            <element signature="e#1104#1105#0" expanded="false" />
-            <element signature="e#1195#1196#0" expanded="false" />
-            <element signature="e#1278#1279#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/StandardInputDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1300,19 +1206,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="53" selection-start-line="116" selection-start-column="53" selection-end-line="116" selection-end-column="53" />
-          <folding>
-            <element signature="e#3850#3864#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/ExpressionsDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.431946">
-          <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.4792285">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1328,7 +1230,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1413,7 +1314,7 @@
     <entry file="file://$PROJECT_DIR$/src/interfaces/IRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1421,7 +1322,7 @@
     <entry file="file://$PROJECT_DIR$/src/model/Statements/WhileStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="137" selection-start-line="55" selection-start-column="104" selection-end-line="55" selection-end-column="137" />
+          <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1429,7 +1330,7 @@
     <entry file="file://$PROJECT_DIR$/src/repository/Repository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1464,7 +1365,7 @@
     <entry file="file://$PROJECT_DIR$/src/ui/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1480,22 +1381,15 @@
     <entry file="file://$PROJECT_DIR$/src/model/ProgramState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="65" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
-          <folding>
-            <element signature="e#2455#2456#0" expanded="true" />
-            <element signature="e#2493#2494#0" expanded="true" />
-            <element signature="e#3849#3850#0" expanded="true" />
-            <element signature="e#3897#3898#0" expanded="true" />
-            <element signature="e#4123#4124#0" expanded="true" />
-            <element signature="e#4164#4165#0" expanded="true" />
-          </folding>
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/interfaces/IProcedure.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1505,9 +1399,15 @@
     <entry file="file://$PROJECT_DIR$/src/model/procedure/Procedure.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
           </folding>
         </state>
       </provider>
