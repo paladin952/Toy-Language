@@ -47,7 +47,7 @@ public class Ui implements Controller.PrintState {
             switch (input) {
                 case 1: // everything starts with a compound
                     IStatement statement = createCompoundStatement();
-                    controller.createProgram(statement);
+//                    controller.createProgram(statement);
                     break;
                 case 2: //run
                     System.out.println(MenuUtils.getSteps());
@@ -146,7 +146,7 @@ public class Ui implements Controller.PrintState {
                     IStatement fork2 = new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
                             new CompoundStatement(new ForkStatement(new PrintStatement(new ConstantExpression(99))), new PrintStatement(new ConstantExpression(1))));
 
-                    controller.createProgram(fork);
+//                    controller.createProgram(fork);
                     break;
             }
         } while (true);

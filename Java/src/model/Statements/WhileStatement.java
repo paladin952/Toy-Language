@@ -53,7 +53,7 @@ public class WhileStatement implements IStatement {
         Stack<IDictionary<String, Integer>> stackSymbolTable = new Stack<>();
         stackSymbolTable.add(myDictionary);
 
-        ProgramState secondProgramState = new ProgramState(secondStack, stackSymbolTable, output, heap, getStatement());
+        ProgramState secondProgramState = new ProgramState(secondStack, stackSymbolTable, output, heap, programState.getProceduresTable(), getStatement());
         while (getExpression().eval(myDictionary, heap) != 0) {
             runAllSteps(secondProgramState);
             secondStack.push(getStatement());

@@ -87,7 +87,8 @@ namespace ToyLanguage
             {
                 foreach (ProgramState p in prgList)
                     printListener.print(p.ToString());
-                
+                repository.SaveStateInFile();
+
             }
             else if (PRINT_FLAG == Constants.PRINT_FILE)
             {

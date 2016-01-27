@@ -54,7 +54,7 @@ public class ProgramState implements java.io.Serializable {
     private transient IStatement originalProgram;
 
 
-    public ProgramState(IStack<IStatement> executionStack, Stack<IDictionary<String, Integer>> symbolicTableStack, IList<String> output, IHeap<Integer, Integer> heap, IStatement originalProgram) {
+    public ProgramState(IStack<IStatement> executionStack, Stack<IDictionary<String, Integer>> symbolicTableStack, IList<String> output, IHeap<Integer, Integer> heap, Map<String, Pair<List<String>, IStatement>> proceduresTable, IStatement originalProgram) {
         this.executionStack = executionStack;
         this.symbolicTableStack = symbolicTableStack;
         this.output = output;
@@ -62,6 +62,7 @@ public class ProgramState implements java.io.Serializable {
         this.executionStack.push(originalProgram);
         this.heap = heap;
         this.stateId = globalStateId ++;
+        this.proceduresTable = proceduresTable;
     }
 
 
@@ -87,6 +88,10 @@ public class ProgramState implements java.io.Serializable {
         result.append("Output: \n");
         result.append(output.toString());
         return result.toString();
+    }
+
+    public Map<String, Pair<List<String>, IStatement>> getProceduresTable() {
+        return proceduresTable;
     }
 
     /**
@@ -142,7 +147,7 @@ public class ProgramState implements java.io.Serializable {
     }
 
     public IDictionary<String, Integer> getMyDictionary() {
-        return symbolicTableStack.pop();
+        return symbolicTableStack.peek();
     }
 
     public void setMyStackDictionary(Stack<IDictionary<String, Integer>> symbolicTableStack) {

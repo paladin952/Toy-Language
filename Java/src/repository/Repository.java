@@ -2,11 +2,13 @@ package repository;
 
 import Exceptions.InvalidPositionException;
 import interfaces.*;
+import javafx.util.Pair;
 import model.ProgramState;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -38,8 +40,8 @@ public class Repository implements IRepository {
         throw new InvalidPositionException();
     }
 
-    public void createProgram(IStack<IStatement> mExecutionStack, Stack<IDictionary<String, Integer>> symbolicTableStack, IList<String> mOutput, IHeap<Integer, Integer> heap, IStatement mInitialProgram) {
-        programStateList.add(new ProgramState(mExecutionStack, symbolicTableStack, mOutput, heap, mInitialProgram));
+    public void createProgram(IStack<IStatement> mExecutionStack, Stack<IDictionary<String, Integer>> symbolicTableStack, IList<String> mOutput, IHeap<Integer, Integer> heap, Map<String, Pair<List<String>, IStatement>> proceduresTable, IStatement mInitialProgram) {
+        programStateList.add(new ProgramState(mExecutionStack, symbolicTableStack, mOutput, heap, proceduresTable, mInitialProgram));
     }
 
     @Override

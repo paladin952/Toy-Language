@@ -3,8 +3,10 @@ package ui;
 import Exceptions.*;
 import Exceptions.EmptyStackException;
 import controller.Controller;
+import interfaces.Expression;
 import interfaces.IProcedure;
 import interfaces.IStatement;
+import javafx.util.Pair;
 import model.Expresions.ArithmeticExpression;
 import model.Expresions.ConstantExpression;
 import model.Expresions.ReadHeap;
@@ -18,6 +20,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
+import java.util.List;
 
 /**
  * Created by Clapa Lucian on 1/12/2016.
@@ -89,7 +92,7 @@ public class Gui extends JFrame implements Controller.PrintState {
             StatementDialog statementDialog = new StatementDialog(this);
             statementDialog.showDialog();
             IStatement statement = statementDialog.getCurrentStatement();
-            controller.createProgram(statement);
+//            controller.createProgram(statement);
         });
 
         saveToFileButton.addActionListener(e -> {
@@ -129,20 +132,37 @@ public class Gui extends JFrame implements Controller.PrintState {
                         new ForStatement(new VariableExpression("v"),
                                 new ConstantExpression(5), new AssignStatement("v", new ArithmeticExpression("+", new VariableExpression("v"), new ConstantExpression(1))), new PrintStatement(new VariableExpression("v"))));
 
+
+        /**procedure example*/
         java.util.List<String> sumParams = new ArrayList<>();
         sumParams.add("a");
         sumParams.add("b");
-        IProcedure sumProcedure = new Procedure("sumProcedure", sumParams, new CompoundStatement(new AssignStatement("v", new ArithmeticExpression("+", new VariableExpression("a"), new VariableExpression("b"))), new PrintStatement(new VariableExpression("v"))));
+        IStatement sumStatement = new CompoundStatement(new AssignStatement("v", new ArithmeticExpression("+", new VariableExpression("a"), new VariableExpression("b"))), new PrintStatement(new VariableExpression("v")));
+        IProcedure sumProcedure = new Procedure("sumProcedure", sumParams, sumStatement);
 
 
         java.util.List<String> productParams = new ArrayList<>();
-        sumParams.add("a");
-        sumParams.add("b");
-        IProcedure producProcedure = new Procedure("producProcedure", sumParams, new CompoundStatement(new AssignStatement("v", new ArithmeticExpression("*", new VariableExpression("a"), new VariableExpression("b"))), new PrintStatement(new VariableExpression("v"))));
+        productParams.add("a");
+        productParams.add("b");
+        IStatement productStatemnet = new CompoundStatement(new AssignStatement("v", new ArithmeticExpression("*", new VariableExpression("a"), new VariableExpression("b"))), new PrintStatement(new VariableExpression("v")));
+        IProcedure producProcedure = new Procedure("producProcedure", productParams, productStatemnet);
 
+        Map<String, Pair<List<String>, IStatement>> proceduresTable = new HashMap<>();
 
+        Pair<List<String>, IStatement> sumPair = new Pair<>(sumParams, sumStatement);
+        Pair<List<String>, IStatement> productPair = new Pair<>(productParams, productStatemnet);
+        proceduresTable.put(sumProcedure.getName(), sumPair);
+//        proceduresTable.put(producProcedure.getName(), productPair);
 
-        controller.createProgram(forStatement);
+        List<Expression> sumEexpressionList = new ArrayList<>();
+        sumEexpressionList.add(new ArithmeticExpression("+", new VariableExpression("v"), new ConstantExpression(10)));
+        sumEexpressionList.add(new VariableExpression("w"));
+
+        IStatement statement = new CompoundStatement(new AssignStatement("v", new ConstantExpression(2)),
+                new CompoundStatement(new AssignStatement("w", new ConstantExpression(5)),
+                        new CallProcedureStatement(sumProcedure.getName(),sumEexpressionList)));
+
+        controller.createProgram(statement, proceduresTable);
     }
 
     /**

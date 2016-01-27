@@ -1,7 +1,9 @@
 STACK
+Sleep(1)
+Print(ToyLanguage.Model.Expressions.VariableExpression*ToyLanguage.Model.Expressions.ConstantExpression)
 
 Dictionary:
-a->2
+v->2
 
 Output:
 

@@ -42,7 +42,7 @@ public class ForkStatement implements IStatement {
         Object copy = programState.getStackDictionary().clone();
         Stack<IDictionary<String, Integer>> copyStack = (Stack<IDictionary<String, Integer>>)stack;
 
-        return new ProgramState(stack, copyStack, programState.getOutput(), programState.getHeap(), statement);
+        return new ProgramState(stack, copyStack, programState.getOutput(), programState.getHeap(), programState.getProceduresTable(), statement);
     }
 
     /**

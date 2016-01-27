@@ -1,7 +1,9 @@
 package controller;
 
 import Exceptions.*;
+import Exceptions.EmptyStackException;
 import interfaces.*;
+import javafx.util.Pair;
 import model.Collections.MyHeap;
 import model.Collections.WrapperDictionary;
 import model.Collections.WrapperList;
@@ -9,9 +11,7 @@ import model.Collections.WrapperStack;
 import model.ProgramState;
 import utils.Constants;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -59,8 +59,8 @@ public class Controller {
      *
      * @param initialStatement initial IStatement
      */
-    public void createProgram(IStatement initialStatement) {
-        repository.createProgram(new WrapperStack<>(), new Stack<>(), new WrapperList<>(), new MyHeap(), initialStatement);
+    public void createProgram(IStatement initialStatement, Map<String, Pair<List<String>, IStatement>> procedureTable) {
+        repository.createProgram(new WrapperStack<>(), new Stack<>(), new WrapperList<>(), new MyHeap(), procedureTable, initialStatement);
     }
 
     /**
