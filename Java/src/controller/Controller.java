@@ -1,13 +1,21 @@
 package controller;
 
 import Exceptions.*;
+import Exceptions.EmptyStackException;
 import interfaces.*;
+import javafx.util.Pair;
+import model.Collections.MyHeap;
 import model.Collections.WrapperDictionary;
 import model.Collections.WrapperList;
 import model.Collections.WrapperStack;
 import model.ProgramState;
-import model.Statements.*;
 import utils.Constants;
+
+import java.util.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -51,8 +59,8 @@ public class Controller {
      *
      * @param initialStatement initial IStatement
      */
-    public void createProgram(IStatement initialStatement) {
-        repository.createProgram(new WrapperStack<>(), new WrapperDictionary<>(), new WrapperList<>(), initialStatement);
+    public void createProgram(IStatement initialStatement, Map<String, Pair<List<String>, IStatement>> procedureTable) {
+        repository.createProgram(new WrapperStack<>(), new Stack<>(), new WrapperList<>(), new MyHeap(), procedureTable, initialStatement);
     }
 
     /**
@@ -65,115 +73,71 @@ public class Controller {
     }
 
     /**
+     * Removes the completed program states
+     *
+     * @param inPrgList The program state lists
+     * @return The program state list
+     */
+    public java.util.List<ProgramState> removeCompletedPrg(java.util.List<ProgramState> inPrgList) {
+        return inPrgList.stream()
+                .filter(ProgramState::isNotCompleted)
+                .collect(Collectors.toList());
+    }
+
+    /**
      * Run the program in debug mode, one step at a time
      *
-     * @param programState The program
      * @throws StatementExecutionException
      */
-    private void oneStep(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
-        IStack<IStatement> myStack = programState.getExecutionStack();
+    private void oneStepForAll() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException, InterruptedException {
 
-        if (myStack.isEmpty())
-            throw new StatementExecutionException();
-        IStatement statement = myStack.pop();
+        List<ProgramState> programStatesList = repository.getProgramStateList();
+        ExecutorService executor = Executors.newSingleThreadExecutor();
 
-        if (statement instanceof CompoundStatement) {
-            CompoundStatement compoundStatement1 = (CompoundStatement) statement;
-            myStack.push(compoundStatement1.getSecondStatement());
-            myStack.push(compoundStatement1.getFirstStatement());
-            return;
+        java.util.List<Callable<ProgramState>> callList = programStatesList.stream()
+                .map(p -> (Callable<ProgramState>) p::oneStep)
+                .collect(Collectors.toList());
+
+        java.util.List<ProgramState> newProgramState = executor.invokeAll(callList).stream()
+                .map(future -> {
+                    try {
+                        return future.get();
+                    } catch (Exception e) {
+                        return null;
+                    }
+                })
+                .filter(p -> p != null)
+                .collect(Collectors.toList());
+
+        programStatesList.forEach(p -> {
+            if (!newProgramState.stream().anyMatch(s -> s.getStateId() == p.getStateId()))
+                newProgramState.add(p);
+        });
+
+        repository.setProgramStateList(programStatesList);
+
+        executor.shutdown();
+
+        if (PRINT_FLAG == Constants.PRINT_IN_FILE) {
+            newProgramState.forEach(p -> saveInFile(p.toString()));
+        } else if (PRINT_FLAG == Constants.PRINT_CONSOLE) {
+            newProgramState.forEach(p -> printListener.print(p.toString()));
         }
+    }
 
-        if (statement instanceof AssignStatement) {
-            AssignStatement assignStatement = (AssignStatement) statement;
-            Expression expression = assignStatement.getExpression();
-            String id = assignStatement.getVariableName();
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
-
-            int val = expression.eval(myDictionary);
-            //insert or update
-            myDictionary.put(id, val);
-            return;
-        }
-
-        if (statement instanceof PrintStatement) {
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
-            IList<String> output = programState.getOutput();
-            PrintStatement printStatement = (PrintStatement) statement;
-            Expression expr = printStatement.getExpression();
-            output.add(String.valueOf(expr.eval(myDictionary)));
-            return;
-        }
-
-        if (statement instanceof IfStatement) {
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
-            IfStatement ifStatement = (IfStatement) statement;
-            if (ifStatement.getExpression().eval(myDictionary) != 0) {
-                myStack.push(ifStatement.getThenStatement());
+    /**
+     * Run all program
+     *
+     * @throws StatementExecutionException
+     */
+    public void runAllSteps() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException, InterruptedException {
+        while (true) {
+            java.util.List<ProgramState> prgList = removeCompletedPrg(repository.getProgramStateList());
+            if (prgList.size() == 0) {
+                return;
             } else {
-                if (ifStatement.getElseStatement() != null) {
-                    myStack.push(ifStatement.getElseStatement());
-                }
+                oneStepForAll();
             }
-            return;
-        }
-
-        if (statement instanceof WhileStatement) {
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
-            IList<String> output = programState.getOutput();
-            WhileStatement whileStatement = (WhileStatement) statement;
-            IStack<IStatement> secondStack = new WrapperStack<>();
-            ProgramState secondProgramState = new ProgramState(secondStack, myDictionary, output, whileStatement.getStatement());
-            while (whileStatement.getExpression().eval(myDictionary) != 0) {
-                runAllSteps(secondProgramState);
-                secondStack.push(whileStatement.getStatement());
-            }
-            return;
-        }
-
-        if (statement instanceof SkipStatement) {
-            return;
-        }
-
-        if (statement instanceof SwitchStatement) {
-            IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
-            SwitchStatement switchStatement = (SwitchStatement) statement;
-            Expression expression = switchStatement.getExpression();
-            if (switchStatement.getCase1().eval(myDictionary) == expression.eval(myDictionary)) {
-                myStack.push(switchStatement.getStatementCase1());
-            }
-            if (switchStatement.getCase2().eval(myDictionary) == expression.eval(myDictionary)) {
-                myStack.push(switchStatement.getStatementCase2());
-            }
-            myStack.push(switchStatement.getStatementDefault());
-        }
-    }
-
-    /**
-     * Run all program
-     *
-     * @throws StatementExecutionException
-     */
-    public void runAllSteps() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
-        ProgramState programState = repository.getCurrentState();
-        while (!programState.getExecutionStack().isEmpty()) {
-            oneStep(programState);
-            if (PRINT_FLAG == Constants.PRINT_CONSOLE) {
-                printListener.print(programState.toString());
-            } else if (PRINT_FLAG == Constants.PRINT_IN_FILE) {
-                repository.saveStateInFile();
-            }
-        }
-    }
-
-    /**
-     * Run all program
-     *
-     * @throws StatementExecutionException
-     */
-    private void runAllSteps(ProgramState programState) throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
-        while (!programState.getExecutionStack().isEmpty()) {
-            oneStep(programState);
         }
     }
 
@@ -182,15 +146,12 @@ public class Controller {
      *
      * @throws StatementExecutionException
      */
-    public void runOneStep() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException {
-        ProgramState programState = repository.getCurrentState();
-        if (programState.getExecutionStack().size() > 0) {
-            oneStep(programState);
-            if (PRINT_FLAG == Constants.PRINT_CONSOLE) {
-                printListener.print(programState.toString());
-            } else if (PRINT_FLAG == Constants.PRINT_IN_FILE) {
-                repository.saveStateInFile();
-            }
+    public void runOneStep() throws StatementExecutionException, EmptyStackException, ValueNotFoundException, InvalidPositionException, DivideByZeroException, InterruptedException {
+        java.util.List<ProgramState> prgList = removeCompletedPrg(repository.getProgramStateList());
+        if (prgList.size() == 0) {
+            return;
+        } else {
+            oneStepForAll();
         }
     }
 
@@ -202,13 +163,13 @@ public class Controller {
     }
 
     /**
-     * Deserializing the program state
+     * Deserialisation the program state
      */
     public void deSerialize() {
         repository.deSerialize();
     }
 
-    public void saveInFile() {
-        repository.saveStateInFile();
+    public void saveInFile(String message) {
+        repository.saveStateInFile(message);
     }
 }

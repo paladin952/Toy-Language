@@ -4,3 +4,11 @@ E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\bin\Debug\ToyL
 E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\bin\Debug\ToyLanguage.pdb
 E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.exe
 E:\Faculty\sem 1\AMP\Labs\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.pdb
+E:\Faculty\AMP\Toy-Language\C#\ToyLanguage\ToyLanguage\bin\Debug\ToyLanguage.exe.config
+E:\Faculty\AMP\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.exe
+E:\Faculty\AMP\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.pdb
+E:\Faculty\AMP\Toy-Language\C#\ToyLanguage\ToyLanguage\bin\Debug\ToyLanguage.exe
+E:\Faculty\AMP\Toy-Language\C#\ToyLanguage\ToyLanguage\bin\Debug\ToyLanguage.pdb
+E:\Faculty\AMP\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.csprojResolveAssemblyReference.cache
+E:\Faculty\AMP\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.UiPackage.Gui.resources
+E:\Faculty\AMP\Toy-Language\C#\ToyLanguage\ToyLanguage\obj\Debug\ToyLanguage.csproj.GenerateResource.Cache

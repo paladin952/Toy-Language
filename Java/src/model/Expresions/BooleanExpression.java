@@ -4,6 +4,7 @@ import Exceptions.DivideByZeroException;
 import Exceptions.ValueNotFoundException;
 import interfaces.Expression;
 import interfaces.IDictionary;
+import interfaces.IHeap;
 import model.OperatorsEnum;
 
 /**
@@ -69,35 +70,35 @@ public class BooleanExpression implements Expression {
      * @return int result
      */
     @Override
-    public int eval(IDictionary<String, Integer> table) throws ValueNotFoundException, DivideByZeroException {
+    public int eval(IDictionary<String, Integer> table, IHeap<Integer, Integer> heap) throws ValueNotFoundException, DivideByZeroException {
         switch (operatorType) {
             case LESS:
-                if (firstExpression.eval(table) < secondExpression.eval(table)) {
+                if (firstExpression.eval(table, heap) < secondExpression.eval(table, heap)) {
                     return 1;
                 }
                 return 0;
             case LESS_EQUAL:
-                if (firstExpression.eval(table) <= secondExpression.eval(table)) {
+                if (firstExpression.eval(table, heap) <= secondExpression.eval(table, heap)) {
                     return 1;
                 }
                 return 0;
             case GRATER_EQUAL:
-                if (firstExpression.eval(table) >= secondExpression.eval(table)) {
+                if (firstExpression.eval(table, heap) >= secondExpression.eval(table, heap)) {
                     return 1;
                 }
                 return 0;
             case GRATER:
-                if (firstExpression.eval(table) > secondExpression.eval(table)) {
+                if (firstExpression.eval(table, heap) > secondExpression.eval(table, heap)) {
                     return 1;
                 }
                 return 0;
             case EQUAL:
-                if (firstExpression.eval(table) == secondExpression.eval(table)) {
+                if (firstExpression.eval(table, heap) == secondExpression.eval(table, heap)) {
                     return 1;
                 }
                 return 0;
             case DIFFERENT:
-                if (firstExpression.eval(table) != secondExpression.eval(table)) {
+                if (firstExpression.eval(table, heap) != secondExpression.eval(table, heap)) {
                     return 1;
                 }
                 return 0;

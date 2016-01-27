@@ -1,7 +1,9 @@
 package model.Statements;
 
-import interfaces.IStatement;
-import interfaces.Expression;
+import Exceptions.DivideByZeroException;
+import Exceptions.ValueNotFoundException;
+import interfaces.*;
+import model.ProgramState;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -43,5 +45,15 @@ public class PrintStatement implements IStatement {
     public String toString() {
         return "Print(" + expression.toString() + ")";
 
+    }
+
+    @Override
+    public ProgramState execute(ProgramState programState) throws DivideByZeroException, ValueNotFoundException {
+        IHeap<Integer, Integer> heap = programState.getHeap();
+        IDictionary<String, Integer> myDictionary = programState.getMyDictionary();
+        IList<String> output = programState.getOutput();
+        Expression expr = getExpression();
+        output.add(String.valueOf(expr.eval(myDictionary, heap)));
+        return null;
     }
 }

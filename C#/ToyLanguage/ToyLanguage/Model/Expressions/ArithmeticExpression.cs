@@ -72,18 +72,18 @@ namespace ToyLanguage.Model.Expressions
          * @return int result
          */
  
-    public int eval(IMyDictionary<string, int> table)
+    public int eval(IMyDictionary<string, int> table, IHeap<int, int> heap)
         {
             switch (operatorType)
             {
                 case OperatorsEnum.ADD:
-                    return (int)(firstExpression.eval(table) + secondExpression.eval(table));
+                    return (int)(firstExpression.eval(table, heap) + secondExpression.eval(table, heap));
                 case OperatorsEnum.SUBSTRACT:
-                    return (int)(firstExpression.eval(table) - secondExpression.eval(table));
+                    return (int)(firstExpression.eval(table, heap) - secondExpression.eval(table, heap));
                 case OperatorsEnum.MULTIPLY:
-                    return (int)(firstExpression.eval(table) * secondExpression.eval(table));
+                    return (int)(firstExpression.eval(table, heap) * secondExpression.eval(table, heap));
                 case OperatorsEnum.DIVIDE:
-                    return (int)(firstExpression.eval(table) + secondExpression.eval(table));
+                    return (int)(firstExpression.eval(table, heap) + secondExpression.eval(table, heap));
                 default:
                     return int.MaxValue;
             }

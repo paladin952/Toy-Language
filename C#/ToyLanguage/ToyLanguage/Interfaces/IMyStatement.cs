@@ -1,4 +1,6 @@
 ﻿
+using ToyLanguage.Model;
+
 namespace ToyLanguage.Interfaces
 {
     interface IMyStatement
@@ -9,6 +11,8 @@ namespace ToyLanguage.Interfaces
     * @return String
     */
         string MyToString();
+
+        ProgramState execute(ProgramState programState);
 
     }
 }

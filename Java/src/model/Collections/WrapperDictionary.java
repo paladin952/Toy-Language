@@ -13,7 +13,7 @@ public class WrapperDictionary<K, V> implements IDictionary<K, V> {
     /**
      * The storage map
      */
-    private Map<K, V> map;
+    protected Map<K, V> map;
 
     /**
      * The constructor
@@ -100,5 +100,16 @@ public class WrapperDictionary<K, V> implements IDictionary<K, V> {
         }
 
         return result.toString();
+    }
+
+    @Override
+    public void addAll(Map<K, V> all) {
+        map.clear();
+        map.putAll(all);
+    }
+
+    @Override
+    public Map<K, V> getMap() {
+        return map;
     }
 }

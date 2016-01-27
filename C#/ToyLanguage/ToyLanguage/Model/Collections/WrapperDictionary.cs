@@ -17,6 +17,17 @@ namespace ToyLanguage.Model.Collections
             map = new Dictionary<K, V>();
         } 
 
+        public void addAll(Dictionary<K, V> all)
+        {
+            map.Clear();
+            map = new Dictionary<K, V>(all);
+        }
+
+        public Dictionary<K, V> getMap()
+        {
+            return map;
+        }
+
         public V lookUp(K id)
         {
             return map[id];
@@ -43,7 +54,15 @@ namespace ToyLanguage.Model.Collections
 
         public void put(K key, V value)
         {
-            map.Add(key, value);
+            if (map.ContainsKey(key))
+            {
+                map[key] = value;
+            }
+            else
+            {
+                map.Add(key, value);
+            }
+            
         }
 
         public void remove(K key)
@@ -57,7 +76,7 @@ namespace ToyLanguage.Model.Collections
 
             foreach (KeyValuePair<K, V> entry in map)
             {
-                result.Append(entry.Key + "->" + entry.Value + "\n");
+                result.Append(entry.Key + "->" + entry.Value + Environment.NewLine);
             }
             return result.ToString();
         }

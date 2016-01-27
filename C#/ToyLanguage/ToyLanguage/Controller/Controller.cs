@@ -17,7 +17,7 @@ namespace ToyLanguage
         /**
     * Boolean: print current programe state if it is true
     */
-        public static int PRINT_FLAG = Constants.NO_PRINT;
+        public static int PRINT_FLAG = Constants.PRINT_CONSOLE;
 
         /**
          * Repository object
@@ -60,8 +60,43 @@ namespace ToyLanguage
     */
         public void createProgram(IMyStatement initialStatement)
         {
-            repository.createProgram(new WrapperStack<IMyStatement>(), new WrapperDictionary<string, int>(), new WrapperList<string>(), initialStatement);
+            repository.createProgram(new WrapperStack<IMyStatement>(), new WrapperDictionary<string, int>(), new WrapperList<string>(), new MyHeap<int, int>(), initialStatement);
         }
+
+        public List<ProgramState> removeCompletedPrg(List<ProgramState> inPrgList)
+        {
+            return inPrgList.Where(p => p.isNotCompleted()).ToList();
+        }
+
+        public void oneStepForAll()
+        {
+            List<ProgramState> prgList = repository.getProgramStateList();
+            List<Task<ProgramState>> taskList =
+                (from prg in prgList
+                 select Task<ProgramState>.Factory.StartNew(() => prg.oneStep())).ToList();
+
+            List<ProgramState> newPrgList = (from tsk in taskList
+                                         where tsk.Result != null
+                                         select tsk.Result).ToList();
+
+            newPrgList.AddRange(prgList.Where(p => !newPrgList.Any(q => q.getStateId() == p.getStateId())).ToList());
+            repository.setProgramStateList(newPrgList);
+
+
+            if (PRINT_FLAG == Constants.PRINT_CONSOLE)
+            {
+                foreach (ProgramState p in prgList)
+                    printListener.print(p.ToString());
+                repository.SaveStateInFile();
+
+            }
+            else if (PRINT_FLAG == Constants.PRINT_FILE)
+            {
+                repository.SaveStateInFile();
+            }
+        }
+
+
 
         /**
          * Run the program in debug mode, one step at a time
@@ -70,53 +105,15 @@ namespace ToyLanguage
          */
         private void oneStep(ProgramState programState)
         {
-            IMyStack<IMyStatement> myStack = repository.getCurrentState().getExecutionStack();
-
-            if (myStack.isEmpty())
-                throw new StatementExecutionException();
-            IMyStatement statement = myStack.pop();
-
-            if (statement.GetType() == typeof(CompoundStatement)) {
-                CompoundStatement compoundStatement1 = (CompoundStatement)statement;
-                myStack.push(compoundStatement1.getSecondStatement());
-                myStack.push(compoundStatement1.getFirstStatement());
+            List<ProgramState> prgList = removeCompletedPrg(repository.getProgramStateList());
+            if (prgList.Count == 0)
+            {
                 return;
             }
-
-            if (statement.GetType() == typeof(AssignStatement)) {
-                AssignStatement assignStatement = (AssignStatement)statement;
-                IExpressions expression = assignStatement.getExpression();
-                String id = assignStatement.getVariableName();
-                IMyDictionary<String, int> myDictionary = programState.getMyDictionary();
-
-                int val = expression.eval(myDictionary);
-                //insert or update
-                myDictionary.put(id, val);
-                return;
+            else {
+                oneStepForAll();
             }
 
-            if (statement.GetType() == typeof(PrintStatement)) {
-                IMyDictionary<String, int> myDictionary = programState.getMyDictionary();
-                IMyList<String> output = programState.getOutput();
-                PrintStatement printStatement = (PrintStatement)statement;
-                IExpressions expr = printStatement.getExpression();
-                output.add(expr.eval(myDictionary).ToString());
-                return;
-            }
-
-            if (statement.GetType() == typeof(IfStatement)) {
-                IMyDictionary<String, int> myDictionary = programState.getMyDictionary();
-                IfStatement ifStatement = (IfStatement)statement;
-                if (ifStatement.getExpression().eval(myDictionary) != 0)
-                {
-                    myStack.push(ifStatement.getThenStatement());
-                }
-                else
-                {
-                    myStack.push(ifStatement.getElseStatement());
-                }
-                return;
-            }
         }
 
         /**
@@ -125,15 +122,16 @@ namespace ToyLanguage
          */
         public void runAllSteps()
         {
-            ProgramState programState = repository.getCurrentState();
-            while (!programState.getExecutionStack().isEmpty()) {
-                oneStep(programState);
-                if (PRINT_FLAG == Constants.PRINT_CONSOLE)
+           
+            while (true)
+            {
+                List<ProgramState> prgList = removeCompletedPrg(repository.getProgramStateList());
+                if (prgList.Count == 0)
                 {
-                    printListener.print(programState.ToString());
-                }else if(PRINT_FLAG == Constants.PRINT_FILE)
-                {
-                    repository.SaveStateInFile();
+                    return;
+                }
+                else {
+                    oneStepForAll();
                 }
             }
         }
@@ -147,25 +145,6 @@ namespace ToyLanguage
         {
             repository.DeSerialize();
         }
-
-    /**
-     * Run step by step
-     * @throws StatementExecutionException
-     */
-    public void runOneStep()
-    {
-        ProgramState programState = repository.getCurrentState();
-        if(programState.getExecutionStack().size()>0){
-            oneStep(programState);
-                if (PRINT_FLAG == Constants.PRINT_CONSOLE)
-                {
-                    printListener.print(programState.ToString());
-                }
-                else if (PRINT_FLAG == Constants.PRINT_FILE)
-                {
-                    repository.SaveStateInFile();
-                }
-            }
-    }
+ 
 }
 }

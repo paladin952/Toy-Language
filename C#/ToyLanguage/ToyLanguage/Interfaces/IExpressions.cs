@@ -8,7 +8,7 @@ namespace ToyLanguage.Interfaces
 {
     interface IExpressions
     {
-        int eval(IMyDictionary<string, int> table);
+        int eval(IMyDictionary<string, int> table, IHeap<int, int> heap);
 
         string MyToString();
     }

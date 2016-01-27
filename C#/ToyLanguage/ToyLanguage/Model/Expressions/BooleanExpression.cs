@@ -71,41 +71,41 @@ namespace ToyLanguage.Model.Expressions
          * @return int result
          */
 
-        public int eval(IMyDictionary<string, int> table) { 
+        public int eval(IMyDictionary<string, int> table, IHeap<int, int> heap) { 
             switch (operatorType)
             {
                 case OperatorsEnum.LESS:
-                    if (firstExpression.eval(table) < secondExpression.eval(table))
+                    if (firstExpression.eval(table, heap) < secondExpression.eval(table, heap))
                     {
                         return 1;
                     }
                     return 0;
                 case OperatorsEnum.LESS_EQUAL:
-                    if (firstExpression.eval(table) <= secondExpression.eval(table))
+                    if (firstExpression.eval(table, heap) <= secondExpression.eval(table, heap))
                     {
                         return 1;
                     }
                     return 0;
                 case OperatorsEnum.GRATER_EQUAL:
-                    if (firstExpression.eval(table) >= secondExpression.eval(table))
+                    if (firstExpression.eval(table, heap) >= secondExpression.eval(table, heap))
                     {
                         return 1;
                     }
                     return 0;
                 case OperatorsEnum.GRATER:
-                    if (firstExpression.eval(table) > secondExpression.eval(table))
+                    if (firstExpression.eval(table, heap) > secondExpression.eval(table, heap))
                     {
                         return 1;
                     }
                     return 0;
                 case OperatorsEnum.EQUAL:
-                    if (firstExpression.eval(table) == secondExpression.eval(table))
+                    if (firstExpression.eval(table, heap) == secondExpression.eval(table, heap))
                     {
                         return 1;
                     }
                     return 0;
                 case OperatorsEnum.DIFFERENT:
-                    if (firstExpression.eval(table) != secondExpression.eval(table))
+                    if (firstExpression.eval(table, heap) != secondExpression.eval(table, heap))
                     {
                         return 1;
                     }

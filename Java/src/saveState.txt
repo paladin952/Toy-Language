@@ -1,9 +1,17207 @@
 STACK:
 
 Symbolic Table
-a->2
+a->1
+v->32
 
 Output
-100
-2
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 0
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 1
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 2
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 3
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 0
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 1
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 4
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 5
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 4
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 6
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 7
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 6
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 8
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 9
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 8
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 10
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 10
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 10
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 10
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 10
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 11
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 10
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 10
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 10
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 10
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 10
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 10
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 10
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 10
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 10
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 10
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 12
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 13
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 14
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 12
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 12
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 12
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 12
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 12
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 12
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 12
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 15
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 15
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 15
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 15
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 15
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 16
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 15
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 15
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 15
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 15
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 15
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 15
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 15
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 15
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 15
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 15
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 17
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 18
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 17
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 17
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 17
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 17
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 17
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 17
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 17
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+
+Symbolic Table
+
+Output
+
+Id: 19
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=10
+HEAP: 
+My dictionary: 
+
+Output: 
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 19
+Execution stack: 
+HeapAllocation{ a -> 22 };Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+
+Symbolic Table
+v->10
+
+Output
+
+Id: 19
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HeapAllocation{ a -> 22 }
+HEAP: 
+My dictionary: 
+
+v->10
+Output: 
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 19
+Execution stack: 
+Fork(WriteHeap( a=30 ));v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 19
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Fork(WriteHeap( a=30 ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 20
+Execution stack: 
+WriteHeap( a=30 )
+WriteHeap( a=30 )
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 19
+Execution stack: 
+v=32;Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+
+Symbolic Table
+a->1
+v->10
+
+Output
+
+Id: 19
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+v=32
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->10
+Output: 
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 19
+Execution stack: 
+Print(v);Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+
+Id: 19
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 19
+Execution stack: 
+Print(ReadHeap( a ));Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+
+Id: 19
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(v);Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 19
+Execution stack: 
+Print(v);Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+Print(v)
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+
+Id: 19
+Execution stack: 
+Print(ReadHeap( a ))
+Print(v)
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+Print(ReadHeap( a ))
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+
+Id: 19
+Execution stack: 
+Print(ReadHeap( a ))
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 0
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 1
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 4
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 6
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 8
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 12
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 17
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
+
+STACK:
+
+Symbolic Table
+a->1
+v->32
+
+Output
+32
+22
+32
+22
+
+Id: 19
+Execution stack: 
+HEAP: 
+1->22
+My dictionary: 
+
+a->1
+v->32
+Output: 
+32
+22
+32
+22
 

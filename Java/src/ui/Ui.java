@@ -47,7 +47,7 @@ public class Ui implements Controller.PrintState {
             switch (input) {
                 case 1: // everything starts with a compound
                     IStatement statement = createCompoundStatement();
-                    controller.createProgram(statement);
+//                    controller.createProgram(statement);
                     break;
                 case 2: //run
                     System.out.println(MenuUtils.getSteps());
@@ -62,6 +62,8 @@ public class Ui implements Controller.PrintState {
                             System.out.println(e.toString());
                         } catch (DivideByZeroException e) {
                             System.out.println("Divide by zero!");
+                        } catch (InterruptedException e) {
+                            System.out.println("Intreruption exception");
                         }
                     } else { //all steps
                         try {
@@ -72,6 +74,8 @@ public class Ui implements Controller.PrintState {
                             e.printStackTrace();
                         } catch (DivideByZeroException e) {
                             System.out.println("Divide by zero!");
+                        } catch (InterruptedException e) {
+                            System.out.println("Intreruption exception");
                         }
                     }
                     break;
@@ -95,18 +99,54 @@ public class Ui implements Controller.PrintState {
                     controller.deSerialize();
                     break;
                 case 6: // for testing
-//                    IStatement logical1 = new CompoundStatement(new AssignStatement("a", new LogicExpression("&&", new ConstantExpression(10), new ArithmeticExpression("-", new ConstantExpression(10),
-//                            new ConstantExpression(10)))), new PrintStatement(new VariableExpression("a")));
+//                    IStatement logical1 =
+//                            new CompoundStatement(new AssignStatement("a", new LogicExpression("&&", new ConstantExpression(10), new ArithmeticExpression("-", new ConstantExpression(10),
+//                                new ConstantExpression(10)))), new PrintStatement(new VariableExpression("a")));
 //
-//                    IStatement readStatement = new CompoundStatement(new AssignStatement("a", new ArithmeticExpression("+", new ConstantExpression(1), new ReadExpression())),
-//                            new PrintStatement(new VariableExpression("a")));
-                    IStatement whileStatement = new CompoundStatement(new AssignStatement("a", new ConstantExpression(12)),
-                            new WhileStatement(new CompoundStatement(new PrintStatement(new VariableExpression("a")),
+//                    IStatement readStatement =
+//                            new CompoundStatement(new AssignStatement("a", new ArithmeticExpression("+", new ConstantExpression(1), new ReadExpression())),
+//                                new PrintStatement(new VariableExpression("a")));
+                    IStatement whileStatement =
+                            new CompoundStatement(new AssignStatement("a", new ConstantExpression(12)),
+                                new WhileStatement(new CompoundStatement(new PrintStatement(new VariableExpression("a")),
                                     new AssignStatement("a",new ArithmeticExpression("-", new VariableExpression("a"), new ConstantExpression(1)))),new VariableExpression("a")));
+//
+//                    IStatement switchStatement =
+//                            new CompoundStatement(new AssignStatement("a", new ConstantExpression(2)),
+//                                new SwitchStatement(new VariableExpression("a"), new ConstantExpression(3),
+//                                    new ConstantExpression(2), new PrintStatement(new ConstantExpression(100)), new PrintStatement(new ConstantExpression(3)), new PrintStatement(new ConstantExpression(2))));
+                    IStatement allocation =
+                            new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                                new CompoundStatement(new HeapAllocation("v", new ConstantExpression(20)),
+                                    new CompoundStatement(new HeapAllocation("a", new ConstantExpression(22)) ,new PrintStatement(new VariableExpression("v")))));
 
-                    IStatement switchStatement = new CompoundStatement(new AssignStatement("a", new ConstantExpression(2)),
-                            new SwitchStatement(new VariableExpression("a"), new ConstantExpression(3), new ConstantExpression(2), new PrintStatement(new ConstantExpression(100)), new PrintStatement(new ConstantExpression(3)), new PrintStatement(new ConstantExpression(2))));
-                    controller.createProgram(switchStatement);
+                    IStatement readHeap =
+                            new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                                new CompoundStatement(new HeapAllocation("v", new ConstantExpression(20)),
+                                    new CompoundStatement(new HeapAllocation("a", new ConstantExpression(22)),
+                                        new CompoundStatement(new PrintStatement(new ArithmeticExpression("+", new ConstantExpression(100), new ReadHeap("v"))),
+                                            new PrintStatement(new ArithmeticExpression("+", new ConstantExpression(100), new ReadHeap("a")))))));
+
+                    IStatement writeHeap =
+                            new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                                new CompoundStatement(new HeapAllocation("v", new ConstantExpression(20)),
+                                        new CompoundStatement(new HeapAllocation("a", new ConstantExpression(22)),
+                                                new CompoundStatement(new WriteHeapStatement("a", new ConstantExpression(30)),
+                                                        new CompoundStatement(new PrintStatement(new VariableExpression("a")), new PrintStatement(new ReadHeap("a")))))));
+
+                    IStatement fork =
+                            new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                                    new CompoundStatement(new HeapAllocation("a", new ConstantExpression(22)),
+                                            new CompoundStatement(new ForkStatement(new WriteHeapStatement("a", new ConstantExpression(30))),
+                                                    new CompoundStatement(new AssignStatement("v", new ConstantExpression(32)),
+                                                            new CompoundStatement(new PrintStatement(new VariableExpression("v")),
+                                                                    new CompoundStatement(new PrintStatement(new ReadHeap("a")),
+                                                                            new CompoundStatement(new PrintStatement(new VariableExpression("v")), new PrintStatement(new ReadHeap("a")))))))));
+
+                    IStatement fork2 = new CompoundStatement(new AssignStatement("v", new ConstantExpression(10)),
+                            new CompoundStatement(new ForkStatement(new PrintStatement(new ConstantExpression(99))), new PrintStatement(new ConstantExpression(1))));
+
+//                    controller.createProgram(fork);
                     break;
             }
         } while (true);
@@ -285,7 +325,7 @@ public class Ui implements Controller.PrintState {
     }
 
     @Override
-    public void print(String message) {
+    synchronized public void print(String message) {
         System.out.println(message);
     }
 }

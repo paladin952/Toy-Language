@@ -1,6 +1,7 @@
 package model.Statements;
 
-import interfaces.IStatement;
+import interfaces.*;
+import model.ProgramState;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -52,5 +53,13 @@ public class CompoundStatement implements IStatement {
     @Override
     public String toString() {
         return firstStatement.toString() + ";" + secondStatement.toString();
+    }
+
+    @Override
+    public ProgramState execute(ProgramState programState) {
+        IStack<IStatement> myStack = programState.getExecutionStack();
+        myStack.push(getSecondStatement());
+        myStack.push(getFirstStatement());
+        return null;
     }
 }

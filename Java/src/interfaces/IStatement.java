@@ -1,5 +1,8 @@
 package interfaces;
 
+import Exceptions.*;
+import model.ProgramState;
+
 import java.io.Serializable;
 
 /**
@@ -14,5 +17,8 @@ public interface IStatement extends Serializable{
      */
     String toString();
 
-
+    /**
+     * run one step for the current statement
+     */
+    ProgramState execute(ProgramState programState) throws DivideByZeroException, ValueNotFoundException, StatementExecutionException, InvalidPositionException, EmptyStackException;
 }

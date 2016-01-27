@@ -31,32 +31,76 @@ namespace ToyLanguage.Model
          */
         private IMyStatement originalProgram;
 
-        public ProgramState(IMyStack<IMyStatement> executionStack, IMyDictionary<string, int> myDictionary, IMyList<string> output, IMyStatement originalProgram)
+        /**
+    * The state id
+    */
+        private int stateId;
+
+        /**
+         * The global state id
+         */
+        private static int globalStateId = 0;
+
+
+        /**
+    * The heap
+    */
+        private IHeap<int, int> heap;
+
+        public ProgramState(IMyStack<IMyStatement> executionStack, IMyDictionary<string, int> myDictionary, IMyList<string> output, IHeap<int, int> heap, IMyStatement originalProgram)
         {
             this.executionStack = executionStack;
             this.myDictionary = myDictionary;
             this.output = output;
             this.originalProgram = originalProgram;
             this.executionStack.push(originalProgram);
+            this.heap = heap;
+            this.stateId = globalStateId++;
         }
 
         /**
-         * String representation
+    * @return True if executionStack is complete, false otherwise
+    */
+        public bool isNotCompleted()
+        {
+            return !executionStack.isEmpty();
+        }
+
+        /**
+         * Run the program in debug mode, one step at a time
          *
-         * @return String
+         * @throws StatementExecutionException
          */
+        public ProgramState oneStep() {
+        if (executionStack.isEmpty())
+            {
+                return this;
+            }
+            
+        IMyStatement statement = executionStack.pop();
+        return statement.execute(this);
+    }
+
+    /**
+     * String representations
+     *
+     * @return String
+     */
     public String ToString()
         {
             StringBuilder result = new StringBuilder();
-        
-            result.Append("Execution stack: \n");
+            result.Append("Id: " + stateId + Environment.NewLine);
+            result.Append("Execution stack: " + Environment.NewLine);
             result.Append(executionStack.ToString());
 
-            result.Append("My dictionary: \n");
+            result.Append("HEAP: " + Environment.NewLine);
+            result.Append(heap.ToString());
+
+            result.Append("My dictionary: " + Environment.NewLine);
             result.Append("\n");
             result.Append(myDictionary.ToString());
 
-            result.Append("Output: \n");
+            result.Append("Output: " + Environment.NewLine);
             result.Append(output.ToString());
             return result.ToString();
         }
@@ -64,6 +108,21 @@ namespace ToyLanguage.Model
         /**
          * Getters and setters
          */
+
+        public int getStateId()
+        {
+            return stateId;
+        }
+
+        public IHeap<int, int> getHeap()
+        {
+            return heap;
+        }
+
+        public void setHeap(IHeap<int, int> heap)
+        {
+            this.heap = heap;
+        }
 
         public IMyStack<IMyStatement> getExecutionStack()
         {

@@ -2,11 +2,14 @@ package repository;
 
 import Exceptions.InvalidPositionException;
 import interfaces.*;
+import javafx.util.Pair;
 import model.ProgramState;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * Created by Lucian on 10/13/2015.
@@ -15,6 +18,7 @@ public class Repository implements IRepository {
 
     public static final String PATH_TO_SERIALIZATION_FILE = "src/file.ser";
     public static final String PATH_TO_SAVE_STATE_FILE = "src/saveState.txt";
+
 
     /**
      * The list of current program states
@@ -29,8 +33,15 @@ public class Repository implements IRepository {
         programStateList = new ArrayList<>();
     }
 
-    public void createProgram(IStack<IStatement> mExecutionStack, IDictionary<String, Integer> myDictionary, IList<String> mOutput, IStatement mInitialProgram) {
-        programStateList.add(new ProgramState(mExecutionStack, myDictionary, mOutput, mInitialProgram));
+    public ProgramState getCurrentState() throws InvalidPositionException {
+        if (programStateList.size() > 0) {
+            return programStateList.get(programStateList.size() - 1);
+        }
+        throw new InvalidPositionException();
+    }
+
+    public void createProgram(IStack<IStatement> mExecutionStack, Stack<IDictionary<String, Integer>> symbolicTableStack, IList<String> mOutput, IHeap<Integer, Integer> heap, Map<String, Pair<List<String>, IStatement>> proceduresTable, IStatement mInitialProgram) {
+        programStateList.add(new ProgramState(mExecutionStack, symbolicTableStack, mOutput, heap, proceduresTable, mInitialProgram));
     }
 
     @Override
@@ -58,7 +69,7 @@ public class Repository implements IRepository {
             /**
              * Replacing old program state
              */
-            if(programStateList.size()>0){
+            if (programStateList.size() > 0) {
                 programStateList.remove(programStateList.size() - 1);
             }
             programStateList.add(serializedProgramState);
@@ -73,34 +84,55 @@ public class Repository implements IRepository {
     }
 
     @Override
-    public void saveStateInFile() {
-        PrintWriter writer = null;
+    public void saveStateInFile(String message) {
+        PrintWriter writer;
         ProgramState programState = programStateList.get(programStateList.size() - 1);
         try {
-            writer = new PrintWriter(PATH_TO_SAVE_STATE_FILE, "UTF-8");
+            writer = new PrintWriter(new BufferedWriter(new FileWriter(PATH_TO_SAVE_STATE_FILE, true)));
             writer.println("STACK:");
             writer.println(programState.getExecutionStack().toString());
             writer.println("Symbolic Table");
             writer.println(programState.getMyDictionary().toString());
             writer.println("Output");
             writer.println(programState.getOutput().toString());
+            writer.println(message);
             writer.close();
-        } catch (FileNotFoundException | UnsupportedEncodingException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Get the latest program state
-     *
-     * @return The ProgramState
-     */
     @Override
-    public ProgramState getCurrentState() throws InvalidPositionException {
-        if (programStateList.size() > 0) {
-            return programStateList.get(programStateList.size() - 1);
+    public ProgramState getBiggerProgramState() {
+        int max = -1;
+        ProgramState result = null;
+        for (ProgramState states : programStateList) {
+            if (states.getExecutionStack().size() > max) {
+                max = states.getExecutionStack().size();
+                result = states;
+            }
         }
-        throw new InvalidPositionException();
+        return result;
+    }
+
+    @Override
+    public void removeCompleteProgramState() {
+        List<ProgramState> copyOfList = new ArrayList<ProgramState>(programStateList);
+        for (ProgramState state : copyOfList) {
+            if (state.isNotCompleted()) {
+                programStateList.remove(state);
+            }
+        }
+    }
+
+    @Override
+    public void setProgramStateList(List<ProgramState> list) {
+        programStateList = list;
+    }
+
+    @Override
+    public List<ProgramState> getProgramStateList() {
+        return programStateList;
     }
 
 }

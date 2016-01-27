@@ -2,6 +2,7 @@ package model.Expresions;
 
 import interfaces.Expression;
 import interfaces.IDictionary;
+import interfaces.IHeap;
 
 /**
  * Created by Lucian on 10/11/2015.
@@ -27,7 +28,7 @@ public class ConstantExpression implements Expression {
      * @return int number
      */
     @Override
-    public int eval(IDictionary<String, Integer> table){
+    public int eval(IDictionary<String, Integer> table, IHeap<Integer, Integer> heap){
         return number;
     }
 

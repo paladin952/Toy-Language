@@ -2,6 +2,7 @@ import controller.Controller;
 import interfaces.IRepository;
 import repository.Repository;
 import tests.Tests;
+import ui.Gui;
 import ui.Ui;
 
 import java.math.BigInteger;
@@ -19,12 +20,14 @@ public class StartClass {
         new Tests();
 
         //init objects
-        IRepository repository = new Repository();
-        Controller controller = new Controller(repository);
-        Ui ui = new Ui(controller);
+//        Ui ui = new Ui(controller);
 
         //start ui
-        ui.run();
+//        ui.run();
+        IRepository repository = new Repository();
+        Controller controller = new Controller(repository);
+        Gui gui = new Gui(controller);
+        gui.myShow();
     }
 }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ToyLanguage.Model;
+using ToyLanguage.Model.Collections;
 
 namespace ToyLanguage.Interfaces
 {
@@ -22,12 +23,24 @@ namespace ToyLanguage.Interfaces
          * @param mOutput         The output list of the program
          * @param mInitialProgram The initial statement
          */
-        void createProgram(IMyStack<IMyStatement> mExecutionStack, IMyDictionary<string, int> myDictionary, IMyList<string> mOutput, IMyStatement mInitialProgram);
+        void createProgram(IMyStack<IMyStatement> mExecutionStack, IMyDictionary<string, int> myDictionary, IMyList<string> mOutput, IHeap<int, int> heap, IMyStatement mInitialProgram);
 
         void Serialize();
 
         void DeSerialize();
 
         void SaveStateInFile();
+
+        /**
+    * Set the list of program states
+    * @param list the list
+    */
+        void setProgramStateList(List<ProgramState> list);
+
+        /**
+         * Get the program state list
+         * @return The list
+         */
+        List<ProgramState> getProgramStateList();
     }
 }
