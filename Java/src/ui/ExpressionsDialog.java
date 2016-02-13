@@ -142,4 +142,5 @@ public class ExpressionsDialog extends JDialog {
         setLocationRelativeTo(this);
         setModal(true);
     }
+
 }
